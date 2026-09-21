@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="ne" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>काल-चक्र: वैदिक समयको भर्‍याङ र हाम्रो ठेगाना</title>
-<meta name="description" content="ब्रह्माको १०० वर्षको आयुदेखि कलियुगसम्म, सात तहको जुम भर्‍याङमा वैदिक काल-गणना, आजको मितिबाट गरिएको गणनासहित।">
+<title>C-काल-चक्र: सृष्टिको घडी र वैदिक समयको भर्‍याङ</title>
+<meta name="description" content="कस्मिक वर्षदेखि सृष्टि, स्थिति र लयसम्म, अनि ब्रह्माको आयुदेखि कलियुगसम्मको सात तहको जुम भर्‍याङ। सबै गणना आजको मितिबाट।">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Mukta:wght@300;400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root{
   color-scheme:light;
-  --bg:#EBF0F5; --panel:#F8FAFC; --ink:#0D1A33; --ink2:#465570; --line:#C3CEDB; --soft:#DCE4ED;
-  --navy:#2B4275; --future:#E1E8F0; --water:#5AA5C4; --night:#1A2350;
-  --satya:#C58F14; --treta:#268565; --dvapara:#3A50B3; --kali:#C43A25; --now:#C43A25;
-  --funnel:rgba(196,58,37,.09);
-  --f-head:'Tiro Devanagari Hindi','Noto Serif Devanagari','Kohinoor Devanagari',serif;
-  --f-body:'Hind','Noto Sans Devanagari','Kohinoor Devanagari',system-ui,sans-serif;
+  --bg:#F4F7FA; --panel:#FFFFFF; --ink:#1A202C; --ink2:#4A5568; --line:#E2E8F0; --soft:#EDF2F7;
+  --navy:#2B4275; --future:#E2E8F0; --water:#3182CE; --night:#44337A;
+  --satya:#D69E2E; --treta:#38A169; --dvapara:#3182CE; --kali:#E53E3E; --now:#E53E3E;
+  --funnel:rgba(229,62,62,.08);
+  --f-head:'Tiro Devanagari Hindi','Noto Serif Devanagari',serif;
+  --f-body:'Mukta','Noto Serif Devanagari',sans-serif;
+  --f-hand:'Rozha One','Tiro Devanagari Hindi','Noto Serif Devanagari',serif;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
@@ -25,7 +26,7 @@
   :root:not([data-theme="light"]){
     color-scheme:dark;
     --bg:#0A1226; --panel:#111B37; --ink:#E8EDF9; --ink2:#9CAAC8; --line:#27365A; --soft:#1B2849;
-    --navy:#4B6BB4; --future:#16213F; --water:#4A93B4; --night:#0B1234;
+    --navy:#4B6BB4; --future:#16213F; --water:#4A93B4; --night:#5B4FC0;
     --satya:#E3AE3A; --treta:#3DB58C; --dvapara:#7088EA; --kali:#F05C45; --now:#F05C45;
     --funnel:rgba(240,92,69,.13);
   }
@@ -33,44 +34,307 @@
 :root[data-theme="dark"]{
   color-scheme:dark;
   --bg:#0A1226; --panel:#111B37; --ink:#E8EDF9; --ink2:#9CAAC8; --line:#27365A; --soft:#1B2849;
-  --navy:#4B6BB4; --future:#16213F; --water:#4A93B4; --night:#0B1234;
+  --navy:#4B6BB4; --future:#16213F; --water:#4A93B4; --night:#5B4FC0;
   --satya:#E3AE3A; --treta:#3DB58C; --dvapara:#7088EA; --kali:#F05C45; --now:#F05C45;
   --funnel:rgba(240,92,69,.13);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--f-body);-webkit-text-size-adjust:100%}
-h1,h2,h3,h4{font-family:var(--f-head);font-weight:400;line-height:1.28;margin:0}
-h1{font-size:clamp(2.1rem,5.6vw,3.7rem);line-height:1.18}
-h2{font-size:clamp(1.65rem,3.4vw,2.35rem)}
+@media(max-width:760px){html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 112px)}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 var(--f-body);-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{font-family:var(--f-head);font-weight:400;line-height:1.3;margin:0}
+h1{font-size:clamp(2.4rem,6vw,4.5rem);line-height:1.15;font-weight:700}
+h2{font-size:clamp(1.8rem,3.8vw,2.6rem)}
 p{margin:0 0 1em}
 a{color:inherit}
 button{font-family:inherit}
 .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
-.sec{padding:76px 0 0}
+.sec{padding:80px 0 0}
 .sec-h{max-width:68ch;margin-bottom:30px}
 .sec-h p{color:var(--ink2);margin:12px 0 0}
 .skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:6px;z-index:99}
 .skip:focus{left:8px}
 :focus-visible{outline:3px solid var(--now);outline-offset:2px}
+.hand{font-family:var(--f-hand)}
+.fine{font-size:.86rem;color:var(--ink2);margin:10px 0 0}
+.pane[hidden]{display:none}
+
+/* motion */
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes spinr{to{transform:rotate(-360deg)}}
+@keyframes write{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fillin{to{fill:var(--now)}}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}
+@keyframes breathe{0%,100%{transform:scale(.42)}50%{transform:scale(1)}}
+@keyframes lab1{0%,8%{opacity:0}18%,46%{opacity:1}56%,100%{opacity:0}}
+@keyframes lab2{0%,52%{opacity:0}62%,92%{opacity:1}100%{opacity:0}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 140s linear infinite}
+.spin.b{animation:spinr 200s linear infinite}
+.spin.c{animation-duration:90s}
+.write{display:inline-block;clip-path:inset(0 100% 0 0);animation:write 2.2s cubic-bezier(.3,.6,.2,1) .65s forwards}
+.om{font-family:var(--f-head);fill:transparent;stroke:var(--now);stroke-width:1.6;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 3.4s ease .3s forwards,fillin 1.2s ease 3s forwards}
+html.js .rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--rd,0s)}
+html.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .spin,.write,.om,.breath,.breath *,.pulse,.bob{animation:none!important}
+  .write{clip-path:none}.om{stroke-dashoffset:0;fill:var(--now)}
+  html.js .rv{opacity:1;transform:none;transition:none}
+  .ladder.rev .funnel svg,.ladder.rev .lvl .marker{opacity:1!important;transform:none!important;transition:none!important}
+}
 
 /* top bar */
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
 @supports (background:color-mix(in srgb,red 10%,blue)){.bar{background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px)}}
-.bar-in{display:flex;align-items:center;gap:18px;height:58px;max-width:1140px;margin:0 auto;padding:0 20px}
-.brand{font:400 1.35rem var(--f-head);text-decoration:none;white-space:nowrap}
-.nav{flex:1;display:flex;gap:4px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;min-width:0}
+.bar-in{display:flex;align-items:center;gap:16px;min-height:58px;max-width:1140px;margin:0 auto;padding:4px 20px}
+.brand{font:700 1.45rem var(--f-head);text-decoration:none;white-space:nowrap}
+.tabs{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:2px;background:var(--panel)}
+.tabs button,.seg2 button{border:0;background:none;padding:4px 15px;border-radius:99px;font:600 .95rem var(--f-body);color:var(--ink2);cursor:pointer;white-space:nowrap}
+.tabs button[aria-selected=true],.seg2 button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.nav{flex:1;display:flex;gap:2px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;min-width:0}
+.nav[hidden]{display:none}
 .nav::-webkit-scrollbar{display:none}
-.nav a{padding:6px 12px;border-radius:99px;text-decoration:none;font-size:.95rem;color:var(--ink2)}
+.nav a{padding:6px 11px;border-radius:99px;text-decoration:none;font-size:.93rem;color:var(--ink2)}
 .nav a:hover{background:var(--soft);color:var(--ink)}
-.ctl{display:flex;align-items:center;gap:10px}
+.ctl{display:flex;align-items:center;gap:10px;margin-left:auto}
+.ctl .seg2[hidden]{display:none}
 .seg2{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:2px;background:var(--panel)}
-.seg2 button{border:0;background:none;padding:4px 13px;border-radius:99px;font:600 .92rem var(--f-body);color:var(--ink2);cursor:pointer;white-space:nowrap}
-.seg2 button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
 .ico{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;display:grid;place-items:center;padding:0}
-@media(max-width:700px){.brand{display:none}.bar-in{gap:10px}}
+@media(max-width:760px){.brand{display:none}.bar-in{flex-wrap:wrap;gap:6px 10px}.nav{order:3;flex-basis:100%}.ctl{margin-left:auto}}
 
-/* hero */
+/* go to top */
+.totop{position:fixed;right:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);z-index:60;width:48px;height:48px;border-radius:50%;border:0;background:var(--ink);color:var(--bg);cursor:pointer;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.28);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .3s,transform .3s}
+.totop.show{opacity:1;pointer-events:auto;transform:none}
+.totop:hover{background:var(--now);color:#fff}
+
+/* shared bits */
+.chip{display:inline-block;padding:0 11px;border-radius:99px;font-size:.82rem;font-weight:600;margin-right:9px;line-height:1.7}
+.chip.done{background:var(--navy);color:#fff}
+.chip.now{background:var(--now);color:#fff}
+.chip.fut{background:var(--soft);color:var(--ink2)}
+.alt{color:var(--ink2);font-size:.88rem}
+.w{margin-left:.35em;color:var(--ink2);font-size:.92em}
+.btn{display:inline-block;border:0;border-radius:99px;padding:10px 24px;font:600 1.02rem var(--f-body);cursor:pointer;text-decoration:none;background:var(--now);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn:hover{filter:brightness(1.08)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.chips button,.pre button{border:1px solid var(--line);background:var(--panel);color:var(--ink2);padding:3px 15px;border-radius:99px;font:600 .9rem var(--f-body);cursor:pointer}
+.chips button[aria-pressed=true],.chips button[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.pre{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pre button{color:var(--ink);font-weight:500;font-size:.88rem;padding:2px 13px}
+.pre button:hover{background:var(--soft)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 4px 6px -1px rgba(0,0,0,.02)}
+.tip{margin:12px 0 0;padding:12px 16px;border-left:4px solid var(--water);background:var(--soft);border-radius:0 10px 10px 0;font-size:.95rem;color:var(--ink2)}
+
+/* HOME hero */
+.h-hero{padding:60px 0 20px;overflow:hidden}
+.h-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.9fr);gap:40px;align-items:center}
+@media(max-width:860px){.h-grid{grid-template-columns:1fr}.mandala-w{order:-1;max-width:300px;margin:0 auto}}
+.h-hero h1{font-size:clamp(3.2rem,9vw,6rem);color:var(--ink)}
+.h-sub{font:400 clamp(1.3rem,2.8vw,1.8rem)/1.45 var(--f-head);margin:16px 0 0;color:var(--now)}
+.mandala{width:100%;height:auto;display:block}
+.mandala .om{font-size:170px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:32px 0 0}
+.facts div{background:var(--panel);padding:16px 20px}
+.facts b{display:block;font:400 1.35rem/1.35 var(--f-head);color:var(--ink)}
+.facts span{font-size:.9rem;color:var(--ink2);margin-top:4px;display:block}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+
+/* stepper */
+.stp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:34px;align-items:start}
+@media(max-width:900px){.stp{grid-template-columns:1fr}}
+.stp-name{font:700 clamp(1.7rem,3.4vw,2.4rem)/1.25 var(--f-head)}
+.stp-num{font:400 clamp(2rem,5vw,3.3rem)/1.2 var(--f-head);color:var(--now);margin:8px 0 2px;overflow-wrap:anywhere}
+.stp-num small{font:400 1rem var(--f-body);color:var(--ink2)}
+.stp-mult{display:inline-block;background:var(--soft);border-radius:99px;padding:0 14px;font-weight:600;font-size:.95rem;margin:4px 0 10px}
+.stp-ctl{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.stp-rows{display:grid;gap:6px}
+.stp-row{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr);gap:12px;align-items:center;border:0;background:none;padding:5px 6px;border-radius:8px;text-align:left;cursor:pointer;color:var(--ink)}
+.stp-row:hover{background:var(--panel)}
+.stp-row[aria-current=true]{background:var(--panel);box-shadow:inset 0 0 0 1.5px var(--now)}
+.stp-row span{font-size:.92rem;line-height:1.3}
+.stp-row i{display:block;height:14px;background:var(--soft);border-radius:0 7px 7px 0;position:relative;overflow:hidden}
+.stp-row i::after{content:'';position:absolute;inset:0;background:var(--c);width:0;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.stp-row.on i::after{width:var(--w)}
+.two-c{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+@media(max-width:760px){.two-c{grid-template-columns:1fr}}
+.two-c h3{font-size:1.35rem;margin-bottom:6px}
+.two-c p{margin:0;color:var(--ink2);font-size:.98rem}
+
+/* creation */
+.cr{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.5fr);gap:30px;align-items:start}
+@media(max-width:860px){.cr{grid-template-columns:1fr}}
+.cr-list{display:grid;gap:0;border-left:3px solid var(--line);margin-left:10px}
+.cr-list button{position:relative;display:block;width:100%;text-align:left;border:0;background:none;padding:10px 12px 10px 24px;cursor:pointer;color:var(--ink2);font:500 1rem/1.4 var(--f-body)}
+.cr-list button::before{content:'';position:absolute;left:-9px;top:50%;width:15px;height:15px;margin-top:-7px;border-radius:50%;background:var(--bg);border:3px solid var(--line);transition:.3s}
+.cr-list button[aria-selected=true]{color:var(--ink);font-weight:700}
+.cr-list button[aria-selected=true]::before{border-color:var(--now);background:var(--now);box-shadow:0 0 0 5px rgba(196,58,37,.18)}
+.cr-list button.seen::before{border-color:var(--navy)}
+.cr-panel{min-height:300px}
+.cr-panel h3{font-size:1.7rem;margin-bottom:8px}
+.cr-panel .src{display:inline-block;margin-top:6px;font-size:.88rem;color:var(--ink2);border-top:1px solid var(--line);padding-top:6px}
+.el5{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.el5 span{padding:2px 14px;border-radius:99px;color:#fff;font-weight:600;font-size:.9rem}
+.vq{margin-top:22px;border-left:5px solid var(--water)}
+.vq h3{font-size:1.25rem;margin-bottom:4px}
+
+/* tridev */
+.td{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.td .card{border-top:7px solid var(--c);border-radius:3px 3px 16px 16px}
+.td svg{width:54px;height:54px;display:block;margin-bottom:6px}
+.td h3{font-size:1.6rem}
+.td .role{display:inline-block;background:var(--c);color:var(--on,#fff);padding:0 14px;border-radius:99px;font-weight:600;margin:6px 0 10px;font-size:.95rem}
+.td ul{margin:0;padding-left:1.1em;color:var(--ink2);font-size:.96rem}
+.td li{margin-bottom:4px}
+.persp{margin-top:26px}
+.persp-t{margin:0;padding:14px 20px;background:var(--panel);border:1px solid var(--line);border-left:6px solid var(--now);border-radius:4px 12px 12px 4px;min-height:96px}
+/*Jyotirling-saroj*/
+.jyotirlinga-story {
+  color: var(--ink);
+}
+
+.story-intro {
+  color: var(--ink2);
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.story-list {
+  padding-left: 24px;
+  margin: 10px 0;
+}
+
+.story-list li {
+  padding-left: 6px;
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.story-list li::marker {
+  color: #d97706;
+  font-weight: 700;
+}
+
+.story-list strong {
+  color: var(--ink);
+}
+
+.story-list p {
+  margin: 3px 0 0;
+  color: var(--ink2);
+}
+
+.story-highlight {
+  color: #d97706;
+  font-weight: 600;
+}
+
+.story-brahma {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.story-vishnu {
+  color: #0891b2;
+  font-weight: 700;
+}
+
+.story-shiva {
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+.story-meaning {
+  margin-top: 18px;
+  padding: 15px 17px;
+  border-radius: 12px;
+  background: rgba(217,119,6,.07);
+  border: 1px solid rgba(217,119,6,.22);
+  line-height: 1.85;
+}
+
+.story-meaning h4 {
+  margin: 0 0 8px;
+  color: #0891b2;
+  font-size: 1.05rem;
+}
+
+.story-meaning p {
+  margin: 7px 0;
+  color: var(--ink2);
+}
+
+.story-final {
+  padding-top: 8px;
+  border-top: 1px solid rgba(128,128,128,.2);
+}
+/* shaiva */
+.sv{display:grid;grid-template-columns:minmax(260px,420px) minmax(0,1fr);gap:34px;align-items:center}
+@media(max-width:860px){.sv{grid-template-columns:1fr}}
+.pent{width:100%;height:auto;display:block}
+.pent text{font-family:var(--f-head);fill:var(--ink)}
+.pent .nd{cursor:pointer}
+.pent .nd circle{fill:var(--panel);stroke:var(--c);stroke-width:4;transition:.3s}
+.pent .nd.sel circle{fill:var(--c)}
+.pent .nd.sel text{fill:#fff}
+.pent .ln{stroke:var(--line);stroke-width:1.5;stroke-dasharray:4 5}
+.sv-p h3{font-size:1.7rem;margin-bottom:6px}
+.lg-story{display:grid;grid-template-columns:minmax(150px,220px) minmax(0,1fr);gap:26px;align-items:center;margin-top:34px}
+@media(max-width:760px){.lg-story{grid-template-columns:1fr}}
+.pillar{width:100%;max-width:220px;height:auto;display:block;margin:0 auto}
+.pillar .beam{fill:url(#pg1)}
+.pillar .goup,.pillar .godown{opacity:0}
+.pillar.play .goup{opacity:1;animation:goup 5s ease-in-out infinite alternate}
+.pillar.play .godown{opacity:1;animation:godown 5s ease-in-out infinite alternate}
+@keyframes goup{from{transform:translateY(0)}to{transform:translateY(-150px)}}
+@keyframes godown{from{transform:translateY(0)}to{transform:translateY(150px)}}
+.lg-story ol{margin:10px 0 0;padding-left:1.3em;color:var(--ink2);font-size:.97rem}
+.lg-story li{margin-bottom:4px}
+
+/* pralaya */
+.pl{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(240px,.9fr);gap:34px;align-items:start}
+@media(max-width:860px){.pl{grid-template-columns:1fr}}
+.pl-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.pl-tabs button{border:1px solid var(--line);background:var(--panel);padding:5px 16px;border-radius:99px;font:600 .95rem var(--f-body);cursor:pointer;color:var(--ink2)}
+.pl-tabs button[aria-selected=true]{background:var(--c);border-color:var(--c);color:#fff}
+.pl-p h3{font-size:1.65rem;margin-bottom:6px}
+.pl-len{display:inline-block;background:var(--soft);padding:0 14px;border-radius:99px;font-weight:600;margin:0 0 10px;font-size:.95rem}
+.breath{position:relative;width:min(100%,300px);aspect-ratio:1;margin:0 auto}
+.breath i{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 40% 35%,var(--satya),var(--now) 62%,var(--night));animation:breathe 10s ease-in-out infinite;transform:scale(.42);opacity:.92}
+.breath b{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font:700 1.15rem/1.4 var(--f-head);color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5);opacity:0}
+.breath b.a{animation:lab1 10s ease-in-out infinite}
+.breath b.b{animation:lab2 10s ease-in-out infinite}
+.breath-c{text-align:center;font-size:.92rem;color:var(--ink2);margin-top:8px}
+
+/* journey timeline */
+.tm{position:relative;margin-left:14px;padding-left:34px;border-left:3px solid var(--line)}
+.tm-i{position:relative;padding:0 0 30px}
+.tm-i::before{content:'';position:absolute;left:-46px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--c);border:4px solid var(--bg);box-shadow:0 0 0 2px var(--c)}
+.tm-i.now::after{content:'';position:absolute;left:-46px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--now);animation:pulse 2s ease-out infinite}
+.tm-ago{font:400 clamp(1.3rem,3vw,1.9rem)/1.3 var(--f-head);color:var(--c)}
+.tm-i h3{font-size:1.3rem;margin:2px 0 4px}
+.tm-i p{color:var(--ink2);margin:0;max-width:66ch;font-size:.99rem}
+.cta{text-align:center;padding:54px 20px;background:var(--panel);border:1px solid var(--line);border-radius:18px;margin-top:80px}
+.cta h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:10px}
+.cta p{color:var(--ink2);max-width:56ch;margin:0 auto 22px}
+
+/* Shaiva detail panel */
+.kriya-section{margin-top:14px;line-height:1.8}
+.kriya-title{color:#d97706;font-weight:700;font-size:1.05em;margin-bottom:7px}
+.kriya-item{margin:4px 0}
+.kriya-srishti{color:#c2410c}.kriya-sthiti{color:#15803d}.kriya-samhara{color:#2563eb}
+.kriya-tirodhan{color:#7c3aed}.kriya-anugraha{color:#dc2626}
+.tattva-section{margin-top:14px;padding-top:12px;border-top:1px solid rgba(128,128,128,.3);line-height:1.8}
+.tattva-title{color:#0891b2;font-weight:700;font-size:1.05em;margin-bottom:7px}
+.tattva-item{margin:4px 0}
+.tattva-shuddha{color:#7c3aed}.tattva-shuddhashuddha{color:#d97706}.tattva-ashuddha{color:#2563eb}
+.total-36{color:#0f766e;font-weight:700;text-align:center;margin:10px 0}
+.tattva-note{margin-top:8px}
+
+/* CHAKRA hero */
 .hero{padding:52px 0 8px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,.85fr);gap:44px;align-items:center}
 @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:28px}}
@@ -80,12 +344,11 @@ button{font-family:inherit}
 .stamps div{background:var(--panel);padding:10px 14px}
 .stamps dt{font-size:.84rem;color:var(--ink2)}
 .stamps dd{margin:0;font:400 1.25rem/1.3 var(--f-head)}
-.fine{font-size:.86rem;color:var(--ink2);margin:10px 0 0}
 .wheel{max-width:360px;width:100%;margin:0 auto;display:block}
 .wheel text{fill:var(--ink);font-family:var(--f-head)}
 .wheel .w-s{fill:var(--ink2);font-family:var(--f-body);font-size:11.5px}
 .addr{margin-top:44px;border-top:2px solid var(--ink)}
-.addr h2{font-size:1.2rem;padding:14px 4px 6px}
+.addr h2{font-size:1.25rem;padding:14px 4px 6px}
 .addr a{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(120px,230px) 92px;gap:16px;align-items:center;padding:12px 4px;border-top:1px solid var(--line);text-decoration:none}
 .addr a:hover{background:var(--panel)}
 .a-l{font-weight:600}
@@ -98,14 +361,14 @@ button{font-family:inherit}
 /* ladder */
 .ladder{position:relative}
 .lvl{padding:6px 0 0}
-.lvl-h{display:grid;grid-template-columns:46px minmax(0,1fr) auto;gap:2px 14px;align-items:start}
-.lvl-n{font:400 2.4rem/1 var(--f-head);color:var(--now)}
-.lvl-h h3{font-size:1.5rem}
+.lvl-h{display:grid;grid-template-columns:50px minmax(0,1fr) auto;gap:2px 14px;align-items:start}
+.lvl-n{font:700 2.6rem/1 var(--f-head);color:var(--now)}
+.lvl-h h3{font-size:1.55rem}
 .lvl-h p{margin:2px 0 0;color:var(--ink2);font-size:.96rem}
-.lvl-d{text-align:right;font-weight:600;line-height:1.35}
+.lvl-d{text-align:right;font-weight:600;line-height:1.35;max-width:260px}
 .lvl-d small{display:block;font-weight:400;color:var(--ink2);font-size:.86rem}
-@media(max-width:660px){.lvl-h{grid-template-columns:34px 1fr}.lvl-d{grid-column:2;text-align:left;margin-top:4px}.lvl-n{font-size:1.9rem}}
-.track{position:relative;padding-top:38px}
+@media(max-width:660px){.lvl-h{grid-template-columns:36px 1fr}.lvl-d{grid-column:2;text-align:left;margin-top:4px}.lvl-n{font-size:2rem}}
+.track{position:relative;padding-top:40px}
 .segs{position:relative;display:flex;height:48px;background:var(--panel);border-radius:6px;box-shadow:0 0 0 1px var(--line);overflow:hidden}
 .seg{--fut:var(--future);flex:var(--len) 1 0px;min-width:0;position:relative;border:0;padding:0;margin:0;background:var(--c);color:var(--on,#fff);font:600 .8rem var(--f-body);cursor:pointer;box-shadow:inset -1px 0 0 var(--panel);overflow:hidden;white-space:nowrap}
 @supports (background:color-mix(in srgb,red 10%,blue)){.seg{--fut:color-mix(in srgb,var(--c) 17%,var(--future))}}
@@ -121,65 +384,75 @@ button{font-family:inherit}
 .tick[aria-pressed=true]{background:linear-gradient(90deg,transparent 3px,var(--ink) 3px 8px,transparent 8px)}
 .tl{position:absolute;top:0;height:100%;width:0;border-left:2px dashed rgba(255,255,255,.75);z-index:1;pointer-events:none}
 .marker{position:absolute;left:var(--pos);top:0;bottom:-6px;width:0;pointer-events:none;z-index:6}
-.marker::before{content:'';position:absolute;left:-1.5px;top:26px;bottom:0;width:3px;background:var(--now);border-radius:2px}
-.marker span{position:absolute;top:0;left:0;transform:translateX(-50%);background:var(--now);color:#fff;font:600 .8rem/1.5 var(--f-body);padding:1px 10px;border-radius:99px;white-space:nowrap}
+.marker::before{content:'';position:absolute;left:-1.5px;top:28px;bottom:0;width:3px;background:var(--now);border-radius:2px}
+.marker span{position:absolute;top:0;left:0;transform:translateX(-50%);background:var(--now);color:#fff;font:400 .98rem/1.55 var(--f-hand);padding:0 11px;border-radius:99px;white-space:nowrap}
 .marker.l span{transform:none;left:-2px}
 .marker.r span{transform:translateX(-100%);left:2px}
-.hl{position:absolute;left:var(--a);width:var(--w);min-width:5px;top:38px;height:48px;outline:2px dashed var(--ink);outline-offset:2px;pointer-events:none;z-index:4;border-radius:2px}
+.hl{position:absolute;left:var(--a);width:var(--w);min-width:5px;top:40px;height:48px;outline:2px dashed var(--ink);outline-offset:2px;pointer-events:none;z-index:4;border-radius:2px}
 .caps{position:relative;height:22px;margin-top:6px;font-size:.84rem;color:var(--ink2)}
 .caps span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
 .caps span.al-l{transform:none}
 .caps span.al-r{transform:translateX(-100%)}
-.readout{margin-top:14px;padding:14px 18px 12px;background:var(--panel);border:1px solid var(--line);border-left:6px solid var(--rc,var(--ink));border-radius:4px 12px 12px 4px;min-height:132px}
-.readout h4{font-size:1.25rem;margin:0 0 6px}
-.ro-s{margin:0 0 6px;font-size:.96rem}
-.readout dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:3px 18px;margin:8px 0 0;font-size:.95rem}
-.readout dt{color:var(--ink2)}
-.readout dd{margin:0}
-.ro-n{margin:10px 0 0;font-size:.95rem;color:var(--ink2)}
-.chip{display:inline-block;padding:0 11px;border-radius:99px;font-size:.82rem;font-weight:600;margin-right:9px;line-height:1.7}
-.chip.done{background:var(--navy);color:#fff}
-.chip.now{background:var(--now);color:#fff}
-.chip.fut{background:var(--soft);color:var(--ink2)}
-.alt{color:var(--ink2);font-size:.88rem}
-.hint{font-size:.88rem;color:var(--ink2);margin:8px 0 0}
+.readout{margin-top:16px;padding:20px 24px 16px;background:var(--panel);border:1px solid var(--line);border-left:6px solid var(--rc,var(--ink));border-radius:4px 14px 14px 4px;min-height:200px;animation:fadeUp .5s ease}
+.readout h4{font-size:1.4rem;margin:0 0 6px}
+.ro-s{margin:0 0 8px;font-size:.96rem}
+.ro-story p{margin:0 0 .7em}
+.ro-story .tip{margin:.4em 0 .7em}
+.ro-num{margin-top:6px;font-size:.92rem;color:var(--ink2)}
+.ro-num summary{cursor:pointer;font:600 .92rem var(--f-body);padding:4px 0;display:block}
+.ro-num summary::after{content:none}
+.ro-num dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:3px 18px;margin:6px 0 4px}
+.ro-num dt{color:var(--ink2)}
+.ro-num dd{margin:0;color:var(--ink)}
 .funnel{position:relative;height:66px;margin:4px 0}
 .funnel svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .funnel polygon{fill:var(--funnel)}
 .funnel line{stroke:var(--ink2);stroke-width:1.2;stroke-dasharray:4 4;vector-effect:non-scaling-stroke}
-.zoom{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:1px 14px;font-size:.88rem;white-space:nowrap}
+.zoom{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:0 14px;font:400 1rem var(--f-hand);white-space:nowrap}
 .ladder.rev .funnel svg{opacity:0}
 .ladder.rev .funnel.in svg{opacity:1;transition:opacity .9s ease}
 .ladder.rev .lvl .marker{opacity:0;transform:translateY(-16px)}
 .ladder.rev .lvl.in .marker{opacity:1;transform:none;transition:opacity .5s ease .25s,transform .7s cubic-bezier(.2,.9,.3,1) .25s}
 
 /* sankalpa */
-.sk{display:grid;gap:0;border-top:2px solid var(--ink)}
+.sk{display:grid;border-top:2px solid var(--ink)}
 .sk a{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.5fr) auto;gap:8px 24px;align-items:baseline;padding:16px 4px;border-bottom:1px solid var(--line);text-decoration:none}
 .sk a:hover{background:var(--panel)}
-.sk-t{font:400 1.45rem/1.35 var(--f-head)}
+.sk-t{font:400 1.5rem/1.35 var(--f-head)}
 .sk-m{color:var(--ink2);font-size:.98rem}
 .sk-l{font-weight:600;font-size:.9rem;background:var(--soft);padding:1px 12px;border-radius:99px;white-space:nowrap}
 @media(max-width:760px){.sk a{grid-template-columns:1fr}.sk-l{justify-self:start}}
-.sk-full{font:400 1.2rem/1.9 var(--f-head);margin:0 0 20px;color:var(--ink2)}
+.sk-full{font:400 1.3rem/1.9 var(--f-head);margin:0 0 20px;color:var(--ink2)}
 
-/* yugas */
-.yg{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:18px}
-.yc{background:var(--panel);border:1px solid var(--line);border-top:7px solid var(--c);border-radius:3px 3px 14px 14px;padding:18px 18px 14px;display:flex;flex-direction:column;gap:10px}
-.yc h3{font-size:1.6rem}
-.yc-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-.yc dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:3px 14px;margin:0;font-size:.94rem}
-.yc dt{color:var(--ink2)}
-.yc dd{margin:0}
-.mini{display:flex;height:14px;border-radius:3px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+/* yuga wheel */
+.wh{display:grid;grid-template-columns:minmax(280px,440px) minmax(0,1fr);gap:38px;align-items:center}
+@media(max-width:900px){.wh{grid-template-columns:1fr}}
+.whs{width:100%;height:auto;display:block;overflow:visible}
+.whs .wh-y{cursor:pointer;stroke-width:38px;transition:stroke-width .35s,opacity .35s;outline:none}
+.whs .wh-y.sel{stroke-width:48px}
+.whs.has .wh-y:not(.sel){opacity:.5}
+.whs .wh-i{cursor:pointer;stroke-width:14px;transition:opacity .35s}
+.whs text{font-family:var(--f-head);fill:var(--ink)}
+.whs .wt-s{font-family:var(--f-body);fill:var(--ink2);font-size:12.5px}
+.whs .lab{fill:#fff;font-size:17px;pointer-events:none;font-weight:700}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.2s ease-out infinite}
+.wh-note{font-size:.88rem;color:var(--ink2);margin-top:8px;text-align:center}
+.wh-p h3{font-size:2rem;margin:0 0 4px}
+.wh-p .lead2{color:var(--ink2);margin:0 0 14px}
+.yb{margin-top:12px}
+.yb-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.legs{display:flex;gap:6px;align-items:flex-end;height:46px;margin:8px 0}
+.legs i{display:block;width:16px;border-radius:3px 3px 0 0;background:var(--c);height:100%;transition:height .6s cubic-bezier(.2,.8,.2,1),background .4s;transform-origin:bottom}
+.legs i.off{height:10%;background:var(--soft)}
+.yb dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 16px;margin:10px 0;font-size:.95rem}
+.yb dt{color:var(--ink2)}
+.yb dd{margin:0}
+.mini{display:flex;height:14px;border-radius:3px;overflow:hidden;box-shadow:0 0 0 1px var(--line);margin-top:8px}
 .mini i{display:block;background:var(--c);flex:var(--w) 1 0px}
 .mini i.sd{background:repeating-linear-gradient(135deg,var(--c) 0 3px,transparent 3px 5px)}
-.mini-c{display:flex;justify-content:space-between;font-size:.8rem;color:var(--ink2);margin-top:-4px}
-.legs{display:flex;gap:4px;align-items:flex-end}
-.legs i{display:block;width:12px;height:28px;border-radius:2px;background:var(--c)}
-.legs i.off{background:var(--soft)}
-.kali-x{margin-top:22px;background:var(--panel);border:1px solid var(--line);border-left:6px solid var(--kali);border-radius:4px 14px 14px 4px;padding:18px 22px}
-.kali-x h3{font-size:1.4rem;margin-bottom:10px}
+.mini-c{display:flex;justify-content:space-between;font-size:.8rem;color:var(--ink2);margin-top:2px}
+.kali-x{margin-top:34px;background:var(--panel);border:1px solid var(--line);border-left:6px solid var(--kali);border-radius:4px 14px 14px 4px;padding:18px 22px}
+.kali-x h3{font-size:1.45rem;margin-bottom:10px}
 .pada{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:14px 0 4px}
 .pada div{height:14px;background:var(--soft);border-radius:3px;position:relative;overflow:hidden}
 .pada div i{position:absolute;inset:0 auto 0 0;background:var(--kali);width:var(--f,0%)}
@@ -187,11 +460,9 @@ button{font-family:inherit}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
 @media(max-width:760px){.two{grid-template-columns:1fr}}
 
-/* manvantara */
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
-.chips button{border:1px solid var(--line);background:var(--panel);color:var(--ink2);padding:3px 15px;border-radius:99px;font:600 .9rem var(--f-body);cursor:pointer}
-.chips button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* manvantara table */
 .tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.tw.tall{max-height:560px;overflow:auto}
 table{border-collapse:collapse;width:100%;font-size:.93rem}
 th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 th{position:sticky;top:0;background:var(--soft);font-weight:600;white-space:nowrap}
@@ -199,84 +470,94 @@ tr.s td{color:var(--ink2)}
 tr.s td:nth-child(2){color:var(--water)}
 tr.n td{background:color-mix(in srgb,var(--now) 11%,var(--panel));font-weight:600}
 td.num{white-space:nowrap}
-.tw.tall{max-height:560px;overflow:auto}
+td .w{display:block;margin-left:0;font-size:.82rem}
 
-/* scale chart */
-.lg{position:relative;padding:4px 0 6px}
-.lg-row{display:grid;grid-template-columns:minmax(126px,230px) minmax(0,1fr);gap:14px;align-items:center;padding:4px 0}
-.lg-name{font-size:.93rem;line-height:1.35}
-.lg-bar{position:relative;height:24px;background-image:linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:calc(100%/6) 100%;border-right:1px solid var(--line)}
-.lg-bar i{position:absolute;left:0;top:3px;height:18px;width:var(--w);background:var(--c);border-radius:0 4px 4px 0}
-.lg-bar i.sci{background:repeating-linear-gradient(135deg,var(--ink2) 0 2px,transparent 2px 6px);box-shadow:inset 0 0 0 1.5px var(--ink2)}
-.lg-bar b{position:absolute;top:0;left:calc(var(--w) + 8px);line-height:24px;font-size:.86rem;white-space:nowrap;font-weight:600}
-.lg-bar b.in{left:auto;right:calc(100% - var(--w) + 8px);color:#fff}
-.lg-ax{display:grid;grid-template-columns:minmax(126px,230px) minmax(0,1fr);gap:14px;margin-top:2px}
-.lg-ax div{position:relative;height:22px;font-size:.78rem;color:var(--ink2)}
-.lg-ax span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
-.lg-ax span:first-child{transform:none}
-.lg-ax span:last-child{transform:translateX(-100%)}
-@media(max-width:640px){.lg-row{grid-template-columns:1fr;gap:0}.lg-ax{grid-template-columns:1fr}.lg-ax>span{display:none}}
+/* plot grid (charts that must line up) */
+.pg{--nc:clamp(118px,22vw,230px);--rc:0px;position:relative}
+.pg .over{position:absolute;top:0;bottom:0;left:calc(var(--nc) + 14px);right:var(--rc);background-image:linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:calc(100%/var(--div)) 100%;border-right:1px solid var(--line);pointer-events:none;z-index:0}
+.pg .r{position:relative;z-index:1;display:grid;grid-template-columns:var(--nc) minmax(0,1fr);gap:14px;align-items:center;padding:4px 0;width:100%;border:0;background:none;text-align:left;color:inherit;font:inherit}
+.pg .nm{font-size:.93rem;line-height:1.35}
+.pg .bar2{position:relative;height:26px}
+.pg .bar2 i{position:absolute;left:0;top:3px;height:20px;width:var(--w);background:var(--c);border-radius:0 5px 5px 0;transition:filter .2s}
+.pg .bar2 i.sci{background:repeating-linear-gradient(135deg,var(--ink2) 0 2px,transparent 2px 6px);box-shadow:inset 0 0 0 1.5px var(--ink2)}
+.pg .bar2 b{position:absolute;top:0;left:calc(var(--w) + 8px);line-height:26px;font-size:.86rem;white-space:nowrap;font-weight:600}
+.pg .bar2 b.in{left:auto;right:calc(100% - var(--w) + 8px);color:#fff}
+.pg .ax{position:relative;z-index:1;display:grid;grid-template-columns:var(--nc) minmax(0,1fr);gap:14px;margin-top:2px}
+.pg .ax .axp{position:relative;height:36px;font-size:.78rem;color:var(--ink2)}
+.pg .ax .axp span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap;text-align:center;line-height:1.3}
+.pg .ax .axp span:first-child{transform:none;text-align:left}
+.pg .ax .axp span:last-child{transform:translateX(-100%);text-align:right}
+.pg.h{--rc:154px}
+.pg.h .r{grid-template-columns:var(--nc) minmax(0,1fr) 140px;padding:9px 0;border-bottom:1px solid var(--line)}
+.pg.h .ax{grid-template-columns:var(--nc) minmax(0,1fr) 140px}
+.pg .over .today{position:absolute;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--now)}
+.pg .over .today::before{content:'आज';position:absolute;top:-2px;left:6px;font:400 .95rem var(--f-hand);color:var(--now)}
+.hd-ruler{position:relative;height:26px}
+.hd-ruler i{position:absolute;top:4px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:var(--c,var(--navy));border:3px solid var(--bg);box-shadow:0 0 0 1.5px var(--c,var(--navy))}
+.hd-n b{font-weight:600}
+.hd-n small,.hd-v small{display:block;color:var(--ink2);font-size:.85rem;line-height:1.4}
+.hd-v{text-align:right;font-size:.92rem}
+.hd-n .mob{display:none}
+@media(max-width:700px){.pg{--nc:112px}.pg.h{--rc:0px}.pg.h .r{grid-template-columns:var(--nc) minmax(0,1fr)}.pg.h .ax{grid-template-columns:var(--nc) minmax(0,1fr)}.hd-v{display:none}.hd-n .mob{display:block}.pg .nm{font-size:.84rem}.pg .ax .axp span:nth-child(even){display:none}.pg .bar2 b{font-size:.78rem}}
 .legend{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:.9rem;color:var(--ink2);margin:0 0 16px}
 .legend i{display:inline-block;width:26px;height:12px;vertical-align:-1px;margin-right:7px;border-radius:2px}
 .note-box{margin-top:18px;font-size:.94rem;color:var(--ink2);max-width:76ch}
 
-/* history dots */
-.hd{border-top:2px solid var(--ink)}
-.hd-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) 130px;gap:8px 22px;align-items:center;padding:12px 4px;border-bottom:1px solid var(--line)}
-.hd-row b{font-weight:600}
-.hd-row small{display:block;color:var(--ink2);font-size:.86rem;line-height:1.4}
-.hd-ruler{position:relative;height:26px}
-.hd-ruler::before{content:'';position:absolute;left:0;right:0;top:12px;height:2px;background:var(--line)}
-.hd-ruler i{position:absolute;top:5px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--c,var(--navy));border:3px solid var(--bg)}
-.hd-v{text-align:right;font-size:.92rem}
-.hd-ax{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) 130px;gap:22px;padding:8px 4px 0;font-size:.78rem;color:var(--ink2)}
-.hd-ax div{position:relative;height:34px}
-.hd-ax span{position:absolute;top:0;transform:translateX(-50%);text-align:center;line-height:1.3;white-space:nowrap}
-.hd-ax span:first-child{transform:none;text-align:left}
-.hd-ax span:last-child{transform:translateX(-100%);text-align:right}
-@media(max-width:760px){.hd-row{grid-template-columns:1fr;gap:4px}.hd-v{text-align:left}.hd-ax{grid-template-columns:1fr}.hd-ax>span,.hd-ax>div:first-child,.hd-ax>div:last-child{display:none}.hd-ax>div:nth-child(2){display:block}}
+/* unit chart */
+.ut .r{cursor:pointer;border-radius:6px}
+.ut .r:hover,.ut .r[aria-pressed=true]{background:color-mix(in srgb,var(--c) 10%,transparent)}
+.ut .r[aria-pressed=true] .nm{font-weight:700}
+.ut .r[aria-pressed=true] .bar2 i{filter:brightness(1.08);box-shadow:0 0 0 2px var(--ink)}
+.ut-d{margin-top:22px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:30px;align-items:start}
+@media(max-width:860px){.ut-d{grid-template-columns:1fr}}
+.ut-d h3{font-size:1.75rem;margin-bottom:4px}
+.ribbon{display:flex;height:34px;border-radius:6px;overflow:hidden;box-shadow:0 0 0 1px var(--line);margin:10px 0 4px;background:var(--panel)}
+.ribbon i{display:block;position:relative;flex:var(--w) 1 0px;min-width:0;background:var(--c);color:var(--on,#fff);font:600 .78rem/34px var(--f-body);text-align:center;overflow:hidden;white-space:nowrap;box-shadow:inset -1px 0 0 var(--panel)}
+.ribbon i.cl::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:calc(100%/var(--cn)) 100%}
+.ribbon i.sd{background:repeating-linear-gradient(135deg,var(--c) 0 3px,color-mix(in srgb,var(--c) 45%,var(--panel)) 3px 6px)}
+.cmp{display:grid;gap:8px}
+.cmp select{font:500 .95rem var(--f-body);padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);width:100%}
+.cmp .out{font:400 1.25rem/1.4 var(--f-head);margin-top:4px;min-height:3em}
+.dchain{display:flex;flex-wrap:wrap;gap:0;align-items:stretch;margin:0 0 6px}
+.dchain button{border:0;color:#fff;padding:8px 14px;font:600 .95rem var(--f-body);cursor:pointer;position:relative;background:var(--c)}
+.dchain button:first-child{border-radius:99px 0 0 99px}
+.dchain button:last-child{border-radius:0 99px 99px 0}
+.dchain button[aria-pressed=true]{outline:3px solid var(--ink);outline-offset:-3px;z-index:2}
+.dchain .x{align-self:center;padding:0 6px;font-size:.88rem;color:var(--ink2)}
 
 /* tools */
 .tools{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;align-items:start}
 @media(max-width:900px){.tools{grid-template-columns:1fr}}
-.tool h3{font-size:1.45rem;margin-bottom:6px}
+.tool h3{font-size:1.5rem;margin-bottom:6px}
 .tool>p{color:var(--ink2);font-size:.95rem}
 .bands{position:relative;display:flex;height:26px;border-radius:5px;overflow:hidden;box-shadow:0 0 0 1px var(--line);background:var(--panel)}
 .bands i{display:block;flex:var(--len) 1 0px;min-width:0;background:var(--c)}
 .bands i.m{--c:var(--navy)}
 .bands i.s{--c:var(--water)}
-.bands u{position:absolute;top:0;height:100%;width:1px;background:var(--water);display:none}
 .bands .pt{position:absolute;top:-2px;bottom:-2px;left:var(--pos);width:4px;margin-left:-2px;background:var(--now);border-radius:2px;z-index:3}
 input[type=range]{width:100%;margin:10px 0 4px;accent-color:var(--now);height:30px}
 .res{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-top:8px}
 .res dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 18px;margin:0;font-size:.96rem}
 .res dt{color:var(--ink2)}
 .res dd{margin:0;font-weight:500}
-.res .big{font:400 1.4rem/1.3 var(--f-head);margin-bottom:8px}
-.pre{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
-.pre button{border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:2px 13px;border-radius:99px;font:500 .88rem var(--f-body);cursor:pointer}
-.pre button:hover{background:var(--soft)}
+.res .big{font:400 1.45rem/1.3 var(--f-head);margin-bottom:8px}
 label{display:block;font-size:.9rem;color:var(--ink2);margin:12px 0 4px}
 input[type=text]{width:100%;font:600 1.2rem var(--f-body);padding:9px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
 .cw{font-size:.9rem;color:var(--ink2);margin:4px 0 0;min-height:1.6em}
 
-/* units table + faq */
-.two-t{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.1fr);gap:32px;align-items:start}
-@media(max-width:940px){.two-t{grid-template-columns:1fr}}
-.small-t th,.small-t td{padding:7px 10px}
+/* faq */
 details{border-top:1px solid var(--line)}
-details:last-of-type{border-bottom:1px solid var(--line)}
-summary{cursor:pointer;padding:15px 4px;font:400 1.2rem/1.4 var(--f-head);list-style:none;display:flex;justify-content:space-between;gap:16px}
+#faq details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;padding:15px 4px;font:400 1.25rem/1.4 var(--f-head);list-style:none;display:flex;justify-content:space-between;gap:16px}
 summary::-webkit-details-marker{display:none}
 summary::after{content:'+';font:400 1.5rem/1 var(--f-body);color:var(--ink2)}
-details[open] summary::after{content:'\2212'}
+details[open]>summary::after{content:'\2212'}
 details>div{padding:0 4px 16px;max-width:74ch;color:var(--ink2)}
 details>div ol{padding-left:1.3em;margin:0}
 details>div li{margin-bottom:4px}
-.src{columns:2 320px;column-gap:40px;font-size:.95rem;color:var(--ink2);padding-left:1.1em}
-.src li{margin-bottom:6px;break-inside:avoid}
+.srcl{columns:2 320px;column-gap:40px;font-size:.95rem;color:var(--ink2);padding-left:1.1em}
+.srcl li{margin-bottom:6px;break-inside:avoid}
 footer{margin-top:84px;border-top:1px solid var(--line);padding:26px 0 44px;color:var(--ink2);font-size:.9rem}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ladder.rev .funnel svg,.ladder.rev .lvl .marker{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -284,22 +565,34 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:26px 0 44px;colo
 
 <header class="bar">
   <div class="bar-in">
-    <a class="brand" href="#top">काल-चक्र</a>
-    <nav class="nav" aria-label="पृष्ठका खण्डहरू">
+    <a class="brand" href="#top" id="brand">काल-चक्र</a>
+    <div class="tabs" role="tablist" aria-label="मुख्य खण्ड">
+      <button id="tab-home" type="button" role="tab" aria-selected="true" aria-controls="pane-home">गृह</button>
+      <button id="tab-chakra" type="button" role="tab" aria-selected="false" aria-controls="pane-chakra">काल-चक्र</button>
+    </div>
+    <nav class="nav" id="nav-home" aria-label="गृह खण्डहरू">
+      <a href="#h-cosmic">कस्मिक वर्ष</a>
+      <a href="#h-srishti">सृष्टि</a>
+      <a href="#h-tridev">ब्रह्मा र विष्णु</a>
+      <a href="#h-shaiva">शैव दृष्टि</a>
+      <a href="#h-pralaya">लय र प्रलय</a>
+      <a href="#h-yatra">यहाँसम्मको यात्रा</a>
+    </nav>
+    <nav class="nav" id="nav-chakra" aria-label="काल-चक्र खण्डहरू" hidden>
       <a href="#bharyang">जुम भर्‍याङ</a>
       <a href="#sankalpa">सङ्कल्प</a>
-      <a href="#yuga">चार युग</a>
+      <a href="#yuga">चतुर्युग चक्र</a>
       <a href="#manvantara">मन्वन्तर</a>
-      <a href="#tulana">स्केल तुलना</a>
+      <a href="#tulana">स्केल</a>
       <a href="#ikai">इकाइ</a>
       <a href="#itihas">इतिहास</a>
       <a href="#upakaran">उपकरण</a>
-      <a href="#prashna">प्रश्न र स्रोत</a>
+      <a href="#prashna">प्रश्न</a>
     </nav>
     <div class="ctl">
-      <div class="seg2" role="group" aria-label="वर्षको एकाइ">
-        <button id="u-dev" type="button" aria-pressed="true">देव वर्ष</button>
-        <button id="u-human" type="button" aria-pressed="false">मानव वर्ष</button>
+      <div class="seg2" id="unit-box" role="group" aria-label="वर्षको एकाइ" hidden>
+        <button id="u-human" type="button" aria-pressed="true">मानव वर्ष</button>
+        <button id="u-dev" type="button" aria-pressed="false">दिव्य वर्ष</button>
       </div>
       <button id="theme" class="ico" type="button" aria-label="उज्यालो वा अँध्यारो रूप बदल्नुहोस्">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>
@@ -311,39 +604,329 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:26px 0 44px;colo
 <main id="main">
 <noscript><div class="wrap"><p>यो पृष्ठका गणना र चित्रहरू देखाउन JavaScript चाहिन्छ।</p></div></noscript>
 
-<!-- HERO -->
-<section class="hero" id="top">
+<!-- ============ HOME ============ -->
+<div class="pane" id="pane-home" data-tab="home" role="tabpanel" aria-labelledby="tab-home">
+
+<section class="h-hero" id="top">
+  <div class="wrap">
+    <div class="h-grid">
+      <div>
+        <h1><span class="write">सृष्टिको घडी</span></h1>
+        <p class="h-sub">समय गन्न सिक्दै, ब्रह्माण्डको जन्मदेखि आजसम्मको यात्रा</p>
+        <p class="lead">हाम्रा ऋषिहरूले समयलाई क्षणदेखि ब्रह्माको १०० वर्षसम्म नापेका थिए। यो यात्रामा हामी पहिले समय गन्न सिक्छौँ, सृष्टि, स्थिति र लयको कथा सुन्छौँ, अनि आफू आज कुन समयमा उभिएका छौँ भनेर काल-चक्रमा खोज्छौँ।</p>
+        <div class="cta-row">
+          <a class="btn" href="#h-cosmic">यात्रा सुरु गरौँ</a>
+          <button class="btn ghost" type="button" data-go="chakra">सिधै काल-चक्रमा जाऊँ</button>
+        </div>
+        <div class="facts">
+          <div><b>१ दिव्य वर्ष = ३६० मानव वर्ष</b><span>देवताको एक वर्ष</span></div>
+          <div><b>१ कल्प = ४ अर्ब ३२ करोड वर्ष</b><span>ब्रह्माको एक दिन</span></div>
+          <div><b>ब्रह्माको आयु = ३१ नील १० खर्ब वर्ष</b><span>१०० ब्रह्म वर्ष</span></div>
+        </div>
+      </div>
+      <div class="mandala-w">
+        <svg class="mandala" viewBox="0 0 400 400" role="img" aria-label="घुमिरहेको काल-चक्रको मण्डल">
+          <circle class="spin" cx="200" cy="200" r="192" fill="none" stroke="var(--ink2)" stroke-width="2" stroke-dasharray="1 9" opacity=".7"/>
+          <g class="spin b"><circle cx="200" cy="200" r="164" fill="none" stroke="var(--satya)" stroke-width="12" pathLength="100" stroke-dasharray="39.5 60.5" transform="rotate(-90 200 200)"/><circle cx="200" cy="200" r="164" fill="none" stroke="var(--treta)" stroke-width="12" pathLength="100" stroke-dasharray="29.5 70.5" stroke-dashoffset="-40" transform="rotate(-90 200 200)"/><circle cx="200" cy="200" r="164" fill="none" stroke="var(--dvapara)" stroke-width="12" pathLength="100" stroke-dasharray="19.5 80.5" stroke-dashoffset="-70" transform="rotate(-90 200 200)"/><circle cx="200" cy="200" r="164" fill="none" stroke="var(--kali)" stroke-width="12" pathLength="100" stroke-dasharray="9.5 90.5" stroke-dashoffset="-90" transform="rotate(-90 200 200)"/></g>
+          <circle class="spin c" cx="200" cy="200" r="128" fill="none" stroke="var(--line)" stroke-width="3" stroke-dasharray="14 10"/>
+          <circle cx="200" cy="200" r="96" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+          <text class="om" x="200" y="252" text-anchor="middle">ॐ</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- कस्मिक वर्ष -->
+<section class="sec" id="h-cosmic">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <h2>कस्मिक वर्ष के हो?</h2>
+      <p>'कस्मिक वर्ष' भन्नाले हामीले प्रयोग गर्ने वर्षभन्दा धेरै ठूला समय-एकाइ बुझिन्छ। वैदिक गणनामा यस्ता एकाइ एकपछि अर्कोलाई गुणा गर्दै बनेका छन्। तलका आठ चरण एक-एक गरी हेरौँ; अङ्क आफैँ गन्तीसँगै बढ्दै जान्छ।</p>
+    </div>
+    <div class="stp rv" id="stp"></div>
+    <div class="two-c">
+      <div class="card rv"><h3>वैदिक अर्थ</h3><p>वैदिक गणनामा 'दिव्य वर्ष' नै कस्मिक वर्ष हो: देवताको एक वर्ष, अर्थात् हाम्रा ३६० वर्ष। यसैको गुणनबाट चतुर्युग, मन्वन्तर, कल्प र ब्रह्माको आयु बन्छन्।</p></div>
+      <div class="card rv" style="--rd:.12s"><h3>आधुनिक खगोल-विज्ञानको अर्थ</h3><p>खगोल-विज्ञानमा 'ग्यालेक्टिक (कस्मिक) वर्ष' भनेको सूर्यले आकाशगङ्गाको केन्द्रलाई एक परिक्रमा गर्न लाग्ने समय हो, जुन करिब २२.५ देखि २५ करोड वर्ष हुन्छ। यो एउटा मन्वन्तर (३०.६७ करोड वर्ष) को नजिकको परिमाण हो, तर दुईबीच प्रमाणित सम्बन्ध छैन।</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- सृष्टि -->
+<section class="sec" id="h-srishti">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <h2>सृष्टि कसरी सुरु भयो?</h2>
+      <p>ग्रन्थहरूले सृष्टिको आरम्भबारे एउटै उत्तर दिँदैनन्। ऋग्वेदले त प्रश्नलाई नै खुला छोडेको छ। तलका आठ चरण उपनिषद्, साङ्ख्य र पुराणमा वर्णित क्रम हुन्; एउटा चरण थिचेर पढ्नुहोस्।</p>
+    </div>
+    <div class="cr rv">
+      <div class="cr-list" id="cr-list" role="tablist" aria-label="सृष्टिका चरण"></div>
+      <div class="card cr-panel" id="cr-panel" role="tabpanel" aria-live="polite"></div>
+    </div>
+    <div class="card vq rv">
+      <h3>वैष्णव दृष्टि: महाविष्णुको निःश्वास</h3>
+      <p style="margin:0;color:var(--ink2)">ब्रह्मसंहिता (५.४८) अनुसार कारणार्णवमा शयन गर्ने महाविष्णु श्वास फेर्दा अनगिन्ती ब्रह्माण्ड उत्पन्न हुन्छन्, र ती एउटै निःश्वासको अवधिसम्म ब्रह्माहरू जीवित रहन्छन्। प्रश्वासमा सबै फेरि उनैमा लीन हुन्छन्। तलको 'लय र प्रलय' खण्डको श्वास-चित्र यही धारणाबाट प्रेरित हो।</p>
+    </div>
+  </div>
+</section>
+
+<!-- त्रिदेव -->
+<section class="sec" id="h-tridev">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <h2>ब्रह्मा, विष्णु र शिवको भूमिका</h2>
+      <p>सृष्टि, स्थिति र लय तीन कार्य हुन्, र पुराणमा तीनको जिम्मा तीन रूपलाई दिइएको छ। तर परम तत्त्व को हो भन्ने कुरामा परम्पराअनुसार दृष्टि फरक छ; तलका बटन थिचेर हेर्नुहोस्।</p>
+    </div>
+    <div class="td" id="td"></div>
+    <div class="persp rv">
+      <div class="chips" id="persp-c" role="tablist" aria-label="परम्परा रोज्नुहोस्"></div>
+      <p class="persp-t" id="persp-t" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- शैव -->
+<section class="sec" id="h-shaiva">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <h2>शैव दृष्टि: सृष्टि, स्थिति र लय</h2>
+      <p>शैव परम्परामा शिव केवल संहारक होइनन्। सृष्टि, स्थिति, संहार, तिरोभाव र अनुग्रह गरी पाँचै कृत्य उनकै मानिन्छन्, जसलाई नटराजको नृत्यले सङ्केत गर्छ। कुनै एक कृत्यमा थिच्नुहोस्।</p>
+    </div>
+    <div class="sv rv">
+      <svg class="pent" id="pent" viewBox="0 0 400 400" role="group" aria-label="शिवका पाँच कृत्य"></svg>
+      <div class="sv-p card" id="sv-p" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="lg-story rv">
+  <svg class="pillar" id="pillar" viewBox="0 0 220 420" role="img" aria-label="अनन्त ज्योतिर्लिङ्ग र माथि-तल खोज्दै गरेका ब्रह्मा र विष्णु">
+    <defs>
+      <linearGradient id="pg1" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fff2c2"/>
+        <stop offset=".5" stop-color="#E3AE3A"/>
+        <stop offset="1" stop-color="#C43A25"/>
+      </linearGradient>
+    </defs>
+
+    <rect class="beam" x="80" y="0" width="60" height="420" rx="26"/>
+
+    <g class="goup">
+      <circle cx="40" cy="330" r="15" fill="var(--navy)"/>
+      <text x="40" y="336" text-anchor="middle" font-size="16" fill="#fff" font-family="var(--f-head)">ब्र</text>
+    </g>
+
+    <g class="godown">
+      <circle cx="180" cy="90" r="15" fill="var(--dvapara)"/>
+      <text x="180" y="96" text-anchor="middle" font-size="16" fill="#fff" font-family="var(--f-head)">वि</text>
+    </g>
+  </svg>
+
+  <div class="jyotirlinga-story">
+
+    <h3 style="font-size:1.5rem;margin-bottom:4px">
+      ज्योतिर्लिङ्गको कथा
+    </h3>
+
+    <p class="story-intro">
+      शिवपुराणमा वर्णित यो प्रसिद्ध कथा ब्रह्मा र विष्णुबीचको श्रेष्ठताको प्रश्नबाट सुरु हुन्छ
+      र अनन्त ज्योतिर्लिङ्गका रूपमा परमशिवको प्राकट्यमा पुग्छ। शैव दृष्टिमा यो कथा
+      केवल देवताहरूबीचको विवाद होइन; यसले सीमित बुद्धिले अनन्त परमसत्तालाई नाप्न
+      नसक्ने सत्यलाई पनि संकेत गर्छ।
+    </p>
+
+    <ol class="story-list">
+
+      <li>
+        <strong>श्रेष्ठताको विवाद</strong>
+        <p>
+          एक समय ब्रह्मा र विष्णुबीच “हामीमध्ये को श्रेष्ठ?” भन्ने प्रश्नमा विवाद उत्पन्न भयो।
+          ब्रह्मा आफूलाई सृष्टिकर्ता भएकाले श्रेष्ठ ठान्थे भने विष्णु जगत्को पालन,
+          संरक्षण र व्यवस्थाका अधिष्ठाता भएकाले आफूलाई श्रेष्ठ मान्थे।
+          यसरी सृष्टि र स्थितिका दुई प्रमुख शक्तिबीच श्रेष्ठताको प्रश्न उठ्यो।
+        </p>
+      </li>
+
+      <li>
+        <strong>अनन्त ज्योतिको प्राकट्य</strong>
+        <p>
+          त्यही समयमा उनीहरूका बीचमा अचानक एउटा अद्भुत, तेजोमय र
+          <span class="story-highlight">अनन्त ज्योतिर्लिङ्ग</span> प्रकट भयो।
+          त्यसको न आदि देखिन्थ्यो, न अन्त।
+          त्यो ज्योति सामान्य भौतिक प्रकाशजस्तो थिएन; शैव परम्परामा
+          यसलाई नाम, रूप, दिशा र सीमाभन्दा पर रहेको परमशिवको
+          अनन्त स्वरूपको प्रतीकका रूपमा बुझिन्छ।
+        </p>
+      </li>
+
+      <li>
+        <strong>ब्रह्माको माथितिर यात्रा</strong>
+        <p>
+          ब्रह्माले त्यस अनन्त ज्योतिको शिर अर्थात् माथिल्लो सीमा खोज्ने निर्णय गरे।
+          उनी <span class="story-brahma">हंस</span>को रूप धारण गरी आकाशतर्फ उडे।
+          उनको उद्देश्य ज्योतिको आदि वा माथिल्लो अन्त पत्ता लगाउनु थियो।
+          तर जति माथि गए पनि त्यो ज्योतिको शिर भेटिएन।
+        </p>
+      </li>
+
+      <li>
+        <strong>विष्णुको तलतिर यात्रा</strong>
+        <p>
+          विष्णुले त्यस ज्योतिको मूल अर्थात् तल्लो सीमा खोज्ने निर्णय गरे।
+          उनी <span class="story-vishnu">वराह</span>को रूप धारण गरी तलतिर गए।
+          उनले पनि अत्यन्त लामो प्रयास गरे, तर ज्योतिको मूल भेट्टाउन सकेनन्।
+          अन्ततः उनले आफ्नो खोज असफल भएको सत्य स्वीकार गरे।
+        </p>
+      </li>
+
+      <li>
+        <strong>सत्य स्वीकार गर्ने विष्णु</strong>
+        <p>
+          विष्णुले आफूले ज्योतिको अन्त भेट्न नसकेको कुरा स्वीकार गरे।
+          यस प्रसङ्गमा उनको सत्यस्वीकारले एउटा महत्त्वपूर्ण कुरा देखाउँछ—
+          <span class="story-highlight">अनन्तलाई सीमित साधनद्वारा पूर्ण रूपमा मापन गर्न सकिँदैन।</span>
+          आफ्नो सीमाको स्वीकार नै सत्यप्रतिको विनय हो।
+        </p>
+      </li>
+
+      <li>
+        <strong>ब्रह्माको असत्य दाबी</strong>
+        <p>
+          तर ब्रह्माले आफ्नो श्रेष्ठता प्रमाणित गर्ने उद्देश्यले ज्योतिको शिर
+          भेटेको दाबी गरे। पुराणीय कथामा केतकी पुष्पलाई समेत आफ्नो
+          दाबीको साक्षी बनाएको प्रसङ्ग आउँछ।
+          यसरी सत्यको खोजभन्दा आफ्नो श्रेष्ठता प्रमाणित गर्ने आग्रह
+          ठूलो बन्न पुग्यो।
+        </p>
+      </li>
+
+      <li>
+        <strong>शिवको प्राकट्य</strong>
+        <p>
+          त्यसपछि त्यस अनन्त ज्योतिबाट स्वयं
+          <span class="story-shiva">महादेव शिव</span> प्रकट हुनुभयो।
+          शिवले ब्रह्माको असत्यलाई प्रकट गर्नुभयो र विष्णुको
+          सत्य स्वीकार गर्ने भावलाई मान्यता दिनुभयो।
+          यहाँ शिव कुनै सीमित देवताको रूपमा मात्र नभई
+          ब्रह्मा र विष्णुसमेत जसबाट आफ्नो शक्ति प्राप्त गर्छन्,
+          त्यही परम तत्त्वका रूपमा प्रस्तुत हुनुहुन्छ।
+        </p>
+      </li>
+
+    </ol>
+
+    <div class="story-meaning">
+
+      <h4>🕉️ शैव दृष्टिमा कथाको संकेत</h4>
+
+      <p>
+        <strong>अनन्त ज्योतिर्लिङ्ग</strong> परमशिवको अनादि, अनन्त र
+        असीम स्वरूपको प्रतीक हो। ब्रह्मा र विष्णुले माथि र तल खोज्नु
+        सीमित दृष्टिले परमसत्यको सीमा निर्धारण गर्ने प्रयासको प्रतीक हो।
+      </p>
+
+      <p>
+        विष्णुले आफ्नो सीमा स्वीकार गर्नु <strong>सत्य र विनय</strong>को
+        प्रतीकका रूपमा आउँछ भने ब्रह्माको असत्य दाबीले
+        <strong>अहंकार र श्रेष्ठताको आग्रह</strong>ले सत्यलाई कसरी ढाक्न सक्छ
+        भन्ने देखाउँछ।
+      </p>
+
+      <p>
+        त्यसैले यस कथाको गहिरो प्रश्न केवल
+        <strong>“ब्रह्मा र विष्णुमध्ये को श्रेष्ठ?”</strong> भन्ने होइन।
+        यसको संकेत अझ गहिरो छ—
+        <span class="story-highlight">
+          अनन्त परमसत्यलाई सीमित बुद्धि, दिशा वा मापनले बाँध्न सकिँदैन।
+        </span>
+      </p>
+
+      <p class="story-final">
+        यही अनन्त, असीम र स्वयंप्रकाशित चैतन्यलाई
+        शैव परम्पराले <strong>परमशिव</strong>का रूपमा देख्छ।
+        त्यसैले ज्योतिर्लिङ्ग यहाँ केवल पूजनीय लिङ्गको प्रतीक मात्र होइन;
+        <strong>आदि–अन्तरहित शिवतत्त्वको दृश्य प्रतीक</strong> पनि हो।
+      </p>
+
+    </div>
+
+    <div class="cta-row">
+      <button class="btn ghost" type="button" id="pl-play">
+        कथा चलाउनुहोस्
+      </button>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- प्रलय -->
+<section class="sec" id="h-pralaya">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <h2>लय र प्रलय के हुन्?</h2>
+      <p>सृष्टि जस्तै लय पनि एकपटक मात्र हुने घटना होइन। विष्णुपुराण (६.३) ले लय चार प्रकारको भएको बताउँछ। ब्रह्माको दिन र रातको ताल श्वास फेरेजस्तै छ: दिनमा सृष्टि फैलिन्छ, रातमा समेटिन्छ।</p>
+    </div>
+    <div class="pl rv">
+      <div>
+        <div class="pl-tabs" id="pl-tabs" role="tablist" aria-label="प्रलयका प्रकार"></div>
+        <div class="card pl-p" id="pl-p" aria-live="polite"></div>
+      </div>
+      <div>
+        <div class="breath" aria-hidden="true"><i></i><b class="a">ब्रह्माको दिन<br>सृष्टि फैलिन्छ</b><b class="b">ब्रह्माको रात<br>प्रलय, सबै समेटिन्छ</b></div>
+        <p class="breath-c">एउटा श्वासको चक्र: १ कल्प दिन र १ कल्प रात</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- यात्रा -->
+<section class="sec" id="h-yatra">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <h2>यहाँसम्मको यात्रा</h2>
+      <p>ब्रह्माको जन्मदेखि आजसम्म हामी कुन-कुन मोडबाट आइपुगेका हौँ? तलका सबै 'आजभन्दा कति अघि' पुराणको युग-गणना अनुसार आजको मितिबाट निकालिएका हुन्।</p>
+    </div>
+    <div class="tm" id="tm"></div>
+    <div class="cta rv">
+      <h2>अब काल-चक्रमा प्रवेश गरौँ</h2>
+      <p>यहाँ गन्न सिकेका एकाइलाई सात तहको जुम भर्‍याङमा एकपछि अर्को गर्दै खोलेर हामी ठ्याक्कै कहाँ छौँ भनेर हेरौँ।</p>
+      <button class="btn" type="button" data-go="chakra">काल-चक्र खोल्नुहोस्</button>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ CHAKRA ============ -->
+<div class="pane" id="pane-chakra" data-tab="chakra" role="tabpanel" aria-labelledby="tab-chakra" hidden>
+
+<section class="hero" id="c-top">
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <h1>ब्रह्माको ५१ औँ वर्षको पहिलो दिन</h1>
+        <h1><span class="write">ब्रह्माको ५१ औँ वर्षको पहिलो दिन</span></h1>
         <p class="lead">श्वेतवाराह कल्प, वैवस्वत मन्वन्तर, २८ औँ चतुर्युग र कलियुगको पहिलो चरण। यही हो वैदिक काल-गणनामा हाम्रो ठेगाना। ब्रह्माको १०० वर्षको आयुदेखि कलि संवत्सम्म सात तह एकपछि अर्को जुम गर्दै तल देखाइएको छ, र सबै अङ्क आजको मितिबाट हिसाब गरिएका हुन्।</p>
         <p class="scale-line" id="scale-line"></p>
         <dl class="stamps" id="stamps"></dl>
         <p class="fine">सम्वत्का वर्ष लगभग हुन्; वर्षारम्भको दिन पञ्चाङ्ग अनुसार केही दिन फरक पर्न सक्छ।</p>
       </div>
-      <svg id="wheel" class="wheel" viewBox="0 0 300 300" role="img" aria-label="चतुर्युगको चक्र"></svg>
+      <a href="#yuga" aria-label="चतुर्युग चक्रको विवरणमा जानुहोस्"><svg id="wheel" class="wheel" viewBox="0 0 300 300" role="img" aria-label="चतुर्युगको चक्र"></svg></a>
     </div>
-
     <div class="addr" id="addr"></div>
   </div>
 </section>
 
-<!-- LADDER -->
 <section class="sec" id="bharyang">
   <div class="wrap">
-    <div class="sec-h">
+    <div class="sec-h rv">
       <h2>सात तहको जुम भर्‍याङ</h2>
-      <p>प्रत्येक तहको पट्टी त्यही तहको पूरा अवधि हो। रातो धर्को हामी कहाँ छौँ भन्ने देखाउँछ, र धर्के घेरा भएको भागलाई ठूलो पारेर तलको अर्को तहमा खोलिएको छ। कुनै पनि खण्डमा थिचेर विवरण हेर्नुहोस्।</p>
+      <p>प्रत्येक तहको पट्टी त्यही तहको पूरा अवधि हो। रातो धर्को हामी कहाँ छौँ भन्ने देखाउँछ, र धर्के घेरा भएको भागलाई ठूलो पारेर तलको अर्को तहमा खोलिएको छ। कुनै पनि खण्डमा थिच्दा त्यो समयकालको सरल व्याख्या तल खुल्छ।</p>
     </div>
     <div class="ladder" id="ladder"></div>
   </div>
 </section>
 
-<!-- SANKALPA -->
 <section class="sec" id="sankalpa">
   <div class="wrap">
-    <div class="sec-h">
+    <div class="sec-h rv">
       <h2>पूजाको सङ्कल्पमा समयको ठेगाना</h2>
       <p>पूजामा पण्डितले सङ्कल्प गर्दा उच्चारण गर्ने समय-खण्ड वास्तवमा यही भर्‍याङलाई माथिबाट तल पढेको ठेगाना हो। प्रत्येक पदमा थिच्दा भर्‍याङको सम्बन्धित तहमा पुगिन्छ।</p>
     </div>
@@ -359,24 +942,28 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:26px 0 44px;colo
   </div>
 </section>
 
-<!-- YUGAS -->
 <section class="sec" id="yuga">
   <div class="wrap">
-    <div class="sec-h">
-      <h2>एउटा चतुर्युगका चार युग</h2>
-      <p>१ चतुर्युग = १२,००० देव वर्ष (४३,२०,००० मानव वर्ष)। चार युगको अनुपात ४:३:२:१ हुन्छ, र प्रत्येक युगको सुरुमा सन्ध्या र अन्त्यमा सन्ध्यांश हुन्छन्। पातलो धर्के भाग सन्ध्या र सन्ध्यांश हो।</p>
+    <div class="sec-h rv">
+      <h2>चतुर्युग चक्र: समयको पहिया</h2>
+      <p>यो चक्रमा चारवटा युग एकपछि अर्को आउँछन्, र चार पूरा भएपछि फेरि पहिलो युगबाट सुरु हुन्छ। बाहिरी घेरा चार युग हो र भित्री पातलो घेरा प्रत्येक युगको सन्ध्या, मुख्य काल र सन्ध्यांश हो। कुनै पनि युगमा थिच्नुहोस्।</p>
     </div>
-    <div class="yg" id="yg"></div>
-    <div class="kali-x" id="kali-x"></div>
+    <div class="wh rv">
+      <div>
+        <svg class="whs" id="whs" viewBox="0 0 360 360" role="group" aria-label="चतुर्युग चक्र, चार युग"></svg>
+        <p class="wh-note">रातो थोपो: हामी अहिले यहाँ। चक्र घडीको दिशामा घुम्छ।</p>
+      </div>
+      <div class="wh-p" id="wh-p" aria-live="polite"></div>
+    </div>
+    <div class="kali-x rv" id="kali-x"></div>
   </div>
 </section>
 
-<!-- MANVANTARA -->
 <section class="sec" id="manvantara">
   <div class="wrap">
-    <div class="sec-h">
+    <div class="sec-h rv">
       <h2>१४ मन्वन्तर र १५ सन्धिकाल</h2>
-      <p>एउटा कल्पमा १४ मन्वन्तर (७१ चतुर्युग प्रत्येक) छन्, र तिनका बीचमा १३ तथा दुवै छेउमा १-१ गरी १५ सन्धिकाल हुन्छन्। प्रत्येक सन्धिकाल एक सत्ययुग (४,८०० देव वर्ष) बराबर हुन्छ र त्यसमा जलप्रलय मानिन्छ। यसरी ९९४ + ६ = १,००० चतुर्युग पूरा हुन्छ।</p>
+      <p>एउटा कल्पमा १४ मन्वन्तर (७१ चतुर्युग प्रत्येक) छन्, र तिनका बीचमा १३ तथा दुवै छेउमा १-१ गरी १५ सन्धिकाल हुन्छन्। प्रत्येक सन्धिकाल एक सत्ययुग (४,८०० दिव्य वर्ष) बराबर हुन्छ र त्यसमा जलप्रलय मानिन्छ। यसरी ९९४ + ६ = १,००० चतुर्युग पूरा हुन्छ।</p>
     </div>
     <div class="chips" id="flt" role="group" aria-label="अवस्था अनुसार छान्नुहोस्"></div>
     <div class="tw tall"><table id="tbl"><thead><tr><th>क्र.</th><th>खण्ड</th><th>अवधि</th><th>सुरु (कल्पदेखि)</th><th>अन्त</th><th>अवस्था</th><th>भागवतमा अवतार</th></tr></thead><tbody></tbody></table></div>
@@ -384,72 +971,74 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:26px 0 44px;colo
   </div>
 </section>
 
-<!-- SCALE -->
 <section class="sec" id="tulana">
   <div class="wrap">
-    <div class="sec-h">
+    <div class="sec-h rv">
       <h2>यी अङ्क कति ठूला हुन्?</h2>
-      <p>तलको चार्ट लगारिदमिक स्केलमा छ: प्रत्येक खाली रेखा १०० गुणा फड्को हो। त्यसैले ब्रह्माको आयु लिखित इतिहासभन्दा अर्बौँ गुणा लामो भए पनि एउटै पानामा अटाएको छ।</p>
+      <p>यो चार्ट लगारिदमिक स्केलमा छ: उभो रेखा एकपटक सर्दा मान १०० गुणा बढ्छ, र तल अङ्कहरू हजार, लाख, करोड, अर्ब, खर्ब, नील र पद्ममा देखाइएका छन्। त्यसैले ब्रह्माको आयु लिखित इतिहासभन्दा अर्बौँ गुणा लामो भए पनि एउटै पानामा अटाएको छ।</p>
     </div>
     <div class="legend">
       <span><i style="background:var(--navy)"></i>परम्परागत काल-गणना</span>
       <span><i style="background:var(--now)"></i>आजसम्म बितेको</span>
       <span><i style="background:repeating-linear-gradient(135deg,var(--ink2) 0 2px,transparent 2px 6px);box-shadow:inset 0 0 0 1.5px var(--ink2)"></i>आधुनिक वैज्ञानिक अनुमान (तुलनाका लागि)</span>
     </div>
-    <div class="lg" id="lg"></div>
+    <div class="pg" id="lg"></div>
     <p class="note-box">पृथ्वीको उमेर र एक कल्पको लम्बाइ नजिक देखिनु रोचक संयोग हो, तर दुवै फरक आधारका मापन हुन्: कल्प खगोलीय चक्रको सैद्धान्तिक गणना हो भने पृथ्वीको उमेर भूवैज्ञानिक मापन हो। दुईलाई एउटै कुरा मानेर निष्कर्ष निकाल्नु हुँदैन।</p>
   </div>
 </section>
 
-<!-- UNITS -->
 <section class="sec" id="ikai">
   <div class="wrap">
-    <div class="sec-h">
+    <div class="sec-h rv">
       <h2>काल-मापनका इकाइ</h2>
-      <p>एक प्राणदेखि ब्रह्माको आयुसम्म। देव वर्षलाई ३६० ले गुणा गर्नुको कारण तलको तालिकाको माथिल्लो भागमा छ: मनुष्यको एक वर्ष देवताको एक अहोरात्र हो।</p>
+      <p>प्रत्येक पट्टी थिचेर हेर्नुहोस्: त्यो इकाइ केबाट बनेको हो, कति लामो हो र अघिल्लो इकाइको कति गुणा हो। पट्टीको रङले तह देखाउँछ: निलो देव तह, चार युगका आफ्ना रङ, निलो-गाढा मन्वन्तर र कल्प तह, अनि बैजनी ब्रह्म तह। लम्बाइ लगारिदमिक स्केलमा (मानव वर्षमा) छ।</p>
     </div>
-    <div class="two-t">
-      <div>
-        <div class="tw"><table class="small-t" id="t-day"><thead><tr><th>दिनभित्रका इकाइ</th><th>बराबर</th></tr></thead><tbody></tbody></table></div>
-        <p class="fine">प्राण (असु) आदि इकाइ सूर्य सिद्धान्त (१.११) अनुसार हुन्।</p>
+    <p class="fine" style="margin:0 0 8px">पहिले दिनभित्रका इकाइ (सूर्य सिद्धान्त १.११):</p>
+    <div class="dchain" id="dchain" role="group" aria-label="दिनभित्रका इकाइ"></div>
+    <p class="tip" id="dchain-t" style="margin:0 0 26px"></p>
+    <div class="pg ut" id="ut"></div>
+    <div class="ut-d">
+      <div class="card" id="ut-d" aria-live="polite"></div>
+      <div class="card cmp">
+        <h3 style="font-size:1.3rem">दुई इकाइ तुलना</h3>
+        <label for="cmp-a" style="margin:0">पहिलो इकाइ</label><select id="cmp-a"></select>
+        <label for="cmp-b" style="margin:0">दोस्रो इकाइसँग</label><select id="cmp-b"></select>
+        <p class="out" id="cmp-o"></p>
       </div>
-      <div class="tw"><table class="small-t" id="t-units"><thead><tr><th>इकाइ</th><th>बनोट</th><th>देव वर्ष</th><th>मानव वर्ष</th></tr></thead><tbody></tbody></table></div>
     </div>
   </div>
 </section>
 
-<!-- HISTORY -->
 <section class="sec" id="itihas">
   <div class="wrap">
-    <div class="sec-h">
+    <div class="sec-h rv">
       <h2>कलियुगको सुरुका ६,००० वर्ष</h2>
-      <p>कलियुगको ४,३२,००० वर्षमध्ये हामीले देखेको इतिहास यही सानो टुक्रामा छ। तलका थोपाले प्रचलित सम्वत् र केही ऐतिहासिक सन्दर्भ कलि संवत्को रेखामा राखेका छन्। कलियुगको आरम्भ १८ फेब्रुअरी, ३१०२ ई.पू. (जुलियन) मानिन्छ।</p>
+      <p>कलियुगको ४,३२,००० वर्षमध्ये हामीले देखेको इतिहास यही सानो टुक्रामा छ। तलका थोपाले प्रचलित सम्वत् र केही ऐतिहासिक सन्दर्भ कलि संवत्को रेखामा राखेका छन्; ठाडा रेखा प्रत्येक १,००० वर्षमा छन्। कलियुगको आरम्भ १८ फेब्रुअरी, ३१०२ ई.पू. (जुलियन) मानिन्छ।</p>
     </div>
-    <div id="hd"></div>
+    <div class="pg h" id="hd"></div>
     <p class="fine">मितिहरू परम्परागत तथा अनुमानित हुन्; इतिहासकारका मत फरक हुन सक्छन्।</p>
   </div>
 </section>
 
-<!-- TOOLS -->
 <section class="sec" id="upakaran">
   <div class="wrap">
-    <div class="sec-h">
+    <div class="sec-h rv">
       <h2>आफैँ खोजेर हेर्नुहोस्</h2>
-      <p>कल्पको जुनसुकै बिन्दुमा कुन मन्वन्तर, चतुर्युग र युग पर्छ भन्ने हेर्न स्लाइडर सार्नुहोस्, वा देव र मानव वर्ष एकआपसमा बदल्नुहोस्।</p>
+      <p>कल्पको जुनसुकै बिन्दुमा कुन मन्वन्तर, चतुर्युग र युग पर्छ भन्ने हेर्न स्लाइडर सार्नुहोस्, वा दिव्य र मानव वर्ष एकआपसमा बदल्नुहोस्।</p>
     </div>
     <div class="tools">
       <div class="tool">
         <h3>कल्पको समय-खोजकर्ता</h3>
-        <p>पट्टीका नीला खण्ड मन्वन्तर हुन् र पातला रेखा सन्धिकाल हुन्। रातो चिह्न तपाईंले रोजेको बिन्दु हो।</p>
+        <p>पट्टीका निला खण्ड मन्वन्तर हुन् र पातला रेखा सन्धिकाल हुन्। रातो चिह्न तपाईंले रोजेको बिन्दु हो।</p>
         <div class="bands" id="bands"></div>
-        <input type="range" id="scr" min="0" max="12000000" step="1" aria-label="कल्पभित्रको समय" >
+        <input type="range" id="scr" min="0" max="12000000" step="1" aria-label="कल्पभित्रको समय">
         <div class="pre" id="scr-pre"></div>
         <div class="res" id="scr-res" aria-live="polite"></div>
       </div>
       <div class="tool">
-        <h3>देव वर्ष र मानव वर्ष</h3>
-        <p>१ देव वर्ष = ३६० मानव वर्ष।</p>
-        <label for="c-dev">देव वर्ष</label>
+        <h3>दिव्य वर्ष र मानव वर्ष</h3>
+        <p>१ दिव्य वर्ष = ३६० मानव वर्ष।</p>
+        <label for="c-dev">दिव्य वर्ष</label>
         <input type="text" id="c-dev" inputmode="decimal" autocomplete="off">
         <p class="cw" id="c-dev-w"></p>
         <label for="c-hum">मानव वर्ष</label>
@@ -461,36 +1050,43 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:26px 0 44px;colo
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="sec" id="prashna">
   <div class="wrap">
-    <div class="sec-h">
-      <h2>प्रश्न, गणनाको आधार र स्रोत</h2>
-    </div>
+    <div class="sec-h rv"><h2>प्रश्न, गणनाको आधार र स्रोत</h2></div>
     <div id="faq"></div>
-    <h3 style="margin:38px 0 12px;font-size:1.4rem">मुख्य स्रोत</h3>
-    <ul class="src">
-      <li>सूर्य सिद्धान्त, मध्यमाधिकार (१.११ देखि १.२४): काल-मापन, देव वर्ष र महायुग।</li>
-      <li>श्रीमद्भागवत महापुराण, स्कन्ध ३, अध्याय ११: काल-विभाग।</li>
-      <li>श्रीमद्भागवत महापुराण, स्कन्ध ८, अध्याय १ देखि १३: १४ मन्वन्तर र तिनका अवतार।</li>
-      <li>श्रीमद्भागवत महापुराण, स्कन्ध १२, अध्याय २ र ३: कलियुगको लक्षण र युगधर्म।</li>
-      <li>विष्णु पुराण, अंश १ (अध्याय ३) र अंश ३ (अध्याय १ र २): कल्प, मन्वन्तर र सप्तर्षि।</li>
+    <h3 style="margin:38px 0 12px;font-size:1.5rem">मुख्य स्रोत</h3>
+    <ul class="srcl">
+      <li>ऋग्वेद, नासदीय सूक्त (१०.१२९) र हिरण्यगर्भ सूक्त (१०.१२१): सृष्टिको आरम्भ।</li>
+      <li>छान्दोग्य उपनिषद् (६.२.३): 'म धेरै होऊँ' भन्ने सङ्कल्प।</li>
+      <li>सूर्य सिद्धान्त, मध्यमाधिकार (१.११ देखि १.२४): काल-मापन, दिव्य वर्ष र महायुग।</li>
+      <li>श्रीमद्भागवत महापुराण, स्कन्ध ३ (अध्याय ११ देखि १३ र २६): काल-विभाग, ब्राह्म, पाद्म र वाराह कल्प, तथा सृष्टिको क्रम।</li>
+      <li>श्रीमद्भागवत महापुराण, स्कन्ध ८ (अध्याय १ देखि १३): १४ मन्वन्तर र तिनका अवतार।</li>
+      <li>श्रीमद्भागवत महापुराण, स्कन्ध १२ (अध्याय २ र ३): कलियुगको लक्षण र युगधर्म।</li>
+      <li>विष्णु पुराण, अंश १ (अध्याय ३), अंश ३ (अध्याय १ र २) र अंश ६ (अध्याय ३): कल्प, मन्वन्तर, सप्तर्षि र चार प्रकारका प्रलय।</li>
       <li>मनुस्मृति, अध्याय १ (श्लोक ६४ देखि ८६): दिव्य वर्ष, युगको अवधि र मनुष्यको आयु।</li>
+      <li>शिवपुराण, विद्येश्वर संहिता: ज्योतिर्लिङ्गको कथा र शिवका कृत्य।</li>
+      <li>ब्रह्मसंहिता (५.४८): महाविष्णुको निःश्वास।</li>
       <li>आर्यभटीय, गीतिकापाद र कालक्रियापाद: फरक मन्वन्तर-गणना र कलि ३६०० को उल्लेख।</li>
     </ul>
   </div>
 </section>
+</div>
 </main>
 
 <footer>
   <div class="wrap">
-    <p style="margin:0">यो पृष्ठ अध्ययन र शिक्षाका लागि हो। परम्परा र ग्रन्थअनुसार गणना केही फरक हुन सक्छ, र यहाँ सूर्य सिद्धान्त तथा पुराण-पद्धति अपनाइएको छ। १ कल्प = १,००० चतुर्युग = १,२०,००,००० देव वर्ष = ४.३२ अर्ब मानव वर्ष।</p>
+    <p style="margin:0">यो पृष्ठ अध्ययन र शिक्षाका लागि हो। परम्परा र ग्रन्थअनुसार गणना र कथा केही फरक हुन सक्छन्, र यहाँ सूर्य सिद्धान्त तथा पुराण-पद्धति अपनाइएको छ। १ कल्प = १,००० चतुर्युग = १,२०,००,००० दिव्य वर्ष = ४.३२ अर्ब मानव वर्ष।</p>
   </div>
 </footer>
+
+<button class="totop" id="totop" type="button" aria-label="माथि जानुहोस्">
+  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
 
 <script>
 (function(){
 'use strict';
+document.documentElement.classList.add('js');
 /* ---------- helpers ---------- */
 var $=function(s,r){return (r||document).querySelector(s)};
 var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
@@ -517,43 +1113,249 @@ function words(n){
   return parts.join(' ');
 }
 function pct(p,dec){return fmt(p,dec)+'%'}
+function reduced(){return window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches}
+function normalizeDevanagariText(root){
+  var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),node;
+  while((node=walker.nextNode())){
+    var parent=node.parentElement;
+    if(parent&&/^(SCRIPT|STYLE|TEXTAREA)$/i.test(parent.tagName))continue;
+    var converted=nd(node.nodeValue);
+    if(converted!==node.nodeValue)node.nodeValue=converted;
+  }
+}
 
-/* ---------- constants (देव वर्षमा) ---------- */
+/* ---------- constants (दिव्य वर्षमा) ---------- */
 var D=360,KALPA=12e6,SANDHI=4800,MANU=852000,CHATUR=12000,AH=2*KALPA,BY=360*AH,KALI_TOTAL=1200;
 var NOW=new Date();
 var JD=NOW.getTime()/864e5+2440587.5;
-var KALI_H=(JD-588465.5)/365.25;        // कलियुग आरम्भ (१८ फेब्रुअरी ३१०२ ई.पू.) देखि बितेको मानव वर्ष
+var KALI_H=(JD-588465.5)/365.25;
 var KALI_D=KALI_H/D;
 var YUGA=[
-  {k:'satya',name:'सत्ययुग',short:'सत्य',dev:4800,sand:400,color:'--satya',on:'#1a1200',legs:4,life:400,dharma:'ध्यान र तप',av:'मत्स्य, कूर्म, वराह, नृसिंह',tone:'सत्य, तप, शौच र दया, धर्मका चारै पाउ पूरा।'},
-  {k:'treta',name:'त्रेतायुग',short:'त्रेता',dev:3600,sand:300,color:'--treta',on:'#fff',legs:3,life:300,dharma:'यज्ञ',av:'वामन, परशुराम, राम',tone:'यज्ञ र कर्मको प्रधानता, धर्म एक पाउले घटेको।'},
-  {k:'dvapara',name:'द्वापरयुग',short:'द्वापर',dev:2400,sand:200,color:'--dvapara',on:'#fff',legs:2,life:200,dharma:'पूजा र परिचर्या',av:'कृष्ण (बलराम सहित)',tone:'वेदको विभाजन र महाभारतको युग, धर्म दुई पाउमा।'},
-  {k:'kali',name:'कलियुग',short:'कलि',dev:1200,sand:100,color:'--kali',on:'#fff',legs:1,life:100,dharma:'हरिनाम सङ्कीर्तन',av:'कल्कि (आगामी); कतिपय सूचीमा बुद्ध',tone:'वर्तमान युग, धर्म एक पाउमा मात्र बाँकी।'}
+  {k:'satya',name:'सत्ययुग',short:'सत्य',dev:4800,sand:400,color:'--satya',on:'#1a1200',legs:4,life:400,dharma:'ध्यान र तप',av:'मत्स्य, कूर्म, वराह, नृसिंह',tone:'धर्मका चारै पाउ (तप, शौच, दया, सत्य) पूरा हुन्छन्। मानिस निरोगी, सन्तुष्ट र ध्यानशील हुन्छन्।'},
+  {k:'treta',name:'त्रेतायुग',short:'त्रेता',dev:3600,sand:300,color:'--treta',on:'#fff',legs:3,life:300,dharma:'यज्ञ',av:'वामन, परशुराम, राम',tone:'धर्म एक पाउले घटेर तीन पाउमा आउँछ। यज्ञ र कर्मको प्रधानता हुन्छ।'},
+  {k:'dvapara',name:'द्वापरयुग',short:'द्वापर',dev:2400,sand:200,color:'--dvapara',on:'#fff',legs:2,life:200,dharma:'पूजा र परिचर्या',av:'कृष्ण (बलराम सहित)',tone:'धर्म दुई पाउमा झर्छ। वेदको विभाजन, श्रीकृष्ण र महाभारतको युग यही हो।'},
+  {k:'kali',name:'कलियुग',short:'कलि',dev:1200,sand:100,color:'--kali',on:'#fff',legs:1,life:100,dharma:'हरिनाम सङ्कीर्तन',av:'कल्कि (आगामी); कतिपय सूचीमा बुद्ध',tone:'धर्मको एक पाउ (सत्य) मात्र बाँकी रहन्छ। नाम-सङ्कीर्तन सबैभन्दा सजिलो साधना मानिन्छ।'}
 ];
 var MANUS=[['स्वायम्भुव','यज्ञ'],['स्वारोचिष','विभु'],['उत्तम','सत्यसेन'],['तामस','हरि'],['रैवत','वैकुण्ठ'],['चाक्षुष','अजित'],['वैवस्वत','वामन'],['सावर्णि','सार्वभौम'],['दक्ष-सावर्णि','ऋषभ'],['ब्रह्म-सावर्णि','विष्वक्सेन'],['धर्म-सावर्णि','धर्मसेतु'],['रुद्र-सावर्णि','सुधामा'],['देव-सावर्णि','योगेश्वर'],['इन्द्र-सावर्णि','बृहद्भानु']];
-var M7S=7*SANDHI+6*MANU;                      // ५१,४५,६००
-var KALI_START=M7S+27*CHATUR+(4800+3600+2400); // ५४,८०,४००
-var E=KALI_START+KALI_D;                       // कल्पमा आजसम्म बितेको देव वर्ष
+var M7S=7*SANDHI+6*MANU;
+var KALI_START=M7S+27*CHATUR+(4800+3600+2400);
+var E=KALI_START+KALI_D;
 var SEQ=[],acc=0;
 for(var i=1;i<=15;i++){
   SEQ.push({t:'s',n:i,start:acc,len:SANDHI});acc+=SANDHI;
   if(i<=14){SEQ.push({t:'m',n:i,start:acc,len:MANU});acc+=MANU;}
 }
-var unit='dev';
-function val(dev,dec){return unit==='dev'?fmt(dev,dec)+' देव वर्ष':fmt(dev*D,dec)+' मानव वर्ष'}
-function alt(dev,dec){return unit==='dev'?fmt(dev*D,dec)+' मानव वर्ष':fmt(dev,dec)+' देव वर्ष'}
-function wordsU(dev){return words(unit==='dev'?dev:dev*D)}
-function U(dev,dec){dec=dec||0;return '<span data-dev="'+dev+'" data-dec="'+dec+'">'+val(dev,dec)+'</span>'}
-function A(dev,dec){dec=dec||0;return '<span class="alt" data-dev-alt="'+dev+'" data-dec="'+dec+'">('+alt(dev,dec)+')</span>'}
-function W(dev){return '<span data-devw="'+dev+'">'+wordsU(dev)+'</span>'}
+var unit='human';
+function val(dev,dec){return unit==='dev'?fmt(dev,dec)+' दिव्य वर्ष':fmt(dev*D,dec)+' मानव वर्ष'}
+function altv(dev,dec){var n=unit==='dev'?dev*D:dev;return (unit==='dev'?fmt(dev*D,dec)+' मानव वर्ष':fmt(dev,dec)+' दिव्य वर्ष')+(n>=1e5?', '+words(n):'')}
+function bigw(dev){var n=unit==='dev'?dev:dev*D;return n>=1e5?'('+words(n)+')':''}
+function tx(dev){var n=unit==='dev'?dev:dev*D,lab=unit==='dev'?' दिव्य वर्ष':' मानव वर्ष';return (n>=1000?words(n):fmt(n,n<10?2:0))+lab}
+function U(dev,dec){dec=dec||0;return '<span data-dev="'+dev+'" data-dec="'+dec+'">'+val(dev,dec)+'</span><span class="w" data-devw="'+dev+'">'+bigw(dev)+'</span>'}
+function A(dev,dec){dec=dec||0;return '<span class="alt" data-dev-alt="'+dev+'" data-dec="'+dec+'">('+altv(dev,dec)+')</span>'}
+function T(dev){return '<strong data-devt="'+dev+'">'+tx(dev)+'</strong>'}
 function updateUnits(){
   $$('[data-dev]').forEach(function(e){e.textContent=val(+e.dataset.dev,+e.dataset.dec||0)});
-  $$('[data-dev-alt]').forEach(function(e){e.textContent='('+alt(+e.dataset.devAlt,+e.dataset.dec||0)+')'});
-  $$('[data-devw]').forEach(function(e){e.textContent=wordsU(+e.dataset.devw)});
+  $$('[data-devw]').forEach(function(e){e.textContent=bigw(+e.dataset.devw)});
+  $$('[data-dev-alt]').forEach(function(e){e.textContent='('+altv(+e.dataset.devAlt,+e.dataset.dec||0)+')'});
+  $$('[data-devt]').forEach(function(e){e.textContent=tx(+e.dataset.devt)});
 }
 function st(s,l,p){return p>=s+l?'done':(p>=s?'now':'future')}
+function clock(p){
+  var m=Math.round(p/100*1440),h=Math.floor(m/60)%24,mm=m%60;
+  var part=h<4?'रातिको':(h<12?'बिहानको':(h<16?'दिउँसोको':(h<20?'साँझको':'रातिको')));
+  return part+' '+nd(h%12||12)+':'+nd((mm<10?'0':'')+mm)+' बजे';
+}
 
-/* ---------- hero ---------- */
+/* ---------- reveal on scroll ---------- */
+var IO=null;
+function observeRv(root){
+  if(!('IntersectionObserver' in window)||reduced()){$$('.rv',root).forEach(function(e){e.classList.add('in')});return}
+  if(!IO)IO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');IO.unobserve(e.target)}})},{threshold:.12});
+  $$('.rv',root).forEach(function(e){if(!e.classList.contains('in'))IO.observe(e)});
+}
+
+/* =====================================================
+   HOME
+   ===================================================== */
+/* --- stepper --- */
+(function(){
+  var S=[
+    {n:'मानव वर्ष',hum:1,mult:'गन्ती यहीँबाट सुरु',c:'--water',t:'पृथ्वीले सूर्यलाई एक परिक्रमा गर्न लाग्ने समय। हाम्रो दैनिक जीवन र इतिहास यही एकाइमा नापिन्छ।'},
+    {n:'देवताको एक अहोरात्र',hum:1,mult:'१ मानव वर्ष = देवताको १ दिन-रात',c:'--water',t:'मनुस्मृति (१.६७) र सूर्य सिद्धान्त (१.१३) अनुसार मनुष्यको १ वर्ष देवताको १ दिन-रात हो। उत्तरायणका ६ महिना उनीहरूको दिन र दक्षिणायनका ६ महिना रात।'},
+    {n:'दिव्य वर्ष (कस्मिक वर्ष)',hum:360,mult:'× ३६०',c:'--treta',t:'देवताको ३६० दिन-रात पूरा भएपछि एक दिव्य वर्ष हुन्छ। त्यसैले १ दिव्य वर्ष हाम्रा ३६० वर्ष हो। यहीँबाट ‘कस्मिक’ मापन सुरु हुन्छ।'},
+    {n:'चतुर्युग',hum:4320000,mult:'× १२,००० दिव्य वर्ष',c:'--satya',t:'१२,००० दिव्य वर्षमा सत्य, त्रेता, द्वापर र कलि चारै युग एकपटक घुम्छन्। यो पूरा चक्रलाई चतुर्युग वा महायुग भनिन्छ।'},
+    {n:'मन्वन्तर',hum:306720000,mult:'× ७१ चतुर्युग',c:'--navy',t:'७१ चतुर्युगसम्म एक मनुले शासन गर्छन्। मनु, इन्द्र र सप्तर्षि यही अवधिपछि बदलिन्छन्, र यो अवधिलाई मन्वन्तर भनिन्छ।'},
+    {n:'कल्प: ब्रह्माको एक दिन',hum:4.32e9,mult:'१४ मन्वन्तर + १५ सन्धि = १,००० चतुर्युग',c:'--dvapara',t:'१,००० चतुर्युग मिलेर ब्रह्माको एक दिन बन्छ, जसलाई कल्प भनिन्छ। हामी अहिले श्वेतवाराह नामको कल्पमा छौँ।'},
+    {n:'ब्रह्माको एक वर्ष',hum:3.1104e12,mult:'× ७२० कल्प (३६० दिन र ३६० रात)',c:'--night',t:'दिन र रात मिलेर एक अहोरात्र हुन्छ, र ३६० अहोरात्रको एक ब्रह्म वर्ष।'},
+    {n:'ब्रह्माको आयु',hum:3.1104e14,mult:'× १०० वर्ष',c:'--kali',t:'ब्रह्मा १०० वर्ष बाँच्छन्। हामी अहिले यसको आधा पार गरेर ५१ औँ वर्षमा छौँ।'}
+  ];
+  var idx=0,cur=1,anim=0,touched=false;
+  var root=$('#stp');
+  var rows=S.map(function(s,i){return '<button type="button" class="stp-row" data-i="'+i+'" style="--c:var('+s.c+');--w:'+(Math.max(1.5,Math.log10(s.hum)/14.6*100))+'%"><span>'+nd(i+1)+'. '+s.n+'</span><i></i></button>'}).join('');
+  root.innerHTML='<div><div class="stp-name" id="stp-name"></div><div class="stp-num"><span id="stp-num">१</span> <small>मानव वर्ष</small></div><div class="stp-mult" id="stp-mult"></div><p id="stp-text"></p><p class="tip" id="stp-cmp"></p><div class="stp-ctl"><button class="btn ghost" type="button" id="stp-prev">अघिल्लो चरण</button><button class="btn" type="button" id="stp-next">अर्को चरण</button></div></div><div class="stp-rows" id="stp-rows" role="group" aria-label="आठ चरणको सूची">'+rows+'</div>';
+  function big(v){return v>=1000?words(v):fmt(Math.round(v))}
+  function go(i,noAnim){
+    idx=Math.max(0,Math.min(S.length-1,i));
+    var s=S[idx];
+    $('#stp-name').textContent=s.n;
+    $('#stp-mult').textContent=s.mult;
+    $('#stp-text').textContent=s.t;
+    var h=s.hum,cmp=h<80?'मानिसको औसत जीवन (८० वर्ष) को तुलनामा यो '+fmt(Math.round(80/h))+' औँ भाग हो।':'मानिसको औसत जीवन (८० वर्ष) को '+big(h/80)+' गुणा लामो।';
+    $('#stp-cmp').textContent=cmp;
+    $$('.stp-row',root).forEach(function(b,k){b.classList.toggle('on',k<=idx);b.setAttribute('aria-current',k===idx?'true':'false')});
+    $('#stp-prev').disabled=idx===0;$('#stp-next').textContent=idx===S.length-1?'फेरि पहिलेदेखि':'अर्को चरण';
+    var el=$('#stp-num'),from=cur,target=h,my=++anim;
+    if(noAnim||reduced()){cur=target;el.textContent=big(target);return}
+    var t0=null;
+    (function f(ts){
+      if(my!==anim)return;
+      if(t0===null)t0=ts;
+      var k=Math.min(1,(ts-t0)/1000),e=1-Math.pow(1-k,3);
+      var v=Math.exp(Math.log(Math.max(from,1))*(1-e)+Math.log(Math.max(target,1))*e);
+      cur=v;el.textContent=k<1?big(v):big(target);
+      if(k<1)requestAnimationFrame(f);else cur=target;
+    })(performance.now?performance.now():0);
+  }
+  root.addEventListener('click',function(e){
+    touched=true;
+    var b=e.target.closest('.stp-row');if(b){go(+b.dataset.i);return}
+    if(e.target.id==='stp-next')go(idx===S.length-1?0:idx+1);
+    if(e.target.id==='stp-prev')go(idx-1);
+  });
+  go(0,true);
+  /* auto-play once when first seen */
+  if('IntersectionObserver' in window&&!reduced()){
+    var started=false;
+    var io=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!started){started=true;var k=0;var iv=setInterval(function(){if(touched){clearInterval(iv);return}k++;go(k);if(k>=3)clearInterval(iv)},1700);io.disconnect()}},{threshold:.5});
+    io.observe(root);
+  }
+})();
+
+/* --- creation --- */
+(function(){
+  var C=[
+    {t:'अव्यक्त: सृष्टिअघिको अवस्था',b:'ऋग्वेदको नासदीय सूक्त भन्छ: त्यस बेला न ‘सत्’ थियो न ‘असत्’, न आकाश थियो न दिन-रात। एउटा तत्त्व आफ्नै शक्तिमा, बिना वायु, श्वास फेरिरहेको थियो। यो सृष्टि कहाँबाट भयो भनेर कसले जान्दछ? सूक्तले अन्त्यमा यो प्रश्नलाई नै खुला छोडेको छ।',s:'ऋग्वेद १०.१२९'},
+    {t:'सङ्कल्प र काल-शक्ति',b:'उपनिषद्ले भन्छ: उसले चाह्यो, ‘म धेरै होऊँ, म जन्मूँ’। भागवतका अनुसार भगवान्को दृष्टिले प्रकृतिमा हलचल ल्याउँछ, र त्यही हलचलसँगै समयको प्रवाह सुरु हुन्छ। यसको अर्थ समय पनि सृष्टिको भाग हो।',s:'छान्दोग्य उपनिषद् ६.२.३; भागवत स्कन्ध ३'},
+    {t:'महत्तत्त्व: चेतनाको पहिलो बीज',b:'प्रकृतिका तीन गुण (सत्त्व, रज, तम) सन्तुलनमा थिए। सन्तुलन हल्लिएपछि पहिलो विकार ‘महत्’ अर्थात् समष्टि बुद्धि प्रकट हुन्छ।',s:'साङ्ख्य; भागवत ३.२६'},
+    {t:'अहङ्कार: ‘म’ को भावना',b:'महत्बाट अहङ्कार बन्छ, जसका तीन रूप छन्: सात्त्विक (मन र इन्द्रियका देवता), राजस (इन्द्रिय) र तामस (भौतिक तत्त्वको आधार)।',s:'भागवत ३.२६'},
+    {t:'पाँच तन्मात्रा',b:'शब्द, स्पर्श, रूप, रस र गन्ध, अर्थात् पदार्थका पाँच सूक्ष्म गुण। यी अझै अनुभूतिका रूप हुन्, वस्तु भइसकेका छैनन्।',s:'भागवत ३.२६'},
+    {t:'पञ्च महाभूत',b:'शब्दबाट आकाश, स्पर्शबाट वायु, रूपबाट अग्नि, रसबाट जल र गन्धबाट पृथ्वी प्रकट हुन्छ। यसैबाट स्थूल संसार बन्छ।',s:'भागवत ३.२६',el:true},
+    {t:'हिरण्यगर्भ: सुनौलो अण्ड',b:'मनुस्मृतिका अनुसार परमेश्वरले जलमा बीज राखे, त्यो सूर्यजस्तै चम्किलो सुनौलो अण्ड बन्यो, र त्यसबाट ब्रह्मा प्रकट भए। ऋग्वेदको हिरण्यगर्भ सूक्तले पनि सबैभन्दा पहिले हिरण्यगर्भ प्रकट भएको भन्छ।',s:'मनुस्मृति १.८ देखि ९; ऋग्वेद १०.१२१'},
+    {t:'ब्रह्मा र सृष्टिको विस्तार',b:'ब्रह्माले तप गरेर मानसपुत्र, ऋषि, मनु र शतरूपा, देव र जीवको रचना गर्छन्। यही रचना-कार्य ब्रह्माको प्रत्येक दिन (कल्प) मा नयाँ रूपमा दोहोरिन्छ।',s:'भागवत स्कन्ध ३, अध्याय १२'}
+  ];
+  var list=$('#cr-list'),panel=$('#cr-panel'),seen={};
+  list.innerHTML=C.map(function(c,i){return '<button type="button" role="tab" data-i="'+i+'" aria-selected="'+(i===0)+'">'+nd(i+1)+'. '+c.t+'</button>'}).join('');
+  function sel(i){
+    seen[i]=1;
+    $$('button',list).forEach(function(b,k){b.setAttribute('aria-selected',k===i?'true':'false');b.classList.toggle('seen',!!seen[k]&&k!==i)});
+    var c=C[i],el='';
+    if(c.el)el='<div class="el5"><span style="background:#7a5cc0">आकाश</span><span style="background:#4A93B4">वायु</span><span style="background:#C43A25">अग्नि</span><span style="background:#2A6FB0">जल</span><span style="background:#268565">पृथ्वी</span></div>';
+    panel.innerHTML='<h3>'+c.t+'</h3><p>'+c.b+'</p>'+el+'<span class="src">'+c.s+'</span>';
+  }
+  list.addEventListener('click',function(e){var b=e.target.closest('button');if(b)sel(+b.dataset.i)});
+  sel(0);
+})();
+
+/* --- tridev --- */
+(function(){
+  var SV={
+    b:'<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="var(--satya)" stroke-width="3"><path d="M32 50C20 42 16 30 22 20c4 6 8 10 10 14 2-4 6-8 10-14 6 10 2 22-10 30z"/><path d="M32 50V12M18 54h28"/></g></svg>',
+    v:'<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="var(--dvapara)" stroke-width="3"><circle cx="32" cy="32" r="14"/><circle cx="32" cy="32" r="4"/><path d="M32 6v12M32 46v12M6 32h12M46 32h12M14 14l8 8M42 42l8 8M50 14l-8 8M22 42l-8 8"/></g></svg>',
+    s:'<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="var(--now)" stroke-width="3" stroke-linecap="round"><path d="M32 8v50M20 8v14a12 12 0 0 0 24 0V8M32 8l0 0"/><path d="M26 58h12"/></g></svg>'
+  };
+  var CARDS=[
+    {k:'b',n:'ब्रह्मा',r:'सृष्टि',c:'--satya',on:'#1a1200',li:['रजोगुणका प्रतिनिधि','नाभिकमलबाट प्रकट भएका, चार मुखबाट चार वेदका वक्ता','आयु १०० वर्ष; दिनमा सृष्टि गर्छन्, रातमा सुत्छन्','हरेक कल्पको सुरुमा नयाँ सृष्टि रच्छन्']},
+    {k:'v',n:'विष्णु',r:'स्थिति (पालन)',c:'--dvapara',on:'#fff',li:['सत्त्वगुणका प्रतिनिधि','शेषनागमा शयन गर्छन्, नाभिकमलमा ब्रह्मा जन्मिन्छन्','धर्म घट्दा हरेक मन्वन्तर र युगमा अवतार लिन्छन्','यो कल्पको नाम श्वेतवाराह: सुरुमा वराहरूपले पृथ्वीलाई जलबाट उठाए (भागवत ३.१३)']},
+    {k:'s',n:'शिव (रुद्र)',r:'संहार (लय)',c:'--now',on:'#fff',li:['तमोगुणका प्रतिनिधि','कल्पान्तमा रुद्ररूपले संहार गर्छन् (विष्णुपुराण ६.३)','संहारको अर्थ नाश होइन, रूपान्तरण र विलय','शैव दृष्टिमा सृष्टि र स्थिति पनि उनकै कृत्य']}
+  ];
+  $('#td').innerHTML=CARDS.map(function(c,i){return '<article class="card rv" style="--c:var('+c.c+');--on:'+c.on+';--rd:'+(i*.12)+'s">'+SV[c.k]+'<h3>'+c.n+'</h3><span class="role">'+c.r+'</span><ul>'+c.li.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></article>'}).join('');
+  var P=[
+    ['वैष्णव','परम तत्त्व नारायण (विष्णु) हुन्। ब्रह्मा उनकै नाभिकमलबाट जन्मिएर सृष्टि गर्छन्, रुद्र उनकै आज्ञाले संहार गर्छन्, र विष्णु आफैँ स्थिति गर्छन्।'],
+    ['शैव','परम तत्त्व शिव हुन्। सृष्टि, स्थिति, संहार, तिरोभाव र अनुग्रह पाँचै उनका कृत्य हुन्, र ब्रह्मा तथा विष्णु उनले अधिकार दिएका कार्यकर्ता हुन्।'],
+    ['शाक्त','परम तत्त्व महादेवी (आदिशक्ति) हुन्। उनकै शक्तिले ब्रह्मा, विष्णु र शिवले आ-आफ्ना कार्य गर्न सक्छन्।'],
+    ['अद्वैत (स्मार्त)','निर्गुण ब्रह्म एक मात्र हो। सृष्टि, स्थिति र लय उसको मायाशक्तिका तीन रूप हुन्, र तीन देव त्यही एक सत्यका सगुण रूप हुन्।']
+  ];
+  var c=$('#persp-c'),t=$('#persp-t');
+  c.innerHTML=P.map(function(p,i){return '<button type="button" role="tab" data-i="'+i+'" aria-selected="'+(i===0)+'">'+p[0]+'</button>'}).join('');
+  function pick(i){$$('button',c).forEach(function(b,k){b.setAttribute('aria-selected',k===i?'true':'false')});t.textContent=P[i][1]}
+  c.addEventListener('click',function(e){var b=e.target.closest('button');if(b)pick(+b.dataset.i)});
+  pick(0);
+})();
+
+/* --- shaiva pentagon --- */
+(function(){
+  var F=[
+    {n:'सृष्टि',c:'--satya',b:'नटराजको हातको डमरु। नादबाट, अर्थात् पहिलो ध्वनिबाट जगत् प्रकट हुन्छ। यो सृष्टिको कृत्य हो।'},
+    {n:'स्थिति',c:'--treta',b:'अभयमुद्रा, अर्थात् ‘नडराऊ’ भन्ने हात। यसले जगत्को रक्षा र पालनलाई देखाउँछ।'},
+    {n:'संहार',c:'--kali',b:'अर्को हातको अग्नि। अग्निले जलाएर नाश गर्दैन, रूपान्तरण गर्छ; पुरानो रूप विलय हुँदा नयाँ सम्भव हुन्छ।'},
+    {n:'तिरोभाव',c:'--dvapara',b:'अपस्मार (अज्ञान) माथि टेकेको पाउ। यसले जीवलाई माया वा अज्ञानले ढाकिदिने कृत्य देखाउँछ, जसको कारण जगत्को अनुभव सम्भव हुन्छ।'},
+    {n:'अनुग्रह',c:'--water',b:'उठाइएको पाउ। यो कृपा हो, जसले ज्ञान दिएर जीवलाई बन्धनबाट मुक्त गर्छ।'}
+  ];
+  var svg=$('#pent'),h='',pts=[];
+  for(var i=0;i<5;i++){var a=-Math.PI/2+i*2*Math.PI/5;pts.push([200+Math.cos(a)*138,200+Math.sin(a)*138])}
+  for(i=0;i<5;i++){var n=pts[(i+2)%5];h+='<line class="ln" x1="'+pts[i][0]+'" y1="'+pts[i][1]+'" x2="'+n[0]+'" y2="'+n[1]+'"/>'}
+  h+='<circle class="spin" cx="200" cy="200" r="60" fill="none" stroke="var(--now)" stroke-width="2" stroke-dasharray="6 8"/><text x="200" y="218" text-anchor="middle" font-size="56" fill="var(--now)" style="fill:var(--now)">ॐ</text>';
+  F.forEach(function(f,i){h+='<g class="nd" data-i="'+i+'" tabindex="0" role="button" aria-label="'+f.n+'" style="--c:var('+f.c+')"><circle cx="'+pts[i][0]+'" cy="'+pts[i][1]+'" r="38"/><text x="'+pts[i][0]+'" y="'+(pts[i][1]+7)+'" text-anchor="middle" font-size="20">'+f.n+'</text></g>'});
+  svg.innerHTML=h;
+  var p=$('#sv-p');
+  function sel(i){
+    $$('.nd',svg).forEach(function(g,k){g.classList.toggle('sel',k===i)});
+    p.innerHTML='<h3>'+F[i].n+'</h3><p>'+F[i].b+'</p>'+
+      '<div class="fine kriya-section"><div class="kriya-title">🔱 शिवका पाँच कृत्य</div>'+ 
+      '<div class="kriya-item"><b class="kriya-srishti">१. सृष्टि</b> — परमशिवको चेतनाबाट विश्वको अभिव्यक्ति र सम्पूर्ण तत्त्वहरूको प्रकट हुनु।</div>'+ 
+      '<div class="kriya-item"><b class="kriya-sthiti">२. स्थिति</b> — प्रकट भएको विश्व, जीव र सम्पूर्ण तत्त्वहरूको धारण, सञ्चालन र निरन्तरता।</div>'+ 
+      '<div class="kriya-item"><b class="kriya-samhara">३. संहार</b> — प्रकट रूप, नाम र भेदहरू क्रमशः आफ्नै कारणमा र अन्ततः शिवचैतन्यमै लय हुनु।</div>'+ 
+      '<div class="kriya-item"><b class="kriya-tirodhan">४. तिरोधान</b> — जीवले आफ्नो वास्तविक शिवस्वरूपलाई विस्मरण गर्ने गरी चेतनामा आवरण र सीमितताको अनुभव उत्पन्न हुनु।</div>'+ 
+      '<div class="kriya-item"><b class="kriya-anugraha">५. अनुग्रह</b> — शिवकृपाबाट त्यो आवरण हट्दै जीवले आफ्नो वास्तविक शिवस्वरूपको प्रत्यभिज्ञा गर्नु।</div></div>'+ 
+      '<div class="fine tattva-section"><div class="tattva-title">🕉️ ३६ तत्त्वको संरचना</div>'+ 
+      '<div class="tattva-item"><b class="tattva-shuddha">५ शुद्ध तत्त्व</b> — शिव, शक्ति, सदाशिव, ईश्वर र शुद्धविद्या।</div>'+ 
+      '<div class="tattva-item"><b class="tattva-shuddhashuddha">७ शुद्धाशुद्ध तत्त्व</b> — माया, पाँच कञ्चुक (कला, विद्या, राग, काल, नियति) र पुरुष।</div>'+ 
+      '<div class="tattva-item"><b class="tattva-ashuddha">२४ अशुद्ध तत्त्व</b> — प्रकृति, बुद्धि, अहंकार, मन, पाँच ज्ञानेन्द्रिय, पाँच कर्मेन्द्रिय, पाँच तन्मात्रा र पाँच महाभूत।</div>'+ 
+      '<div class="total-36">५ + ७ + २४ = ३६ तत्त्व</div>'+ 
+      '<div class="tattva-note">यसरी ३६ तत्त्व परमशिवको चेतनाको क्रमिक विस्तार, सीमितीकरण र पुनः आफ्नै शिवस्वरूपको प्रत्यभिज्ञासम्मको दार्शनिक नक्सा हुन्।</div></div>';
+  }
+  svg.addEventListener('click',function(e){var g=e.target.closest('.nd');if(g)sel(+g.dataset.i)});
+  svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){var g=e.target.closest('.nd');if(g){e.preventDefault();sel(+g.dataset.i)}}});
+  sel(0);
+  var pl=$('#pillar'),btn=$('#pl-play');
+  btn.addEventListener('click',function(){var on=pl.classList.toggle('play');btn.textContent=on?'रोक्नुहोस्':'कथा चलाउनुहोस्'});
+})();
+
+/* --- pralaya --- */
+(function(){
+  var P=[
+    {n:'नैमित्तिक',c:'--dvapara',len:'ब्रह्माको प्रत्येक रात्रि: '+words(4.32e9)+' वर्ष',b:'निमित्त यहाँ ब्रह्माको रात हो। कल्पको अन्त्यमा ब्रह्मा सुत्छन् र तल्ला तीन लोक (भूः, भुवः, स्वः) जलमा लीन हुन्छन्। रात कल्पकै बराबर लामो हुन्छ, अनि बिहान ब्रह्मा उठेर फेरि सृष्टि गर्छन्। मन्वन्तरका बीचका सन्धिमा पनि जलप्रलय हुन्छ, र वैवस्वत मनुलाई मत्स्य अवतारले जोगाएको कथा त्यसैसँग जोडिन्छ।'},
+    {n:'प्राकृतिक',c:'--night',len:'ब्रह्माको १०० वर्षपछि: '+words(3.1104e14)+' वर्ष',b:'ब्रह्माको आयु पूरा भएपछि महत्तत्त्वदेखि पृथ्वीसम्मका सबै तत्त्व क्रमशः आफ्नो कारणमा विलय हुँदै मूल प्रकृतिमा लीन हुन्छन्। ब्रह्माण्ड नै समेटिने भएकाले यो सबैभन्दा ठूलो लय हो।'},
+    {n:'आत्यन्तिक',c:'--treta',len:'समय-सीमा छैन: ज्ञानको क्षणमा',b:'यो व्यक्तिगत प्रलय हो। आत्मज्ञान प्राप्त हुँदा जीव सदाका लागि जन्म-मरणको चक्रबाट छुट्छ, जसलाई मोक्ष भनिन्छ। यसमा सृष्टि रहन्छ, तर ज्ञानीका लागि बन्धन रहँदैन।'},
+    {n:'नित्य',c:'--satya',len:'प्रत्येक क्षण, निरन्तर',b:'प्रतिक्षण चलिरहने सूक्ष्म लय। गहिरो निद्रामा संसारको भान हराउनु, दिनको रात हुनु, जन्म र मृत्यु र शरीरका कोशिकाको बदलाव यसका उदाहरण हुन्। सृष्टि र लय एकैपटक चलिरहन्छन्।'}
+  ];
+  var tabs=$('#pl-tabs'),p=$('#pl-p');
+  tabs.innerHTML=P.map(function(x,i){return '<button type="button" role="tab" data-i="'+i+'" style="--c:var('+x.c+')" aria-selected="'+(i===0)+'">'+x.n+'</button>'}).join('');
+  function sel(i){$$('button',tabs).forEach(function(b,k){b.setAttribute('aria-selected',k===i?'true':'false')});p.innerHTML='<h3>'+P[i].n+' प्रलय</h3><span class="pl-len">'+P[i].len+'</span><p style="margin:0;color:var(--ink2)">'+P[i].b+'</p>'}
+  tabs.addEventListener('click',function(e){var b=e.target.closest('button');if(b)sel(+b.dataset.i)});
+  sel(0);
+})();
+
+/* --- journey timeline --- */
+(function(){
+  var TM=[
+    {ago:50*BY+E,t:'ब्रह्माको जन्म',c:'--night',b:'भागवतमा ब्रह्माको जन्म कारण-जलमा शयन गर्ने विष्णुको नाभिकमलबाट भएको वर्णन छ। यहीँबाट ब्रह्माको १०० वर्षको आयु गन्न थालिन्छ (भागवत ३.११)।'},
+    {ago:E,t:'दोस्रो परार्ध र श्वेतवाराह कल्पको आरम्भ',c:'--satya',b:'५० वर्ष पूरा भएपछि दोस्रो परार्ध सुरु भयो, र यसको पहिलो कल्प श्वेतवाराह हो। किनकि सुरुमा विष्णुले वराहरूप लिएर पृथ्वीलाई जलबाट उद्धार गरे (भागवत ३.११, ३.१३)।'},
+    {ago:E-SANDHI,t:'पहिलो मन्वन्तर: स्वायम्भुव मनु',c:'--water',b:'पहिलो सन्धि सकिएपछि स्वायम्भुव मनु र शतरूपाबाट मानव-वंश फैलियो (भागवत ३.१२)।'},
+    {ago:E-M7S,t:'वैवस्वत मन्वन्तरको आरम्भ',c:'--navy',b:'छ मन्वन्तर र सन्धिकाल पार गरेपछि सूर्यपुत्र वैवस्वत मनुको मन्वन्तर सुरु भयो। जलप्रलयबाट मनुलाई जोगाउने मत्स्य अवतारको कथा यही सन्धिसँग जोडिन्छ।'},
+    {ago:E-(M7S+23*CHATUR+8400),t:'त्रेतामा श्रीराम (लगभग)',c:'--treta',b:'वैवस्वतका २४ औँ चतुर्युगको त्रेता अन्त्यतिर श्रीरामको अवतार मानिन्छ। यो पुराणको युग-गणना हो; पुरातात्त्विक कालनिर्धारणसँग मेल खाँदैन।'},
+    {ago:KALI_D,t:'द्वापरको अन्त्य, कलियुगको आरम्भ',c:'--dvapara',b:'२८ औँ चतुर्युगको द्वापर सकिँदा श्रीकृष्णले देह त्यागे र कलियुग सुरु भयो (१८ फेब्रुअरी, ३१०२ ई.पू.)।'},
+    {ago:0,t:'आज',c:'--now',now:true,b:'श्वेतवाराह कल्पको '+pct(E/KALPA*100,2)+' र वैवस्वत मन्वन्तरको '+pct((E-M7S)/MANU*100,2)+' बितिसकेको छ। हामी कलियुगको पहिलो चरणमा छौँ।'}
+  ];
+  $('#tm').innerHTML=TM.map(function(e,i){
+    var ago=e.ago<1?'अहिले, यही क्षण':'आजभन्दा '+T(e.ago)+' अघि';
+    return '<article class="tm-i rv'+(e.now?' now':'')+'" style="--c:var('+e.c+');--rd:.05s"><div class="tm-ago">'+ago+'</div><h3>'+e.t+'</h3><p>'+e.b+'</p></article>';
+  }).join('');
+})();
+
+/* =====================================================
+   CHAKRA
+   ===================================================== */
 (function hero(){
   var y=NOW.getFullYear();
   var bs=NOW>=new Date(y,3,14)?y+57:y+56;
@@ -568,61 +1370,86 @@ function st(s,l,p){return p>=s+l?'done':(p>=s?'now':'future')}
 
 /* ---------- levels ---------- */
 var L=[];
-L.push({short:'ब्रह्माको आयु',title:'ब्रह्माको आयु',sub:'१०० ब्रह्म वर्ष, ५०-५० वर्षका दुई परार्ध',total:100*BY,pos:50*BY+E,dec:4,hl:[.5,.51],
-  val:'५० वर्ष पूरा, ५१ औँ वर्ष चलिरहेको',
+var SEC_KALI=KALI_H/(BY*D)*365.25*86400;
+function whenLine(l,s,stt,p){
+  var end=s.start+s.len;
+  if(stt==='done')return 'यो आजभन्दा लगभग '+T(l.pos-end)+' अघि पूरा भइसकेको छ।';
+  if(stt==='now')return 'अहिले यसको '+pct(p,l.dec>2?4:2)+' बितिसकेको छ, र अझै '+T(end-l.pos)+' बाँकी छ।';
+  return 'यो आजबाट लगभग '+T(s.start-l.pos)+' पछि सुरु हुनेछ।';
+}
+function lenLine(s){return 'यसको कुल अवधि '+T(s.len)+' हो।'}
+L.push({title:'ब्रह्माको आयु',sub:'१०० ब्रह्म वर्ष, ५०-५० वर्षका दुई परार्ध',total:100*BY,pos:50*BY+E,dec:4,hl:[.5,.51],
   caps:[[{c:25,t:'प्रथम परार्ध (५० वर्ष, पूरा)'},{c:75,t:'द्वितीय परार्ध (५० वर्ष)'}]],
   segs:Array.apply(null,Array(100)).map(function(_,i){return {start:i*BY,len:BY,name:'ब्रह्माको '+nd(i+1)+' औँ वर्ष',color:i===50?'--kali':'--navy',
-    note:i<50?'प्रथम परार्धभित्रको वर्ष। यसमा १८,००० कल्प पूरा भएका छन् (३६० दिन × ५० वर्ष)।':(i===50?'यही वर्षको पहिलो दिन, श्वेतवाराह कल्प, अहिले चलिरहेको छ।':'द्वितीय परार्धभित्रको आगामी वर्ष।')}})
+    story:function(l,s,stt,p){
+      var h='<p>🌌 <strong>ब्रह्माको १०० वर्षको विशालता:</strong> ब्रह्माको एक वर्षमा ३६० अहोरात्र (दिन र रात) हुन्छन्, अर्थात् '+T(BY)+'। यस्ता १०० वर्ष बाँचेपछि ब्रह्माको आयु पूरा हुन्छ।</p>';
+      if(stt==='done')h+='<p>यो वर्ष '+(i<50?'प्रथम':'द्वितीय')+' परार्धमा पर्छ। '+whenLine(l,s,stt,p)+'</p>';
+      else if(stt==='now')h+='<p>🎯 <strong>हाम्रो ठेगाना:</strong> हामी अहिले यही ५१ औँ वर्षको पहिलो दिनमा छौँ। ब्रह्माको आयुको आधा पार भइसकेको छ र दोस्रो परार्ध भर्खर सुरु भएको छ। यो वर्षमा अझै ३५९ दिन-रात बाँकी छन्।</p>';
+      else h+='<p>यो द्वितीय परार्धको आगामी वर्ष हो। '+whenLine(l,s,stt,p)+'</p>';
+      h+='<p class="tip">बुझ्न सजिलो तुलना: ब्रह्माको १ वर्षलाई हाम्रो १ वर्षजत्तिकै छोटो बनाउने हो भने कलियुगका अहिलेसम्मका '+fmt(KALI_H,0)+' वर्ष केवल '+fmt(SEC_KALI,2)+' सेकेन्डजत्ति हुन्छन्।</p>';
+      if(stt==='now'){var hrs=Math.round(E/BY*365.25*24);h+='<p class="tip">ब्रह्माको १०० वर्षलाई मानिसको १०० वर्षको जीवन मान्दा हामी ५० वर्ष र लगभग '+nd(hrs)+' घण्टामा छौँ, अर्थात् जीवनको ठ्याक्कै बीचमा।</p>'}
+      return h;
+    }}})
 });
-L.push({short:'५१ औँ वर्ष',title:'५१ औँ ब्रह्म वर्ष',sub:'द्वितीय परार्धको पहिलो वर्ष, ३६० अहोरात्र (दिन र रात) को',total:BY,pos:E,dec:4,hl:[0,1/360],
-  val:'पहिलो अहोरात्र (३६० मध्ये)',
-  segs:[{start:0,len:AH,name:'पहिलो अहोरात्र',color:'--kali',note:'ब्रह्माको १ दिन (कल्प) र १ रात्रि (प्रलय)। हामी यही अहोरात्रको दिन भागमा छौँ।'},
-        {start:AH,len:359*AH,name:'बाँकी ३५९ अहोरात्र',color:'--navy',cells:359,note:'५१ औँ वर्षका आगामी दिन-रात। प्रत्येक अहोरात्र २,४०,००,००० देव वर्षको हुन्छ।'}]
+L.push({title:'५१ औँ ब्रह्म वर्ष',sub:'द्वितीय परार्धको पहिलो वर्ष, ३६० अहोरात्र (दिन र रात)',total:BY,pos:E,dec:4,hl:[0,1/360],
+  segs:[{start:0,len:AH,name:'पहिलो अहोरात्र',color:'--kali',story:function(l,s,stt,p){
+      return '<p>🌅 <strong>नयाँ दिनको सुरुवात:</strong> यो ब्रह्माको ५१ औँ वर्षको पहिलो दिन-रात हो। यसमा एउटा कल्प (दिन) भरि सृष्टि रहन्छ, अनि त्यति नै लामो रात्रि (प्रलय) आउँछ। हामी अहिले यही दिनको बीचतिर छौँ। '+lenLine(s)+'</p><p class="tip">⏰ यदि ५१ औँ ब्रह्म वर्षलाई १ वर्षको (जनवरी १ देखि डिसेम्बर ३१) मान्दा हामी अहिले जनवरी १ को '+clock((E/BY*365.25%1)*100)+' मा छौँ।</p>'}},
+        {start:AH,len:359*AH,name:'बाँकी ३५९ अहोरात्र',color:'--navy',cells:359,story:function(l,s,stt,p){
+      return '<p>यी ५१ औँ वर्षका आगामी दिन-रात हुन्। प्रत्येक अहोरात्रमा एक कल्प दिन र एक कल्प रात्रि हुन्छ, र प्रत्येक नयाँ दिनमा ब्रह्माले नयाँ सृष्टि गर्छन्। '+whenLine(l,s,stt,p)+'</p>'}}]
 });
-L.push({short:'अहोरात्र',title:'पहिलो अहोरात्र',sub:'१ कल्प दिन र १ कल्प रात्रि',total:AH,pos:E,dec:2,hl:[0,.5],
-  val:'दिन (कल्प) भाग, रात्रि आउन बाँकी',
-  segs:[{start:0,len:KALPA,name:'दिन: श्वेतवाराह कल्प',label:'दिन (कल्प)',color:'--satya',on:'#1a1200',note:'सृष्टि-काल। यही दिनको ४५.६७% भाग हामीले पार गरिसकेका छौँ।'},
-        {start:KALPA,len:KALPA,name:'रात्रि: नैमित्तिक प्रलय',label:'रात्रि (प्रलय)',color:'--night',note:'कल्पको अन्त्यपछि ब्रह्मा सुत्ने समय; तल्ला तीन लोक (भूः, भुवः, स्वः) प्रलयमा रहन्छन्। अवधि दिनकै बराबर।'}]
+L.push({title:'पहिलो अहोरात्र',sub:'१ कल्प दिन र १ कल्प रात्रि',total:AH,pos:E,dec:2,hl:[0,.5],
+  segs:[{start:0,len:KALPA,name:'दिन: श्वेतवाराह कल्प',label:'दिन (कल्प)',color:'--satya',on:'#1a1200',story:function(l,s,stt,p){
+      return '<p>ब्रह्माको दिन नै कल्प हो। यो अवधिमा भूः, भुवः र स्वः लोकमा सृष्टि र स्थिति चलिरहन्छन्, र क्रमैसँग १४ मनुले शासन गर्छन्। '+lenLine(s)+' हामी यसको '+pct(p,2)+' मा छौँ।</p><p class="tip">यो कल्पलाई एक दिनको २४ घण्टा मान्दा हामी अहिले '+clock(p)+' मा छौँ।</p>'}},
+        {start:KALPA,len:KALPA,name:'रात्रि: नैमित्तिक प्रलय',label:'रात्रि (प्रलय)',color:'--night',story:function(l,s,stt,p){
+      return '<p>कल्पको अन्त्यपछि ब्रह्मा सुत्ने समय, जसलाई नैमित्तिक प्रलय भनिन्छ। तल्ला तीन लोक जलमा लीन हुन्छन्। रातको अवधि दिनकै बराबर हुन्छ, र बिहान फेरि नयाँ सृष्टि सुरु हुन्छ। '+whenLine(l,s,stt,p)+'</p>'}}]
 });
-L.push({short:'कल्प',title:'श्वेतवाराह कल्प',sub:'१,००० चतुर्युग = १४ × ७१ + १५ सन्धि (६ चतुर्युग)',total:KALPA,pos:E,dec:2,hl:[M7S/KALPA,(M7S+MANU)/KALPA],
-  val:'श्वेतवाराह कल्प',
+L.push({title:'श्वेतवाराह कल्प',sub:'१,००० चतुर्युग = १४ × ७१ + १५ सन्धि (६ चतुर्युग)',total:KALPA,pos:E,dec:2,hl:[M7S/KALPA,(M7S+MANU)/KALPA],
   caps:[[{c:0,t:'कल्पको सुरु',al:'l'},{c:50,t:'पातला रेखा = सन्धिकाल'},{c:100,t:'कल्पान्त',al:'r'}]],
   segs:SEQ.map(function(s){
     if(s.t==='s'){
-      var nt=s.n===1?'कल्प सुरु हुनुअघिको सन्धि।':(s.n===15?'कल्पको अन्तिम सन्धि, यसपछि नैमित्तिक प्रलय।':'दुई मन्वन्तरबीचको सन्धि।');
-      return {start:s.start,len:s.len,tick:true,name:nd(s.n)+' औँ सन्धिकाल (जलप्रलय)',color:'--water',on:'#04222d',note:nt+' अवधि १ सत्ययुग बराबर, अर्थात् ४,८०० देव वर्ष।'};
+      return {start:s.start,len:s.len,tick:true,name:nd(s.n)+' औँ सन्धिकाल (जलप्रलय)',color:'--water',on:'#04222d',story:function(l,seg,stt,p){
+        var w=s.n===1?'यो कल्प सुरु हुनुअघिको सन्धि हो।':(s.n===15?'यो कल्पको अन्तिम सन्धि हो, जसपछि नैमित्तिक प्रलय आउँछ।':'यो दुई मन्वन्तरको बीचमा पर्ने सन्धि हो।');
+        return '<p>🌊 <strong>जलप्रलयको समय:</strong> '+w+' यस अवधिमा जलप्रलय हुन्छ र एक मन्वन्तर सकिएर अर्को सुरु हुँदा सृष्टि नयाँ ढङ्गले सजिन्छ। '+lenLine(seg)+' यो एउटा सत्ययुगको बराबर हो। '+whenLine(l,seg,stt,p)+'</p>'}};
     }
-    var m=MANUS[s.n-1],rows=[['मनु',m[0]+(s.n===7?' (सूर्यपुत्र)':' मनु')],['भागवतमा अवतार',m[1]]],note='७१ चतुर्युगको एक मन्वन्तर।';
-    if(s.n===7)note='यही मन्वन्तरका सप्तर्षि: कश्यप, अत्रि, वसिष्ठ, विश्वामित्र, गौतम, जमदग्नि र भरद्वाज। यसमा ७१ मध्ये २८ औँ चतुर्युग चलिरहेको छ।';
-    if(s.n===8)note='आगामी सावर्णि मन्वन्तरमा बलि इन्द्र हुने र गालव, दीप्तिमान्, परशुराम, कृप, अश्वत्थामा, व्यास तथा ऋष्यशृङ्ग सप्तर्षि हुने भागवतमा वर्णन छ।';
-    return {start:s.start,len:s.len,name:nd(s.n)+'. '+m[0]+' मन्वन्तर',label:nd(s.n),color:'--navy',rows:rows,note:note};
+    var m=MANUS[s.n-1];
+    return {start:s.start,len:s.len,name:nd(s.n)+'. '+m[0]+' मन्वन्तर',label:nd(s.n),color:'--navy',story:function(l,seg,stt,p){
+      var h='<p>यो '+nd(s.n)+' औँ मन्वन्तर हो, जसमा '+m[0]+(s.n===7?' (सूर्यपुत्र)':'')+' मनुको शासन चल्छ। एउटा मन्वन्तरमा एक मनु, एक इन्द्र र सात ऋषि (सप्तर्षि) हुन्छन्, र ७१ चतुर्युग बित्छन्। भागवतअनुसार यसमा भगवान्ले '+m[1]+' अवतार लिन्छन्। '+lenLine(seg)+'</p>';
+      if(s.n===7)h+='<p>यही मन्वन्तरका सप्तर्षि कश्यप, अत्रि, वसिष्ठ, विश्वामित्र, गौतम, जमदग्नि र भरद्वाज हुन्। '+whenLine(l,seg,stt,p)+'</p><p class="tip">यो मन्वन्तरलाई एक दिनको २४ घण्टा मान्दा हामी अहिले '+clock(p)+' मा छौँ।</p>';
+      else if(s.n===8)h+='<p>आगामी सावर्णि मन्वन्तरमा बलि इन्द्र हुने र गालव, दीप्तिमान्, परशुराम, कृप, अश्वत्थामा, व्यास तथा ऋष्यशृङ्ग सप्तर्षि हुने भागवतमा वर्णन छ। '+whenLine(l,seg,stt,p)+'</p>';
+      else h+='<p>'+whenLine(l,seg,stt,p)+'</p>';
+      return h;}};
   })
 });
-L.push({short:'मन्वन्तर',title:'वैवस्वत मन्वन्तर (७ औँ)',sub:'७१ चतुर्युग, सूर्यपुत्र वैवस्वत मनुको शासनकाल',total:MANU,pos:E-M7S,dec:2,hl:[27/71,28/71],
-  val:'७ औँ वैवस्वत (१४ मध्ये)',
+L.push({title:'वैवस्वत मन्वन्तर (७ औँ)',sub:'७१ चतुर्युग, सूर्यपुत्र वैवस्वत मनुको शासनकाल',total:MANU,pos:E-M7S,dec:2,hl:[27/71,28/71],
   caps:[[{c:0,t:'१ औँ चतुर्युग',al:'l'},{c:100,t:'७१ औँ चतुर्युग',al:'r'}]],
-  segs:Array.apply(null,Array(71)).map(function(_,i){var s=i*CHATUR,stt=st(s,CHATUR,E-M7S);return {start:s,len:CHATUR,name:nd(i+1)+' औँ चतुर्युग',label:(i===27?'२८':''),color:stt==='now'?'--kali':'--navy',note:i===27?'सत्य, त्रेता र द्वापर पूरा भइसके; कलियुग चलिरहेको छ।':(i<27?'पूरा भइसकेको चतुर्युग।':'आगामी चतुर्युग।')}})
+  segs:Array.apply(null,Array(71)).map(function(_,i){var s0=i*CHATUR,stt0=st(s0,CHATUR,E-M7S);return {start:s0,len:CHATUR,name:nd(i+1)+' औँ चतुर्युग',label:(i===27?'२८':''),color:stt0==='now'?'--kali':'--navy',story:function(l,s,stt,p){
+    var h='<p>एउटा चतुर्युगमा सत्य, त्रेता, द्वापर र कलि चारै युग एकपटक घुम्छन्। '+lenLine(s)+'</p>';
+    if(stt==='done')h+='<p>यो चतुर्युग चारै युगसहित पूरा भइसकेको छ। '+whenLine(l,s,stt,p)+'</p>';
+    else if(stt==='now')h+='<p>🎯 <strong>हाम्रो चक्र:</strong> यही २८ औँ चतुर्युग हामी बाँचिरहेको चक्र हो। सत्य, त्रेता र द्वापर पूरा भइसके, र अहिले कलियुग चलिरहेको छ। '+whenLine(l,s,stt,p)+'</p><p class="tip">⏰ यो चतुर्युगलाई एक दिनको २४ घण्टा मान्दा हामी अहिले '+clock(p)+' मा छौँ: दिन लगभग सकिएर कलियुगको साँझमा।</p>';
+    else h+='<p>'+whenLine(l,s,stt,p)+'</p>';
+    return h;}}})
 });
 (function(){
   var segs=[],a=0;
   YUGA.forEach(function(y){
     var main=y.dev-2*y.sand;
-    segs.push({start:a,len:y.sand,name:y.name+'को सन्ध्या',color:y.color,on:y.on,sand:true,rows:[['युगधर्म',y.dharma]],note:'युगको सुरुको सन्धिकाल; मुख्य युग सुरु हुनुअघिको उषा-काल।'});
-    segs.push({start:a+y.sand,len:main,name:'मुख्य '+y.name,label:y.short,color:y.color,on:y.on,rows:[['युगधर्म',y.dharma],['अवतार',y.av]],note:y.tone});
-    segs.push({start:a+y.sand+main,len:y.sand,name:y.name+'को सन्ध्यांश',color:y.color,on:y.on,sand:true,note:'युगको अन्तिम सन्धिकाल; अर्को युगमा पस्ने साँझ-काल।'});
+    segs.push({start:a,len:y.sand,name:y.name+'को सन्ध्या',color:y.color,on:y.on,sand:true,story:function(l,s,stt,p){return '<p>🌅 <strong>उषाकाल:</strong> '+y.name+' सुरु हुनुअघिको उषा-काल। अघिल्लो युगको प्रभाव घट्दै जान्छ र नयाँ युगका लक्षण देखिन थाल्छन्। '+lenLine(s)+' '+whenLine(l,s,stt,p)+'</p>'}});
+    segs.push({start:a+y.sand,len:main,name:'मुख्य '+y.name,label:y.short,color:y.color,on:y.on,story:function(l,s,stt,p){return '<p>☀️ <strong>मुख्य काल:</strong> '+y.tone+' यो युगमा मानिसको आयु '+nd(y.life)+' वर्षसम्म हुन्थ्यो, र सबैभन्दा उपयुक्त साधना '+y.dharma+' मानिन्छ। अवतार: '+y.av+'। '+lenLine(s)+' '+whenLine(l,s,stt,p)+'</p>'}});
+    segs.push({start:a+y.sand+main,len:y.sand,name:y.name+'को सन्ध्यांश',color:y.color,on:y.on,sand:true,story:function(l,s,stt,p){return '<p>🌇 <strong>साँझकाल:</strong> '+y.name+'को साँझ-काल। युगका लक्षण कमजोर हुँदै जान्छन् र अर्को युगमा प्रवेश हुन्छ। '+lenLine(s)+' '+whenLine(l,s,stt,p)+'</p>'}});
     a+=y.dev;
   });
   var caps=[];a=0;
   YUGA.forEach(function(y,i){caps.push({c:(a+y.dev/2)/CHATUR*100,t:y.name+' '+nd(y.dev/CHATUR*100)+'%',al:i===3?'r':''});a+=y.dev;});
-  L.push({short:'चतुर्युग',title:'२८ औँ चतुर्युग (महायुग)',sub:'सत्य ४ : त्रेता ३ : द्वापर २ : कलि १, प्रत्येकमा सन्ध्या र सन्ध्यांश',total:CHATUR,pos:10800+KALI_D,dec:2,hl:[.9,1],
-    val:'२८ औँ (७१ मध्ये)',caps:[caps],segs:segs});
+  L.push({title:'२८ औँ चतुर्युग (महायुग)',sub:'सत्य ४ : त्रेता ३ : द्वापर २ : कलि १, प्रत्येकमा सन्ध्या र सन्ध्यांश',total:CHATUR,pos:10800+KALI_D,dec:2,hl:[.9,1],caps:[caps],segs:segs});
 })();
-L.push({short:'कलियुग',title:'कलियुग',sub:'४,३२,००० मानव वर्ष = ३६,००० सन्ध्या + ३,६०,००० मुख्य + ३६,००० सन्ध्यांश; चार चरण',total:KALI_TOTAL,pos:KALI_D,dec:2,ticks:[25,50,75],
-  val:'पहिलो चरण, सन्ध्या भित्र',
+L.push({title:'कलियुग',sub:'४,३२,००० मानव वर्ष = ३६,००० सन्ध्या + ३,६०,००० मुख्य + ३६,००० सन्ध्यांश; चार चरण',total:KALI_TOTAL,pos:KALI_D,dec:2,ticks:[25,50,75],
   caps:[[{c:4.17,t:'सन्ध्या'},{c:50,t:'मुख्य कलियुग'},{c:95.8,t:'सन्ध्यांश'}],[{c:12.5,t:'चरण १'},{c:37.5,t:'चरण २'},{c:62.5,t:'चरण ३'},{c:87.5,t:'चरण ४'}]],
-  segs:[{start:0,len:100,name:'कलियुगको सन्ध्या',color:'--kali',sand:true,note:'कलियुगको पहिलो ३६,००० मानव वर्ष। हामी यही खण्डमा, पहिलो चरणको सुरुतिर छौँ।'},
-        {start:100,len:1000,name:'मुख्य कलियुग',label:'मुख्य कलियुग',color:'--kali',note:'३,६०,००० मानव वर्षको मुख्य काल।'},
-        {start:1100,len:100,name:'कलियुगको सन्ध्यांश',color:'--kali',sand:true,note:'अन्तिम ३६,००० मानव वर्ष, जसपछि नयाँ सत्ययुग आउँछ।'}]
+  segs:[{start:0,len:100,name:'कलियुगको सन्ध्या',color:'--kali',sand:true,story:function(l,s,stt,p){
+      return '<p>🌅 <strong>कलियुगको सुरुवात:</strong> कलियुगको पहिलो ३६,००० मानव वर्ष। हामी अहिले यही खण्डमा, पहिलो चरणको सुरुतिर छौँ: कलियुग सुरु भएको '+fmt(KALI_H,0)+' वर्ष भयो, जुन यो सन्ध्याको '+pct(p,1)+' मात्र हो। '+lenLine(s)+'</p><p class="tip">⏰ यो सन्ध्यालाई एक दिनको २४ घण्टा मान्दा हामी अहिले '+clock(p)+' मा छौँ, अर्थात् आधारातपछिको पहिलो पहरमा।</p>'}},
+        {start:100,len:1000,name:'मुख्य कलियुग',label:'मुख्य कलियुग',color:'--kali',story:function(l,s,stt,p){
+      return '<p>🌑 <strong>अधर्मको बढोत्तरी:</strong> ३,६०,००० मानव वर्षको मुख्य काल, जसमा धर्मको एक मात्र पाउ बाँकी रहन्छ र अधर्म बढ्दै जान्छ। '+whenLine(l,s,stt,p)+'</p>'}},
+        {start:1100,len:100,name:'कलियुगको सन्ध्यांश',color:'--kali',sand:true,story:function(l,s,stt,p){
+      return '<p>कलियुगको अन्तिम ३६,००० मानव वर्ष। पुराणअनुसार यस समयको अन्त्यमा कल्कि अवतार हुन्छ र त्यसपछि नयाँ सत्ययुग सुरु हुन्छ। '+whenLine(l,s,stt,p)+'</p>'}}]
 });
 var LN=L.length;
 
@@ -648,7 +1475,7 @@ function buildLadder(){
     var caps=(l.caps||[]).map(function(row){return '<div class="caps">'+row.map(function(c){return '<span class="'+(c.al?'al-'+c.al:'')+'" style="left:'+(c.al==='l'?0:(c.al==='r'?100:c.c))+'%">'+c.t+'</span>'}).join('')+'</div>'}).join('');
     html+='<article class="lvl" id="lvl-'+(li+1)+'" style="--d:'+(li*0.12)+'s">'+
       '<header class="lvl-h"><span class="lvl-n">'+nd(li+1)+'</span><div><h3>'+l.title+'</h3><p>'+l.sub+'</p></div>'+
-      '<div class="lvl-d">'+U(l.total)+'<small>'+W(l.total)+'</small></div></header>'+
+      '<div class="lvl-d">'+U(l.total)+'</div></header>'+
       '<div class="track" style="--pos:'+p+'%"><div class="marker'+side+'"><span>हामी यहाँ, '+pct(p,l.dec)+'</span></div>'+
       '<div class="segs" role="group" aria-label="'+l.title+'">'+sp+ticks+tl+'</div>'+hl+'</div>'+caps+
       '<div class="readout" id="ro-'+li+'"></div></article>';
@@ -662,33 +1489,31 @@ function buildLadder(){
   $('#ladder').addEventListener('click',function(e){var b=e.target.closest('[data-l]');if(b)show(+b.dataset.l,+b.dataset.i)});
 }
 function describe(l,s){
-  var end=s.start+s.len,stt=st(s.start,s.len,l.pos),p=Math.max(0,Math.min(1,(l.pos-s.start)/s.len))*100,line;
-  if(stt==='done')line='<span class="chip done">पूरा भइसकेको</span>आजभन्दा '+U(l.pos-end)+' अघि सकिएको';
-  else if(stt==='now')line='<span class="chip now">चलिरहेको</span>'+pct(p,l.dec>2?4:2)+' बितेको ('+U(l.pos-s.start,2)+'), बाँकी '+U(end-l.pos,2);
-  else line='<span class="chip fut">आउन बाँकी</span>आजबाट '+U(s.start-l.pos)+' पछि सुरु हुने';
-  var rows=[['अवधि',U(s.len)+' '+A(s.len)],['यो तहभित्र स्थान',U(s.start)+' देखि '+U(end)+' सम्म']].concat(s.rows||[]);
-  return '<h4>'+s.name+'</h4><p class="ro-s">'+line+'</p><dl>'+rows.map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>'}).join('')+'</dl>'+(s.note?'<p class="ro-n">'+s.note+'</p>':'');
+  var end=s.start+s.len,stt=st(s.start,s.len,l.pos),p=Math.max(0,Math.min(1,(l.pos-s.start)/s.len))*100;
+  var chip=stt==='done'?'<span class="chip done">पूरा भइसकेको</span>':(stt==='now'?'<span class="chip now">चलिरहेको</span>':'<span class="chip fut">आउन बाँकी</span>');
+  var story=s.story?s.story(l,s,stt,p):'';
+  var nums='<dl><dt>अवधि</dt><dd>'+U(s.len)+' '+A(s.len)+'</dd><dt>यो तहभित्र सुरु</dt><dd>'+U(s.start)+'</dd><dt>यो तहभित्र अन्त</dt><dd>'+U(end)+'</dd></dl>';
+  return '<h4>'+s.name+'</h4><p class="ro-s">'+chip+'</p><div class="ro-story">'+story+'</div><details class="ro-num"><summary>सटीक अङ्क हेर्नुहोस्</summary>'+nums+'</details>';
 }
 function show(li,si){
   var l=L[li],s=l.segs[si],ro=$('#ro-'+li);
+  var open=ro.querySelector('details')&&ro.querySelector('details').open;
   ro.innerHTML=describe(l,s);
+  if(open)ro.querySelector('details').open=true;
   ro.style.setProperty('--rc','var('+s.color+')');
   $$('#lvl-'+(li+1)+' [data-l]').forEach(function(b){b.setAttribute('aria-pressed',+b.dataset.i===si?'true':'false')});
 }
 buildLadder();
-
-/* ladder reveal (one orchestrated moment) */
 (function(){
   var lad=$('#ladder');
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!('IntersectionObserver' in window)||reduce)return;
+  if(!('IntersectionObserver' in window)||reduced())return;
   lad.classList.add('rev');
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.2});
   $$('.lvl,.funnel',lad).forEach(function(el){io.observe(el)});
-  setTimeout(function(){$$('.lvl,.funnel',lad).forEach(function(el){el.classList.add('in')})},9000);
+  setTimeout(function(){$$('.lvl,.funnel',lad).forEach(function(el){el.classList.add('in')})},12000);
 })();
 
-/* ---------- hero address + wheel ---------- */
+/* ---------- chakra hero address + mini wheel ---------- */
 (function(){
   var vals=['५० वर्ष पूरा, ५१ औँ वर्ष चलिरहेको','पहिलो अहोरात्र (३६० मध्ये)','दिन भाग, रात्रि आउन बाँकी','श्वेतवाराह कल्प','७ औँ वैवस्वत (१४ मध्ये)','२८ औँ (७१ मध्ये)','कलियुग, पहिलो चरणको सन्ध्या'];
   var lab=['ब्रह्माको आयु','५१ औँ वर्ष','अहोरात्र','कल्प','मन्वन्तर','चतुर्युग','कलियुग'];
@@ -697,34 +1522,64 @@ buildLadder();
   $('#addr').innerHTML=h;
   var R=108,off=0,arcs='';
   YUGA.forEach(function(y){var len=y.dev/CHATUR*100;
-    arcs+='<circle cx="150" cy="150" r="'+R+'" fill="none" stroke="var('+y.color+')" stroke-width="30" pathLength="100" stroke-dasharray="'+(len-.7)+' '+(100-len+.7)+'" stroke-dashoffset="'+(-off)+'" transform="rotate(-90 150 150)"><title>'+y.name+', '+nd(len)+'%</title></circle>';off+=len;});
+    arcs+='<circle cx="150" cy="150" r="'+R+'" fill="none" stroke="var('+y.color+')" stroke-width="30" pathLength="100" stroke-dasharray="'+(len-.7)+' '+(100-len+.7)+'" stroke-dashoffset="'+(-off)+'" transform="rotate(-90 150 150)"><title>'+y.name+'</title></circle>';off+=len;});
   var th=((10800+KALI_D)/CHATUR)*2*Math.PI-Math.PI/2,cx=Math.cos(th),cy=Math.sin(th);
   var needle='<line x1="'+(150+cx*70)+'" y1="'+(150+cy*70)+'" x2="'+(150+cx*128)+'" y2="'+(150+cy*128)+'" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/><circle cx="'+(150+cx*R)+'" cy="'+(150+cy*R)+'" r="8" fill="var(--now)" stroke="var(--bg)" stroke-width="3"/>';
   var lbl='<text x="'+(150+cx*136-4)+'" y="'+(150+cy*136-2)+'" text-anchor="end" font-size="15">हामी यहाँ</text>';
-  $('#wheel').innerHTML=arcs+needle+lbl+'<text x="150" y="140" text-anchor="middle" font-size="21">२८ औँ चतुर्युग</text><text x="150" y="164" text-anchor="middle" class="w-s">कलियुगको सुरुमा</text><text x="150" y="182" text-anchor="middle" class="w-s">१२,००० देव वर्षको चक्र</text>';
+  $('#wheel').innerHTML=arcs+needle+lbl+'<text x="150" y="140" text-anchor="middle" font-size="21">२८ औँ चतुर्युग</text><text x="150" y="164" text-anchor="middle" class="w-s">विवरण हेर्न थिच्नुहोस्</text><text x="150" y="182" text-anchor="middle" class="w-s">१२,००० दिव्य वर्षको चक्र</text>';
 })();
 
-/* ---------- yuga cards ---------- */
+/* ---------- interactive yuga wheel ---------- */
 (function(){
-  var h='';
+  var svg=$('#whs'),cx=180,cy=180;
+  var h='<circle class="spin" cx="180" cy="180" r="172" fill="none" stroke="var(--ink2)" stroke-width="1.5" stroke-dasharray="1 8" opacity=".55"/>';
+  var off=0;
   YUGA.forEach(function(y,i){
-    var start=YUGA.slice(0,i).reduce(function(a,b){return a+b.dev},0),stt=st(start,y.dev,10800+KALI_D);
-    var chip=stt==='done'?'<span class="chip done">पूरा</span>':'<span class="chip now">चलिरहेको</span>';
-    var legs='';for(var k=0;k<4;k++)legs+='<i class="'+(k<y.legs?'':'off')+'"></i>';
-    var main=y.dev-2*y.sand;
-    h+='<article class="yc" style="--c:var('+y.color+')"><div class="yc-top"><h3>'+y.name+'</h3>'+chip+'</div>'+
-      '<div><strong>'+U(y.dev)+'</strong> '+A(y.dev)+'</div>'+
-      '<div class="mini" aria-hidden="true"><i class="sd" style="--w:'+y.sand+'"></i><i style="--w:'+main+'"></i><i class="sd" style="--w:'+y.sand+'"></i></div>'+
-      '<div class="mini-c"><span>सन्ध्या '+nd(y.sand)+'</span><span>मुख्य '+nd(main)+'</span><span>सन्ध्यांश '+nd(y.sand)+'</span></div>'+
-      '<div class="legs" role="img" aria-label="धर्मका '+nd(y.legs)+' पाउ बाँकी">'+legs+'<span style="margin-left:8px;font-size:.9rem;color:var(--ink2)">धर्मका '+nd(y.legs)+' पाउ</span></div>'+
-      '<dl><dt>मानव आयु</dt><dd>'+nd(y.life)+' वर्ष (मनुस्मृति १.८३)</dd><dt>युगधर्म</dt><dd>'+y.dharma+'</dd><dt>अवतार</dt><dd>'+y.av+'</dd></dl>'+
-      '<p style="margin:0;font-size:.92rem;color:var(--ink2)">'+y.tone+'</p></article>';
+    var len=y.dev/CHATUR*100;
+    h+='<circle class="wh-y" data-y="'+i+'" tabindex="0" role="button" aria-label="'+y.name+'" cx="180" cy="180" r="128" fill="none" stroke="var('+y.color+')" pathLength="100" stroke-dasharray="'+(len-.5)+' '+(100-len+.5)+'" stroke-dashoffset="'+(-off)+'" transform="rotate(-90 180 180)"><title>'+y.name+'</title></circle>';
+    off+=len;
   });
-  $('#yg').innerHTML=h;
+  off=0;
+  YUGA.forEach(function(y,i){
+    var parts=[[y.sand,.5],[y.dev-2*y.sand,1],[y.sand,.5]];
+    parts.forEach(function(pt){var len=pt[0]/CHATUR*100;
+      h+='<circle class="wh-i" data-y="'+i+'" cx="180" cy="180" r="90" fill="none" stroke="var('+y.color+')" opacity="'+pt[1]+'" pathLength="100" stroke-dasharray="'+Math.max(0,len-.35)+' '+(100-len+.35)+'" stroke-dashoffset="'+(-off)+'" transform="rotate(-90 180 180)"/>';
+      off+=len;});
+  });
+  var a0=0;
+  YUGA.forEach(function(y,i){var mid=(a0+y.dev/2)/CHATUR*2*Math.PI-Math.PI/2;h+='<text class="lab" x="'+(cx+Math.cos(mid)*128)+'" y="'+(cy+Math.sin(mid)*128+6)+'" text-anchor="middle">'+y.short+'</text>';a0+=y.dev});
+  var th=((10800+KALI_D)/CHATUR)*2*Math.PI-Math.PI/2,nx=Math.cos(th),ny=Math.sin(th);
+  h+='<circle class="pulse" cx="'+(cx+nx*128)+'" cy="'+(cy+ny*128)+'" r="9" fill="var(--now)"/><circle cx="'+(cx+nx*128)+'" cy="'+(cy+ny*128)+'" r="7" fill="var(--now)" stroke="var(--bg)" stroke-width="3" style="pointer-events:none"/>';
+  h+='<text id="wt-1" x="180" y="170" text-anchor="middle" font-size="26"></text><text id="wt-2" class="wt-s" x="180" y="194" text-anchor="middle"></text><text id="wt-3" class="wt-s" x="180" y="212" text-anchor="middle"></text>';
+  svg.innerHTML=h;
+  var panel=$('#wh-p'),cur=3;
+  function pick(i){
+    cur=i;var y=YUGA[i],main=y.dev-2*y.sand;
+    svg.classList.add('has');
+    $$('.wh-y',svg).forEach(function(c,k){c.classList.toggle('sel',k===i)});
+    $('#wt-1').textContent=y.name;
+    $('#wt-2').textContent=fmt(y.dev/CHATUR*100)+'% अवधि';
+    $('#wt-3').textContent='धर्मका '+nd(y.legs)+' पाउ';
+    var legs='';for(var k=0;k<4;k++)legs+='<i class="'+(k<y.legs?'':'off')+'" style="transition-delay:'+(k*.08)+'s"></i>';
+    var start=YUGA.slice(0,i).reduce(function(a,b){return a+b.dev},0),stt=st(start,y.dev,10800+KALI_D);
+    var chip=stt==='done'?'<span class="chip done">पूरा भइसकेको</span>':'<span class="chip now">चलिरहेको</span>';
+    var nxt=YUGA[(i+1)%4],prv=YUGA[(i+3)%4];
+    panel.innerHTML='<h3 style="color:var('+y.color+')">'+y.name+'</h3><p class="lead2">चतुर्युग चक्रको '+nd(i+1)+' औँ युग '+chip+'</p>'+
+      '<p>'+(i===0?'यो चक्रको सुरुवात हो। ':'')+y.tone+'</p>'+
+      '<div class="yb" style="--c:var('+y.color+')"><div class="yb-top"><strong>धर्म-वृषभका पाउ</strong><span class="alt">प्रत्येक युगमा एक पाउ घट्छ</span></div><div class="legs" role="img" aria-label="धर्मका '+nd(y.legs)+' पाउ बाँकी">'+legs+'</div>'+
+      '<div class="mini"><i class="sd" style="--w:'+y.sand+'"></i><i style="--w:'+main+'"></i><i class="sd" style="--w:'+y.sand+'"></i></div><div class="mini-c"><span>सन्ध्या '+nd(y.sand)+'</span><span>मुख्य '+nd(main)+'</span><span>सन्ध्यांश '+nd(y.sand)+'</span></div>'+
+      '<dl><dt>अवधि</dt><dd>'+U(y.dev)+' '+A(y.dev)+'</dd><dt>मानव आयु</dt><dd>'+nd(y.life)+' वर्ष (मनुस्मृति १.८३)</dd><dt>युगधर्म</dt><dd>'+y.dharma+'</dd><dt>अवतार</dt><dd>'+y.av+'</dd><dt>क्रम</dt><dd>अघि '+prv.name+', पछि '+(i===3?'नयाँ चक्रको सत्ययुग':nxt.name)+'</dd></dl></div>'+
+      '<div class="pre"><button type="button" data-n="-1">अघिल्लो युग</button><button type="button" data-n="1">अर्को युग</button></div>'+
+      '<p class="fine" style="margin-top:14px">यो चक्र १२,००० दिव्य वर्ष (४३,२०,००० मानव वर्ष) को हो। धर्म एक-एक पाउले घट्दै जाँदा युगको अवधि पनि ४:३:२:१ को अनुपातमा घट्छ। कलियुग सकिएपछि फेरि सत्ययुग सुरु हुन्छ। यस्ता ७१ चक्र घुम्दा एक मन्वन्तर, र १,००० चक्र (सन्धिसहित) घुम्दा ब्रह्माको एक दिन बन्छ।</p>';
+  }
+  svg.addEventListener('click',function(e){var c=e.target.closest('[data-y]');if(c)pick(+c.dataset.y)});
+  svg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){var c=e.target.closest('.wh-y');if(c){e.preventDefault();pick(+c.dataset.y)}}});
+  panel.addEventListener('click',function(e){var b=e.target.closest('[data-n]');if(b)pick((cur+ +b.dataset.n+4)%4)});
+  pick(3);
   var rem=432000-KALI_H,endCE=NOW.getFullYear()+rem;
   var pada='';for(var q=0;q<4;q++){var f=Math.max(0,Math.min(1,(KALI_H-q*108000)/108000))*100;pada+='<div><i style="--f:'+f+'%"></i></div>'}
   $('#kali-x').innerHTML='<h3>कलियुग अहिले कहाँ पुगेको छ?</h3><div class="two"><div>'+
-    '<p style="margin-bottom:6px"><strong>बितेको:</strong> '+fmt(KALI_H,1)+' मानव वर्ष ('+pct(KALI_H/432000*100,2)+')<br><strong>बाँकी:</strong> '+fmt(rem,1)+' मानव वर्ष ('+pct(rem/432000*100,2)+')</p>'+
+    '<p style="margin-bottom:6px"><strong>बितेको:</strong> '+fmt(KALI_H,1)+' मानव वर्ष ('+pct(KALI_H/432000*100,2)+')<br><strong>बाँकी:</strong> '+fmt(rem,1)+' मानव वर्ष ('+pct(rem/432000*100,2)+'), अर्थात् '+words(rem)+' वर्ष</p>'+
     '<p style="margin:0;color:var(--ink2)">कलियुगको अन्त्य लगभग ई.सं. '+fmt(Math.round(endCE))+' मा हुने गणना हुन्छ। कलियुगको सन्ध्या ३६,००० मानव वर्षको हो, त्यसमध्ये हामीले '+pct(KALI_H/36000*100,1)+' पार गरेका छौँ।</p></div>'+
     '<div><div class="pada">'+pada+'</div><div class="pada-l"><span>चरण १</span><span>चरण २</span><span>चरण ३</span><span>चरण ४</span></div>'+
     '<p style="margin:10px 0 0;color:var(--ink2);font-size:.94rem">प्रत्येक चरण १,०८,००० मानव वर्षको हो। सङ्कल्पमा \u201cकलिप्रथमचरणे\u201d भन्नुको अर्थ यही हो: हामी पहिलो चरणको '+pct(KALI_H/108000*100,2)+' मा छौँ।</p></div></div>';
@@ -748,7 +1603,7 @@ buildLadder();
   });
 })();
 
-/* ---------- log-scale chart ---------- */
+/* ---------- scale chart (aligned via shared grid) ---------- */
 (function(){
   var lifeEl=(50*BY+E)*D;
   var data=[
@@ -766,42 +1621,86 @@ buildLadder();
     ['ब्रह्माको आयुमा आजसम्म बितेको',lifeEl,'now'],
     ['ब्रह्माको पूरा आयु (१०० वर्ष)',100*BY*D,'trad']
   ];
-  var h='';
+  var h='<div class="over" style="--div:6"></div>';
   data.forEach(function(d){
     var w=(Math.log10(d[1])-3)/12*100,cls=d[2]==='sci'?'sci':'',c=d[2]==='now'?'--now':'--navy';
-    var inside=w>72;
-    h+='<div class="lg-row"><div class="lg-name">'+d[0]+'</div><div class="lg-bar" style="--w:'+w+'%;--c:var('+c+')"><i class="'+cls+'"></i><b class="'+(inside?'in':'')+'">'+words(d[1])+' वर्ष</b></div></div>';
+    h+='<div class="r"><div class="nm">'+d[0]+'</div><div class="bar2" style="--w:'+w+'%;--c:var('+c+')"><i class="'+cls+'"></i><b class="'+(w>72?'in':'')+'">'+words(d[1])+' वर्ष</b></div></div>';
   });
   var ax=['१ हजार','१ लाख','१ करोड','१ अर्ब','१ खर्ब','१ नील','१ पद्म'].map(function(t,i){return '<span style="left:'+(i/6*100)+'%">'+t+'</span>'}).join('');
-  h+='<div class="lg-ax"><span></span><div>'+ax+'</div></div>';
+  h+='<div class="ax"><div></div><div class="axp">'+ax+'</div></div>';
   $('#lg').innerHTML=h;
 })();
 
-/* ---------- unit tables ---------- */
+/* ---------- interactive unit chart ---------- */
 (function(){
-  var day=[['१ प्राण (असु)','१० गुर्वक्षर, लगभग ४ सेकेन्ड'],['६ प्राण','१ विनाडी (लगभग २४ सेकेन्ड)'],['६० विनाडी','१ नाडी या घडी (लगभग २४ मिनेट)'],['६० नाडी','१ अहोरात्र (२४ घण्टा)'],['३० अहोरात्र','१ मास'],['१२ मास','१ मानव वर्ष']];
-  $('#t-day tbody').innerHTML=day.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>'}).join('');
-  var u=[
-    ['देव अहोरात्र','१ मानव वर्ष (उत्तरायण दिन, दक्षिणायन रात)',1/360],
-    ['देव मास','३० देव अहोरात्र',30/360],
-    ['देव वर्ष (दिव्य वर्ष)','३६० देव अहोरात्र',1],
-    ['सत्ययुग','४०० + ४,००० + ४०० देव वर्ष',4800],
-    ['त्रेतायुग','३०० + ३,००० + ३०० देव वर्ष',3600],
-    ['द्वापरयुग','२०० + २,००० + २०० देव वर्ष',2400],
-    ['कलियुग','१०० + १,००० + १०० देव वर्ष',1200],
-    ['चतुर्युग (महायुग)','सत्य + त्रेता + द्वापर + कलि',CHATUR],
-    ['मन्वन्तर','७१ चतुर्युग',MANU],
-    ['मन्वन्तर सन्धि','१ सत्ययुग बराबर',SANDHI],
-    ['कल्प (ब्रह्माको १ दिन)','१४ मन्वन्तर + १५ सन्धि = १,००० चतुर्युग',KALPA],
-    ['ब्रह्माको अहोरात्र','१ कल्प दिन + १ कल्प रात्रि',AH],
-    ['ब्रह्माको वर्ष','३६० अहोरात्र',BY],
-    ['परार्ध','५० ब्रह्म वर्ष',50*BY],
-    ['ब्रह्माको आयु','१०० वर्ष (२ परार्ध)',100*BY]
+  function cells(n,c,t){return [{w:1,c:c,cn:n,t:t}]}
+  var UT=[
+    {n:'देव अहोरात्र',hum:1,c:'--water',g:'देव तह',make:'१ मानव वर्ष',story:'मनुष्यको १ वर्ष देवताको १ दिन-रात हो। उत्तरायण (६ महिना) उनीहरूको दिन र दक्षिणायन (६ महिना) उनीहरूको रात।',parts:[{w:6,c:'--water',t:'उत्तरायण: दिन'},{w:6,c:'--night',t:'दक्षिणायन: रात'}]},
+    {n:'देव मास',hum:30,c:'--water',g:'देव तह',make:'३० देव अहोरात्र',story:'देवताको एक महिना हाम्रो ३० वर्ष हो।',parts:cells(30,'--water','३० देव अहोरात्र')},
+    {n:'दिव्य वर्ष (कस्मिक वर्ष)',hum:360,c:'--water',g:'देव तह',make:'१२ देव मास = ३६० देव अहोरात्र',story:'देवताको एक वर्ष हाम्रा ३६० वर्ष हो। सबै ठूला एकाइ यसैको गुणनबाट बन्छन्।',parts:cells(12,'--water','१२ देव मास')},
+    {n:'कलियुग',hum:432000,c:'--kali',g:'चार युग',make:'१०० + १,००० + १०० = १,२०० दिव्य वर्ष',story:'चार युगमध्ये सबैभन्दा छोटो, जसमा धर्मको एक पाउ मात्र बाँकी हुन्छ।',parts:[{w:100,c:'--kali',sd:1,t:'सन्ध्या'},{w:1000,c:'--kali',t:'मुख्य कलि'},{w:100,c:'--kali',sd:1,t:'सन्ध्यांश'}]},
+    {n:'द्वापरयुग',hum:864000,c:'--dvapara',on:'#fff',g:'चार युग',make:'२०० + २,००० + २०० = २,४०० दिव्य वर्ष',story:'कलियुगको दोब्बर। धर्म दुई पाउमा हुन्छ।',parts:[{w:200,c:'--dvapara',sd:1,t:'सन्ध्या'},{w:2000,c:'--dvapara',t:'मुख्य द्वापर'},{w:200,c:'--dvapara',sd:1,t:'सन्ध्यांश'}]},
+    {n:'त्रेतायुग',hum:1296000,c:'--treta',g:'चार युग',make:'३०० + ३,००० + ३०० = ३,६०० दिव्य वर्ष',story:'कलियुगको तेब्बर। धर्म तीन पाउमा हुन्छ।',parts:[{w:300,c:'--treta',sd:1,t:'सन्ध्या'},{w:3000,c:'--treta',t:'मुख्य त्रेता'},{w:300,c:'--treta',sd:1,t:'सन्ध्यांश'}]},
+    {n:'सत्ययुग',hum:1728000,c:'--satya',on:'#1a1200',g:'चार युग',make:'४०० + ४,००० + ४०० = ४,८०० दिव्य वर्ष',story:'कलियुगको चौबर्ति, सबैभन्दा लामो युग। धर्मका चारै पाउ हुन्छन्।',parts:[{w:400,c:'--satya',sd:1,t:'सन्ध्या'},{w:4000,c:'--satya',t:'मुख्य सत्य'},{w:400,c:'--satya',sd:1,t:'सन्ध्यांश'}]},
+    {n:'चतुर्युग (महायुग)',hum:4320000,c:'--navy',g:'मन्वन्तर र कल्प तह',make:'सत्य + त्रेता + द्वापर + कलि = १२,००० दिव्य वर्ष',story:'चार युगको एक पूरा चक्र। यसको लम्बाइमा सत्य ४०%, त्रेता ३०%, द्वापर २०% र कलि १०% हुन्छन्।',parts:[{w:4800,c:'--satya',on:'#1a1200',t:'सत्य'},{w:3600,c:'--treta',t:'त्रेता'},{w:2400,c:'--dvapara',t:'द्वापर'},{w:1200,c:'--kali',t:'कलि'}]},
+    {n:'मन्वन्तर सन्धि',hum:1728000,c:'--water',on:'#04222d',g:'मन्वन्तर र कल्प तह',make:'१ सत्ययुग बराबर = ४,८०० दिव्य वर्ष',story:'दुई मन्वन्तरका बीचको जलप्रलय-काल। लम्बाइ एउटा सत्ययुगजत्ति हुन्छ।',parts:[{w:1,c:'--water',on:'#04222d',sd:1,t:'जलप्रलय'}]},
+    {n:'मन्वन्तर',hum:306720000,c:'--navy',g:'मन्वन्तर र कल्प तह',make:'७१ चतुर्युग = ८,५२,००० दिव्य वर्ष',story:'एक मनुको शासनकाल, जसमा एक इन्द्र र सात ऋषि पनि रहन्छन्।',parts:cells(71,'--navy','७१ चतुर्युग')},
+    {n:'कल्प (ब्रह्माको १ दिन)',hum:4.32e9,c:'--navy',g:'मन्वन्तर र कल्प तह',make:'१४ मन्वन्तर + १५ सन्धि = १,००० चतुर्युग',story:'ब्रह्माको एउटा दिन। यसभित्र १४ मन्वन्तर र तिनका बीचका १५ सन्धिकाल पर्छन्।',parts:SEQ.map(function(s){return {w:s.len,c:s.t==='s'?'--water':'--navy',on:s.t==='s'?'#04222d':'#fff',t:s.t==='m'?nd(s.n):''}})},
+    {n:'ब्रह्माको अहोरात्र',hum:8.64e9,c:'--night',g:'ब्रह्म तह',make:'१ कल्प दिन + १ कल्प रात्रि',story:'ब्रह्माको एक दिन र एक रात मिलेर एक अहोरात्र हुन्छ।',parts:[{w:1,c:'--satya',on:'#1a1200',t:'दिन: सृष्टि'},{w:1,c:'--night',t:'रात: प्रलय'}]},
+    {n:'ब्रह्माको वर्ष',hum:3.1104e12,c:'--night',g:'ब्रह्म तह',make:'३६० अहोरात्र = ७२० कल्प',story:'ब्रह्माको एक वर्ष। अहिले चलिरहेको ५१ औँ वर्षको पहिलो दिनमा हामी छौँ।',parts:cells(360,'--night','३६० अहोरात्र')},
+    {n:'परार्ध',hum:1.5552e14,c:'--night',g:'ब्रह्म तह',make:'५० ब्रह्म वर्ष',story:'ब्रह्माको आयुको आधा भाग। पहिलो परार्ध सकिएर हामी दोस्रो परार्धमा छौँ।',parts:cells(50,'--night','५० ब्रह्म वर्ष')},
+    {n:'ब्रह्माको पूरा आयु',hum:3.1104e14,c:'--night',g:'ब्रह्म तह',make:'१०० ब्रह्म वर्ष = २ परार्ध',story:'ब्रह्माको १०० वर्षको आयु, जसपछि प्राकृतिक प्रलय आउँछ।',parts:[{w:1,c:'--navy',t:'प्रथम परार्ध (पूरा)'},{w:1,c:'--night',t:'द्वितीय परार्ध'}]}
   ];
-  $('#t-units tbody').innerHTML=u.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td class="num">'+fmt(r[2],r[2]<1?4:0)+'</td><td class="num">'+fmt(r[2]*D,r[2]*D<1?4:0)+'<br><span class="alt">'+(r[2]*D>=1000?words(r[2]*D):'')+'</span></td></tr>'}).join('');
+  var MAXL=15;
+  var h='<div class="over" style="--div:'+7.5+'"></div>';
+  UT.forEach(function(u,i){
+    var w=Math.log10(u.hum)/MAXL*100;
+    h+='<button type="button" class="r" data-i="'+i+'" style="--c:var('+u.c+')" aria-pressed="false"><span class="nm">'+u.n+'</span><span class="bar2" style="--w:'+Math.max(w,.8)+'%;--c:var('+u.c+')"><i></i><b class="'+(w>72?'in':'')+'">'+(u.hum>=1000?words(u.hum):fmt(u.hum))+' वर्ष</b></span></button>';
+  });
+  var ticks=[0,2,4,6,8,10,12,14];
+  h+='<div class="ax"><div></div><div class="axp">'+ticks.map(function(t){var v=Math.pow(10,t);return '<span style="left:'+(t/MAXL*100)+'%">'+(t===0?'१':words(v))+'</span>'}).join('')+'</div></div>';
+  $('#ut').innerHTML=h;
+  /* overlay lines every 2 decades: 7.5 divisions of 2 decades = 15 decades */
+  var det=$('#ut-d');
+  function ribbon(u){
+    var tot=u.parts.reduce(function(a,p){return a+p.w},0);
+    return '<div class="ribbon" role="img" aria-label="बनोट">'+u.parts.map(function(p){var share=p.w/tot;return '<i class="'+(p.cn?'cl':'')+(p.sd?' sd':'')+'" style="--w:'+p.w+';--c:var('+p.c+');'+(p.on?'--on:'+p.on+';':'')+(p.cn?'--cn:'+p.cn+';':'')+'">'+(p.t&&share>.11?p.t:'')+'</i>'}).join('')+'</div>';
+  }
+  var cur=0;
+  function pick(i){
+    cur=i;
+    $$('#ut .r').forEach(function(b,k){b.setAttribute('aria-pressed',k===i?'true':'false')});
+    var u=UT[i],prev=UT[i-1],devv=u.hum/D;
+    det.innerHTML='<h3 style="color:var('+u.c+')">'+u.n+'</h3><p style="margin:0 0 6px"><span class="chip fut">'+u.g+'</span></p><p>'+u.story+'</p>'+
+      '<p style="margin:0 0 4px"><strong>बनोट:</strong> '+u.make+'</p>'+ribbon(u)+
+      '<dl style="display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 16px;margin:14px 0 0;font-size:.95rem"><dt style="color:var(--ink2)">मानव वर्षमा</dt><dd style="margin:0">'+fmt(u.hum,u.hum<10?2:0)+(u.hum>=1e5?' ('+words(u.hum)+')':'')+'</dd><dt style="color:var(--ink2)">दिव्य वर्षमा</dt><dd style="margin:0">'+fmt(devv,devv<10?3:0)+(devv>=1e5?' ('+words(devv)+')':'')+'</dd>'+''+'</dl>';
+  }
+  $('#ut').addEventListener('click',function(e){var b=e.target.closest('.r');if(b)pick(+b.dataset.i)});
+  pick(7);
+  /* comparator */
+  var a=$('#cmp-a'),b=$('#cmp-b'),o=$('#cmp-o');
+  var opts=UT.map(function(u,i){return '<option value="'+i+'">'+u.n+'</option>'}).join('');
+  a.innerHTML=opts;b.innerHTML=opts;a.value=9;b.value=7;
+  function cmp(){var ua=UT[+a.value],ub=UT[+b.value],r=ua.hum/ub.hum;
+    o.textContent=ua.n+' = '+ub.n+' को '+(r>=1000?words(r):fmt(r,r<10?3:1))+' गुणा';}
+  a.addEventListener('change',cmp);b.addEventListener('change',cmp);cmp();
+  /* day-level chain */
+  var DC=[
+    {n:'१ प्राण (असु)',c:'--water',t:'सूर्य सिद्धान्तमा १० गुर्वक्षर (दीर्घ अक्षर) उच्चारण गर्न लाग्ने समय एक प्राण हो, जुन करिब ४ सेकेन्डको हुन्छ। एक दिनमा २१,६०० प्राण हुन्छन्।'},
+    {n:'६ प्राण = १ विनाडी',c:'--treta',t:'६ प्राणको एक विनाडी हुन्छ, अर्थात् लगभग २४ सेकेन्ड।'},
+    {n:'६० विनाडी = १ नाडी',c:'--satya',on:'#1a1200',t:'६० विनाडीको एक नाडी (घडी) हुन्छ, अर्थात् लगभग २४ मिनेट।'},
+    {n:'६० नाडी = १ अहोरात्र',c:'--dvapara',t:'६० नाडी मिलेर एक अहोरात्र, अर्थात् पूरा २४ घण्टा हुन्छ।'},
+    {n:'३० अहोरात्र = १ मास',c:'--navy',t:'३० अहोरात्रको एक मास हुन्छ।'},
+    {n:'१२ मास = १ मानव वर्ष',c:'--kali',t:'१२ मासको एक मानव वर्ष हुन्छ, र यही देवताको एक अहोरात्र हो। यहीँबाट दिव्य वर्षको गन्ती सुरु हुन्छ।'}
+  ];
+  var dc=$('#dchain');
+  dc.innerHTML=DC.map(function(d,i){return (i?'<span class="x">×</span>':'')+'<button type="button" data-i="'+i+'" style="--c:var('+d.c+');'+(d.on?'color:'+d.on:'')+'" aria-pressed="false">'+d.n+'</button>'}).join('');
+  function dpick(i){$$('button',dc).forEach(function(b){b.setAttribute('aria-pressed',+b.dataset.i===i?'true':'false')});$('#dchain-t').textContent=DC[i].t}
+  dc.addEventListener('click',function(e){var b=e.target.closest('button');if(b)dpick(+b.dataset.i)});
+  dpick(0);
 })();
 
-/* ---------- history dots ---------- */
+/* ---------- history dot plot (aligned) ---------- */
 (function(){
   var MAX=6000;
   function ce(t){return t<3102?'ई.पू. '+nd(Math.ceil(3102-t)):'ई.सं. '+nd(Math.floor(t-3101))}
@@ -814,11 +1713,14 @@ buildLadder();
     {t:5000,n:'कलि ५,००० वर्ष पूरा',s:'कलि संवत्को पाँच हजारौँ वर्ष',ce:'ई.सं. १८९९'},
     {t:KALI_H,n:'आज',s:'तपाईं अहिले यहाँ हुनुहुन्छ',ce:ce(KALI_H),c:'--now'}
   ];
-  var ticks=[0,1000,2000,3000,4000,5000,6000];
-  var axis='<div class="hd-ax"><span style="visibility:hidden">.</span><div>'+ticks.map(function(t){return '<span style="left:'+(t/MAX*100)+'%">'+nd(t)+'<br>'+ce(t===0?0.4:t)+'</span>'}).join('')+'</div><span style="text-align:right">कलि संवत् / वर्ष</span></div>';
-  // fix first/last label alignment via CSS rules
-  var rows=ev.map(function(e){return '<div class="hd-row"><div><b>'+e.n+'</b><small>'+e.s+'</small></div><div class="hd-ruler" role="img" aria-label="'+e.n+', कलि '+fmt(e.t,0)+'"><i style="left:'+(e.t/MAX*100)+'%;'+(e.c?'--c:var('+e.c+')':'')+'"></i></div><div class="hd-v"><b>'+e.ce+'</b><small>कलि '+fmt(Math.round(e.t*10)/10,e.t===Math.round(e.t)?0:1)+'</small></div></div>'}).join('');
-  $('#hd').innerHTML='<div class="hd">'+rows+'</div>'+axis;
+  var h='<div class="over" style="--div:6"><i class="today" style="left:'+(KALI_H/MAX*100)+'%"></i></div>';
+  ev.forEach(function(e){
+    var kv='कलि '+fmt(Math.round(e.t*10)/10,e.t===Math.round(e.t)?0:1);
+    h+='<div class="r"><div class="hd-n"><b>'+e.n+'</b><small>'+e.s+'</small><small class="mob">'+e.ce+', '+kv+'</small></div><div class="hd-ruler" role="img" aria-label="'+e.n+', '+kv+'"><i style="left:'+(e.t/MAX*100)+'%;'+(e.c?'--c:var('+e.c+')':'')+'"></i></div><div class="hd-v"><b>'+e.ce+'</b><small>'+kv+'</small></div></div>';
+  });
+  var tk=[0,1000,2000,3000,4000,5000,6000];
+  h+='<div class="ax"><div></div><div class="axp">'+tk.map(function(t){return '<span style="left:'+(t/MAX*100)+'%">कलि '+nd(t)+'<br>'+(t===0?'ई.पू. ३१०२':ce(t))+'</span>'}).join('')+'</div><div></div></div>';
+  $('#hd').innerHTML=h;
 })();
 
 /* ---------- scrubber ---------- */
@@ -844,9 +1746,8 @@ buildLadder();
     var t=+rng.value,r=resolve(t),p=t/KALPA*100;
     $('#pt').style.setProperty('--pos',p+'%');
     var place=r.seg.t==='s'?nd(r.seg.n)+' औँ सन्धिकाल (जलप्रलय)':nd(r.seg.n)+'. '+MANUS[r.seg.n-1][0]+' मन्वन्तर';
-    var diff=t-E,cmp=Math.abs(diff)<1?'लगभग आजकै समय':'आजभन्दा '+U(Math.abs(diff))+(diff<0?' अघि':' पछि');
-    var h='<div class="big">'+place+'</div><dl>'+
-      '<dt>कल्पमा स्थान</dt><dd>'+pct(p,3)+' ('+U(t)+')</dd>';
+    var diff=t-E,cmp=Math.abs(diff)<1?'लगभग आजकै समय':'आजभन्दा '+T(Math.abs(diff))+(diff<0?' अघि':' पछि');
+    var h='<div class="big">'+place+'</div><dl><dt>कल्पमा स्थान</dt><dd>'+pct(p,3)+' ('+T(t)+' बितेको)</dd>';
     if(r.seg.t==='m'){
       h+='<dt>चतुर्युग</dt><dd>'+nd(r.c)+' औँ (७१ मध्ये)</dd><dt>युग</dt><dd>'+r.y.name+', '+r.part+'</dd><dt>युगभित्र बितेको</dt><dd>'+U(r.oy,2)+' '+A(r.oy,2)+'</dd>';
     }else{
@@ -854,12 +1755,11 @@ buildLadder();
     }
     h+='<dt>आजसँग तुलना</dt><dd>'+cmp+'</dd></dl>';
     res.innerHTML=h;
-    $('#scr-lbl')&&($('#scr-lbl').textContent='');
   }
   rng.value=Math.round(E);
   rng.addEventListener('input',render);
   var pre=[['आज',E],['कल्पको सुरु',0],['७ औँ मन्वन्तर सुरु',M7S],['कलियुग सुरु',KALI_START],['७ औँ मन्वन्तरको अन्त्य',M7S+MANU],['८ औँ मन्वन्तर सुरु',8*SANDHI+7*MANU],['कल्पको मध्य',KALPA/2],['कल्पान्त',KALPA-1]];
-  $('#scr-pre').innerHTML=pre.map(function(a,i){return '<button type="button" data-v="'+a[1]+'">'+a[0]+'</button>'}).join('');
+  $('#scr-pre').innerHTML=pre.map(function(a){return '<button type="button" data-v="'+a[1]+'">'+a[0]+'</button>'}).join('');
   $('#scr-pre').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;rng.value=Math.round(+b.dataset.v);render()});
   window.__renderScr=render;
   render();
@@ -869,32 +1769,32 @@ buildLadder();
 (function(){
   var dv=$('#c-dev'),hm=$('#c-hum');
   function num(s){var v=parseFloat(toAscii(s));return isFinite(v)?v:0}
-  function raw(n){return String(+n.toPrecision(15))}
+  function raw(n){return nd(String(+n.toPrecision(15)))}
   function lab(n){return n>=1000?words(n):fmt(n,2)}
-  function fromDev(){var v=num(dv.value);hm.value=raw(v*D);$('#c-dev-w').textContent=v?lab(v)+' देव वर्ष':'';$('#c-hum-w').textContent=v?lab(v*D)+' मानव वर्ष':''}
-  function fromHum(){var v=num(hm.value);dv.value=raw(v/D);$('#c-hum-w').textContent=v?lab(v)+' मानव वर्ष':'';$('#c-dev-w').textContent=v?lab(v/D)+' देव वर्ष':''}
+  function fromDev(){var v=num(dv.value);hm.value=raw(v*D);$('#c-dev-w').textContent=v?lab(v)+' दिव्य वर्ष':'';$('#c-hum-w').textContent=v?lab(v*D)+' मानव वर्ष':''}
+  function fromHum(){var v=num(hm.value);dv.value=raw(v/D);$('#c-hum-w').textContent=v?lab(v)+' मानव वर्ष':'';$('#c-dev-w').textContent=v?lab(v/D)+' दिव्य वर्ष':''}
   dv.addEventListener('input',fromDev);hm.addEventListener('input',fromHum);
-  dv.value='12000';fromDev();
+  dv.value=nd('12000');fromDev();
   var pre=[['कलियुग',1200],['१ चतुर्युग',12000],['१ मन्वन्तर',MANU],['१ कल्प',KALPA],['ब्रह्माको १ वर्ष',BY],['ब्रह्माको आयु',100*BY]];
   $('#c-pre').innerHTML=pre.map(function(a){return '<button type="button" data-v="'+a[1]+'">'+a[0]+'</button>'}).join('');
-  $('#c-pre').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;dv.value=b.dataset.v;fromDev()});
+  $('#c-pre').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;dv.value=nd(b.dataset.v);fromDev()});
 })();
 
 /* ---------- FAQ ---------- */
 (function(){
   var q=[
-    ['देव वर्षलाई ३६० ले किन गुणा गरिन्छ?','मनुस्मृति (१.६७) र सूर्य सिद्धान्त (१.१३) अनुसार मनुष्यको १ वर्ष देवताको १ अहोरात्र हो: उत्तरायण देवताको दिन र दक्षिणायन रात। देवताको वर्षमा ३६० अहोरात्र हुने भएकाले १ देव वर्ष = ३६० मानव वर्ष हुन्छ।'],
-    ['सन्धिकाल र सन्ध्या/सन्ध्यांश एउटै हुन्?','होइनन्। सन्ध्या र सन्ध्यांश प्रत्येक युगको सुरु र अन्त्यमा हुन्छन् (सत्ययुगमा ४०० + ४०० देव वर्ष, कलियुगमा १०० + १०० आदि)। सन्धिकाल चाहिँ दुई मन्वन्तरका बीचको जलप्रलय-काल हो, र त्यसको लम्बाइ एक सत्ययुग (४,८०० देव वर्ष) बराबर हुन्छ। कल्पमा १४ मन्वन्तरका लागि १५ सन्धिकाल हुन्छन्।'],
-    ['हामी कलि संवत् ५,१२७ मा छौँ कि ५,१२८ मा?','कलि संवत् पूरा भएका वर्षका रूपमा गनिन्छ। चैत्र २०२६ मा ५,१२७ वर्ष पूरा भएको मानिन्छ, र यो पृष्ठको जीवित गणनाले आजको मितिसम्म पूरा भएको भाग दशमलवसहित (अहिले '+fmt(KALI_H,1)+') देखाउँछ। कुन सङ्ख्या "वर्तमान वर्ष" भनेर लेखिन्छ भन्ने कुरा पञ्चाङ्गको परम्परामा भर पर्छ।'],
+    ['दिव्य वर्षलाई ३६० ले किन गुणा गरिन्छ?','मनुस्मृति (१.६७) र सूर्य सिद्धान्त (१.१३) अनुसार मनुष्यको १ वर्ष देवताको १ अहोरात्र हो: उत्तरायण देवताको दिन र दक्षिणायन रात। देवताको वर्षमा ३६० अहोरात्र हुने भएकाले १ दिव्य वर्ष = ३६० मानव वर्ष हुन्छ।'],
+    ['सन्धिकाल र सन्ध्या/सन्ध्यांश एउटै हुन्?','होइनन्। सन्ध्या र सन्ध्यांश प्रत्येक युगको सुरु र अन्त्यमा हुन्छन् (सत्ययुगमा ४०० + ४०० दिव्य वर्ष, कलियुगमा १०० + १०० आदि)। सन्धिकाल चाहिँ दुई मन्वन्तरका बीचको जलप्रलय-काल हो, र त्यसको लम्बाइ एक सत्ययुग (४,८०० दिव्य वर्ष) बराबर हुन्छ। कल्पमा १४ मन्वन्तरका लागि १५ सन्धिकाल हुन्छन्।'],
+    ['हामी कलि संवत् ५,१२७ मा छौँ कि ५,१२८ मा?','कलि संवत् पूरा भएका वर्षका रूपमा गनिन्छ। चैत्र २०२६ मा ५,१२७ वर्ष पूरा भएको मानिन्छ, र यो पृष्ठको जीवित गणनाले आजको मितिसम्म पूरा भएको भाग दशमलवसहित (अहिले '+fmt(KALI_H,1)+') देखाउँछ। कुन सङ्ख्यालाई "वर्तमान वर्ष" भनेर लेखिन्छ भन्ने कुरा पञ्चाङ्गको परम्परामा भर पर्छ।'],
     ['सबै परम्पराले यही गणना मान्छन्?','मान्दैनन्। यहाँ सूर्य सिद्धान्त र पुराणको पद्धति प्रयोग गरिएको छ: मन्वन्तरमा ७१ चतुर्युग र १५ सन्धि। आर्यभटले भने प्रत्येक मन्वन्तरमा ७२ महायुग र कल्पमा १,००८ महायुग मानेका छन्, र चार युगलाई बराबर भागमा बाँडेका छन्। ग्रन्थ अनुसार अङ्क फरक पर्न सक्छ।'],
-    ['यो पृष्ठमा आजको स्थान कसरी निकालिएको छ?','<ol><li>कलियुगको आरम्भ १८ फेब्रुअरी ३१०२ ई.पू. (जुलियन) देखि आजसम्म बितेको समयलाई ३६५.२५ दिनले भाग गरिन्छ: '+fmt(KALI_H,2)+' मानव वर्ष = '+fmt(KALI_D,4)+' देव वर्ष।</li><li>कल्पको सुरुदेखि ७ सन्धि (३३,६००) + ६ मन्वन्तर (५१,१२,०००) + वैवस्वतका २७ चतुर्युग (३,२४,०००) + २८ औँ चतुर्युगका सत्य, त्रेता र द्वापर (१०,८००) जोडिन्छ, जसको जम्मा ५४,८०,४०० देव वर्ष हुन्छ।</li><li>त्यसमा कलियुगको बितेको भाग जोडेर कल्पमा बितेको समय: <strong>'+fmt(E,2)+' देव वर्ष</strong> ('+pct(E/KALPA*100,3)+')।</li><li>ब्रह्माको आयुमा ५० वर्ष (४,३२,००,००,००,००० देव वर्ष) यसमा थपिन्छ, किनकि हामी ५१ औँ वर्षको पहिलो दिनमा छौँ।</li></ol>'],
-    ['ब्रह्माको ५० वर्ष कति देव वर्ष हुन्छ?','१ कल्प = १,२०,००,००० देव वर्ष, १ अहोरात्र = २,४०,००,००० देव वर्ष, १ ब्रह्म वर्ष = ३६० अहोरात्र = ८६,४०,००,००० देव वर्ष (८.६४ अर्ब), त्यसैले ५० वर्षको १ परार्ध = ४३,२०,००,००,००० देव वर्ष = १,५५,५२,००,००,००,००० मानव वर्ष (लगभग १५ नील ५५ खर्ब)।'],
+    ['यो पृष्ठमा आजको स्थान कसरी निकालिएको छ?','<ol><li>कलियुगको आरम्भ १८ फेब्रुअरी ३१०२ ई.पू. (जुलियन) देखि आजसम्म बितेको समयलाई ३६५.२५ दिनले भाग गरिन्छ: '+fmt(KALI_H,2)+' मानव वर्ष = '+fmt(KALI_D,4)+' दिव्य वर्ष।</li><li>कल्पको सुरुदेखि ७ सन्धि (३३,६००) + ६ मन्वन्तर (५१,१२,०००) + वैवस्वतका २७ चतुर्युग (३,२४,०००) + २८ औँ चतुर्युगका सत्य, त्रेता र द्वापर (१०,८००) जोडिन्छ, जसको जम्मा ५४,८०,४०० दिव्य वर्ष हुन्छ।</li><li>त्यसमा कलियुगको बितेको भाग जोडेर कल्पमा बितेको समय: <strong>'+fmt(E,2)+' दिव्य वर्ष</strong> ('+pct(E/KALPA*100,3)+')।</li><li>ब्रह्माको आयुमा ५० वर्ष (४३,२०,००,००,००० दिव्य वर्ष) यसमा थपिन्छ, किनकि हामी ५१ औँ वर्षको पहिलो दिनमा छौँ।</li></ol>'],
+    ['ब्रह्माको ५० वर्ष कति दिव्य वर्ष हुन्छ?','१ कल्प = १,२०,००,००० दिव्य वर्ष, १ अहोरात्र = २,४०,००,००० दिव्य वर्ष, १ ब्रह्म वर्ष = ३६० अहोरात्र = ८६,४०,००,००० दिव्य वर्ष (८.६४ अर्ब), त्यसैले ५० वर्षको १ परार्ध = ४३,२०,००,००,००० दिव्य वर्ष = १,५५,५२,००,००,००,००० मानव वर्ष (लगभग १५ नील ५५ खर्ब)।'],
     ['ब्रह्माको आयु आधा बितिसकेको हो?','हो। पहिलो परार्ध (५० वर्ष) पूरा भएको छ र दोस्रो परार्धको पहिलो दिन चलिरहेको छ, त्यसैले ब्रह्माको आयुको लगभग '+pct(pctOf(L[0]),4)+' बितेको छ। तल्लो तहका अङ्क (कलियुग, कल्प) जति ठूला लागे पनि यो तहमा तिनको अंश नगण्य हुन्छ।']
   ];
   $('#faq').innerHTML=q.map(function(a){return '<details><summary>'+a[0]+'</summary><div>'+(a[1].charAt(0)==='<'?a[1]:'<p>'+a[1]+'</p>')+'</div></details>'}).join('');
 })();
 
-/* ---------- controls ---------- */
+/* ---------- tabs, unit, theme, to-top ---------- */
 function setUnit(u){
   unit=u;
   $('#u-dev').setAttribute('aria-pressed',u==='dev');
@@ -912,6 +1812,42 @@ $('#theme').addEventListener('click',function(){
   try{localStorage.setItem('kala-theme',next)}catch(e){}
 });
 try{var th=localStorage.getItem('kala-theme');if(th)document.documentElement.setAttribute('data-theme',th)}catch(e){}
+
+var tab='home';
+function setTab(name,keepScroll){
+  tab=name;
+  $('#pane-home').hidden=name!=='home';
+  $('#pane-chakra').hidden=name!=='chakra';
+  $('#tab-home').setAttribute('aria-selected',name==='home');
+  $('#tab-chakra').setAttribute('aria-selected',name==='chakra');
+  $('#nav-home').hidden=name!=='home';
+  $('#nav-chakra').hidden=name!=='chakra';
+  $('#unit-box').hidden=name!=='chakra';
+  observeRv($('#pane-'+name));
+  if(!keepScroll)window.scrollTo(0,0);
+}
+$('#tab-home').addEventListener('click',function(){setTab('home')});
+$('#tab-chakra').addEventListener('click',function(){setTab('chakra')});
+document.addEventListener('click',function(e){
+  var g=e.target.closest('[data-go]');
+  if(g){setTab(g.dataset.go);return}
+  var a=e.target.closest('a[href^="#"]');
+  if(!a)return;
+  var id=a.getAttribute('href').slice(1);
+  if(id==='top'){e.preventDefault();setTab('home');return}
+  var t=document.getElementById(id);
+  if(!t)return;
+  var pane=t.closest('.pane');
+  if(pane&&pane.hidden){e.preventDefault();setTab(pane.dataset.tab,true);setTimeout(function(){t.scrollIntoView()},30)}
+});
+var tt=$('#totop');
+function onScroll(){tt.classList.toggle('show',(window.pageYOffset||document.documentElement.scrollTop)>500)}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:reduced()?'auto':'smooth'})});
+setUnit('human');
+setTab('home',true);
+if(location.hash){var ht=document.getElementById(location.hash.slice(1));if(ht&&ht.closest('.pane')&&ht.closest('.pane').dataset.tab==='chakra'){setTab('chakra',true);setTimeout(function(){ht.scrollIntoView()},50)}}
+normalizeDevanagariText(document.body);
 })();
 </script>
 </body>
