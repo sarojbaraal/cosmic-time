@@ -130,10 +130,10 @@ html.js .rv.in{opacity:1;transform:none}
 .tip{margin:12px 0 0;padding:12px 16px;border-left:4px solid var(--water);background:var(--soft);border-radius:0 10px 10px 0;font-size:.95rem;color:var(--ink2)}
 
 /* HOME hero */
-.h-hero{padding:60px 0 20px;overflow:hidden}
+.h-hero{padding:80px 0 20px;overflow:hidden}
 .h-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.9fr);gap:40px;align-items:center}
 @media(max-width:860px){.h-grid{grid-template-columns:1fr}.mandala-w{order:-1;max-width:300px;margin:0 auto}}
-.h-hero h1{font-size:clamp(3.2rem,9vw,6rem);color:var(--ink)}
+.h-hero h1{font-size:clamp(3.2rem,9vw,6rem);color:var(--ink); line-height:1.3;padding-top:0.15em}}
 .h-sub{font:400 clamp(1.3rem,2.8vw,1.8rem)/1.45 var(--f-head);margin:16px 0 0;color:var(--now)}
 .mandala{width:100%;height:auto;display:block}
 .mandala .om{font-size:170px}
@@ -280,6 +280,8 @@ html.js .rv.in{opacity:1;transform:none}
 .pent .nd circle{fill:var(--panel);stroke:var(--c);stroke-width:4;transition:.3s}
 .pent .nd.sel circle{fill:var(--c)}
 .pent .nd.sel text{fill:#fff}
+.pent .nd{cursor:pointer;outline:none}
+.pent .nd:focus{outline:none}
 .pent .ln{stroke:var(--line);stroke-width:1.5;stroke-dasharray:4 5}
 .sv-p h3{font-size:1.7rem;margin-bottom:6px}
 .lg-story{display:grid;grid-template-columns:minmax(150px,220px) minmax(0,1fr);gap:26px;align-items:center;margin-top:34px}
@@ -1300,7 +1302,7 @@ function observeRv(root){
   var p=$('#sv-p');
   function sel(i){
     $$('.nd',svg).forEach(function(g,k){g.classList.toggle('sel',k===i)});
-    p.innerHTML='<h3>'+F[i].n+'</h3><p>'+F[i].b+'</p>'+
+    p.innerHTML='<h3 style="color:var('+F[i].c+')">'+F[i].n+'</h3><p>'+F[i].b+'</p>'+
       '<div class="fine kriya-section"><div class="kriya-title">🔱 शिवका पाँच कृत्य</div>'+ 
       '<div class="kriya-item"><b class="kriya-srishti">१. सृष्टि</b> — परमशिवको चेतनाबाट विश्वको अभिव्यक्ति र सम्पूर्ण तत्त्वहरूको प्रकट हुनु।</div>'+ 
       '<div class="kriya-item"><b class="kriya-sthiti">२. स्थिति</b> — प्रकट भएको विश्व, जीव र सम्पूर्ण तत्त्वहरूको धारण, सञ्चालन र निरन्तरता।</div>'+ 
